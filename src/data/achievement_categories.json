@@ -1,0 +1,482 @@
+[
+  {
+    "id": 92,
+    "name": "General"
+  },
+  {
+    "categories": [
+      {
+        "id": 14861,
+        "name": "Eastern Kingdoms"
+      },
+      {
+        "id": 15081,
+        "name": "Kalimdor"
+      },
+      {
+        "id": 14862,
+        "name": "Outland"
+      },
+      {
+        "id": 14863,
+        "name": "Northrend"
+      },
+      {
+        "id": 15070,
+        "name": "Cataclysm"
+      },
+      {
+        "id": 15110,
+        "name": "Pandaria"
+      },
+      {
+        "id": 15220,
+        "name": "Draenor"
+      },
+      {
+        "id": 15252,
+        "name": "Legion"
+      }
+    ],
+    "id": 96,
+    "name": "Quests"
+  },
+  {
+    "categories": [
+      {
+        "id": 14777,
+        "name": "Eastern Kingdoms"
+      },
+      {
+        "id": 14778,
+        "name": "Kalimdor"
+      },
+      {
+        "id": 14779,
+        "name": "Outland"
+      },
+      {
+        "id": 14780,
+        "name": "Northrend"
+      },
+      {
+        "id": 15069,
+        "name": "Cataclysm"
+      },
+      {
+        "id": 15113,
+        "name": "Pandaria"
+      },
+      {
+        "id": 15235,
+        "name": "Draenor"
+      },
+      {
+        "id": 15257,
+        "name": "Legion"
+      }
+    ],
+    "id": 97,
+    "name": "Exploration"
+  },
+  {
+    "categories": [
+      {
+        "id": 15266,
+        "name": "Honor"
+      },
+      {
+        "id": 14804,
+        "name": "Warsong Gulch"
+      },
+      {
+        "id": 14802,
+        "name": "Arathi Basin"
+      },
+      {
+        "id": 14803,
+        "name": "Eye of the Storm"
+      },
+      {
+        "id": 14801,
+        "name": "Alterac Valley"
+      },
+      {
+        "id": 15003,
+        "name": "Isle of Conquest"
+      },
+      {
+        "id": 14881,
+        "name": "Strand of the Ancients"
+      },
+      {
+        "id": 15073,
+        "name": "Battle for Gilneas"
+      },
+      {
+        "id": 15074,
+        "name": "Twin Peaks"
+      },
+      {
+        "id": 15162,
+        "name": "Silvershard Mines"
+      },
+      {
+        "id": 15163,
+        "name": "Temple of Kotmogu"
+      },
+      {
+        "id": 15218,
+        "name": "Deepwind Gorge"
+      },
+      {
+        "id": 14901,
+        "name": "Wintergrasp"
+      },
+      {
+        "id": 15075,
+        "name": "Tol Barad"
+      },
+      {
+        "id": 15241,
+        "name": "Ashran"
+      },
+      {
+        "id": 15265,
+        "name": "The Timeless Isle"
+      },
+      {
+        "id": 15092,
+        "name": "Rated Battleground"
+      },
+      {
+        "id": 165,
+        "name": "Arena"
+      },
+      {
+        "id": 15283,
+        "name": "Legion"
+      },
+      {
+        "id": 15292,
+        "name": "Seething Shore"
+      }
+    ],
+    "id": 95,
+    "name": "Player vs. Player"
+  },
+  {
+    "categories": [
+      {
+        "id": 14808,
+        "name": "Classic"
+      },
+      {
+        "id": 14805,
+        "name": "The Burning Crusade"
+      },
+      {
+        "id": 14806,
+        "name": "Lich King Dungeon"
+      },
+      {
+        "id": 14922,
+        "name": "Lich King Raid"
+      },
+      {
+        "id": 15067,
+        "name": "Cataclysm Dungeon"
+      },
+      {
+        "id": 15068,
+        "name": "Cataclysm Raid"
+      },
+      {
+        "id": 15106,
+        "name": "Pandaria Dungeon"
+      },
+      {
+        "id": 15107,
+        "name": "Pandaria Raid"
+      },
+      {
+        "id": 15228,
+        "name": "Draenor Dungeon"
+      },
+      {
+        "id": 15231,
+        "name": "Draenor Raid"
+      },
+      {
+        "id": 15254,
+        "name": "Legion Dungeon"
+      },
+      {
+        "id": 15255,
+        "name": "Legion Raid"
+      }
+    ],
+    "id": 168,
+    "name": "Dungeons & Raids"
+  },
+  {
+    "categories": [
+      {
+        "id": 170,
+        "name": "Cooking"
+      },
+      {
+        "id": 171,
+        "name": "Fishing"
+      },
+      {
+        "id": 172,
+        "name": "First Aid"
+      },
+      {
+        "id": 15071,
+        "name": "Archaeology"
+      }
+    ],
+    "id": 169,
+    "name": "Professions"
+  },
+  {
+    "categories": [
+      {
+        "id": 14864,
+        "name": "Classic"
+      },
+      {
+        "id": 14865,
+        "name": "The Burning Crusade"
+      },
+      {
+        "id": 14866,
+        "name": "Wrath of the Lich King"
+      },
+      {
+        "id": 15072,
+        "name": "Cataclysm"
+      },
+      {
+        "id": 15114,
+        "name": "Pandaria"
+      },
+      {
+        "id": 15232,
+        "name": "Draenor"
+      },
+      {
+        "id": 15258,
+        "name": "Legion"
+      }
+    ],
+    "id": 201,
+    "name": "Reputation"
+  },
+  {
+    "categories": [
+      {
+        "id": 160,
+        "name": "Lunar Festival"
+      },
+      {
+        "id": 187,
+        "name": "Love is in the Air"
+      },
+      {
+        "id": 159,
+        "name": "Noblegarden"
+      },
+      {
+        "id": 163,
+        "name": "Children's Week"
+      },
+      {
+        "id": 161,
+        "name": "Midsummer"
+      },
+      {
+        "id": 162,
+        "name": "Brewfest"
+      },
+      {
+        "id": 158,
+        "name": "Hallow's End"
+      },
+      {
+        "id": 14981,
+        "name": "Pilgrim's Bounty"
+      },
+      {
+        "id": 156,
+        "name": "Winter Veil"
+      },
+      {
+        "id": 14941,
+        "name": "Argent Tournament"
+      },
+      {
+        "id": 15101,
+        "name": "Darkmoon Faire"
+      },
+      {
+        "id": 15282,
+        "name": "Brawler's Guild"
+      }
+    ],
+    "id": 155,
+    "name": "World Events"
+  },
+  {
+    "categories": [
+      {
+        "id": 15118,
+        "name": "Collect"
+      },
+      {
+        "id": 15119,
+        "name": "Battle"
+      },
+      {
+        "id": 15120,
+        "name": "Level"
+      }
+    ],
+    "id": 15117,
+    "name": "Pet Battles"
+  },
+  {
+    "categories": [
+      {
+        "id": 15247,
+        "name": "Toy Box"
+      },
+      {
+        "id": 15248,
+        "name": "Mounts"
+      },
+      {
+        "id": 15259,
+        "name": "Appearances"
+      }
+    ],
+    "id": 15246,
+    "name": "Collections"
+  },
+  {
+    "categories": [
+      {
+        "id": 15256,
+        "name": "Artifacts"
+      },
+      {
+        "id": 15276,
+        "name": "Missions"
+      }
+    ],
+    "id": 15275,
+    "name": "Class Hall"
+  },
+  {
+    "categories": [
+      {
+        "id": 15238,
+        "name": "Buildings"
+      },
+      {
+        "id": 15239,
+        "name": "Followers"
+      },
+      {
+        "id": 15249,
+        "name": "Invasions"
+      },
+      {
+        "id": 15240,
+        "name": "Missions"
+      },
+      {
+        "id": 15242,
+        "name": "Monuments"
+      },
+      {
+        "id": 15250,
+        "name": "Shipyard"
+      }
+    ],
+    "id": 15237,
+    "name": "Draenor Garrison"
+  },
+  {
+    "categories": [
+      {
+        "id": 15229,
+        "name": "Mists of Pandaria"
+      },
+      {
+        "id": 15222,
+        "name": "Proving Grounds"
+      }
+    ],
+    "id": 15165,
+    "name": "Scenarios"
+  },
+  {
+    "categories": [
+      {
+        "id": 15277,
+        "name": "Dungeons"
+      },
+      {
+        "id": 15278,
+        "name": "Raids"
+      },
+      {
+        "id": 15279,
+        "name": "Player vs. Player"
+      },
+      {
+        "id": 15280,
+        "name": "Currencies"
+      }
+    ],
+    "id": 15234,
+    "name": "Legacy"
+  },
+  {
+    "categories": [
+      {
+        "id": 15269,
+        "name": "Mounts"
+      },
+      {
+        "id": 15272,
+        "name": "Dungeons"
+      },
+      {
+        "id": 15271,
+        "name": "Raids"
+      },
+      {
+        "id": 15270,
+        "name": "Player vs. Player"
+      },
+      {
+        "id": 15273,
+        "name": "Reputation"
+      },
+      {
+        "id": 15274,
+        "name": "Events"
+      },
+      {
+        "id": 15268,
+        "name": "Promotions"
+      }
+    ],
+    "id": 81,
+    "name": "Feats of Strength"
+  }
+]

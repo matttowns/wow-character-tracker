@@ -1,0 +1,568 @@
+[ {
+  "id" : 1,
+  "name" : "Warrior",
+  "specs" : [ {
+    "icon" : "ability_warrior_savageblow",
+    "name" : "Arms",
+    "quest" : 44925,
+    "description": "A battle-hardened master of two-handed weapons, using mobility and overpowering attacks to strike his opponents down."
+
+  }, {
+    "icon" : "ability_warrior_innerrage",
+    "name" : "Fury",
+    "quest" : 46065,
+    "description": "A furious berserker wielding a weapon in each hand, unleashing a flurry of attacks to carve his opponents to pieces."
+  }, {
+    "icon" : "ability_warrior_defensivestance",
+    "name" : "Protection",
+    "quest" : 45416,
+    "description": "A stalwart protector who uses a shield to safeguard himself and his allies."
+  } ]
+}, {
+  "id" : 2,
+  "name" : "Paladin",
+  "specs" : [ {
+    "icon" : "spell_holy_holybolt",
+    "name" : "Holy",
+    "quest" : 46035,
+    "description": "Invokes the power of the Light to protect and to heal."
+  }, {
+    "icon" : "ability_paladin_shieldofthetemplar",
+    "name" : "Protection",
+    "quest" : 45416,
+    "description": "Uses Holy magic to shield himself and defend allies from attackers."
+  }, {
+    "icon" : "spell_holy_auraoflight",
+    "name" : "Retribution",
+    "quest" : 45526,
+    "description": "A righteous crusader who judges and punishes opponents with weapons and Holy magic."
+  } ]
+}, {
+  "id" : 3,
+  "name" : "Hunter",
+  "specs" : [ {
+    "icon" : "ability_hunter_bestialdiscipline",
+    "name" : "Beast Mastery",
+    "quest" : 45627,
+    "description": "A master of the wild who can tame a wide variety of beasts to assist him in combat."
+  }, {
+    "icon" : "ability_hunter_focusedaim",
+    "name" : "Marksmanship",
+    "quest" : 46127,
+    "description": "A master archer or sharpshooter who excels in bringing down enemies from afar."
+  }, {
+    "icon" : "ability_hunter_camouflage",
+    "name" : "Survival",
+    "quest" : 44925,
+    "description": "A rugged tracker who favors using animal venom, explosives and traps as deadly weapons."
+  } ]
+}, {
+  "id" : 4,
+  "name" : "Rogue",
+  "specs" : [ {
+    "icon" : "ability_rogue_deadlybrew",
+    "name" : "Assassination",
+    "quest" : 45526,
+    "description": "A deadly master of poisons who dispatches victims with vicious dagger strikes."
+  }, {
+    "icon" : "inv_sword_30",
+    "name" : "Outlaw",
+    "quest" : 46065,
+    "description": "A ruthless fugitive who uses agility and guile to stand toe-to-toe with enemies."
+  }, {
+    "icon" : "ability_stealth",
+    "name" : "Subtlety",
+    "quest" : 44925,
+    "description": "A dark stalker who leaps from the shadows to ambush her unsuspecting prey."
+  } ]
+}, {
+  "id" : 5,
+  "name" : "Priest",
+  "specs" : [ {
+    "icon" : "spell_holy_powerwordshield",
+    "name" : "Discipline",
+    "quest" : 45627,
+    "description": "Uses magic to shield allies from taking damage as well as heal their wounds."
+  }, {
+    "icon" : "spell_holy_guardianspirit",
+    "name" : "Holy",
+    "quest" : 46035,
+    "description": "A versatile healer who can reverse damage on individuals or groups and even heal from beyond the grave."
+  }, {
+    "icon" : "spell_shadow_shadowwordpain",
+    "name" : "Shadow",
+    "quest" : 46127,
+    "description": "Uses sinister Shadow magic, especially damage-over-time spells, to eradicate enemies."
+  } ]
+}, {
+  "id" : 6,
+  "name" : "Death Knight",
+  "specs" : [ {
+    "icon" : "spell_deathknight_bloodpresence",
+    "name" : "Blood",
+    "quest" : 45416,
+    "description": "A dark guardian who manipulates and corrupts life energy to sustain himself in the face of an enemy onslaught."
+  }, {
+    "icon" : "spell_deathknight_frostpresence",
+    "name" : "Frost",
+    "quest" : 44925,
+    "description": "An icy harbinger of doom, channeling runic power and delivering vicious weapon strikes."
+  }, {
+    "icon" : "spell_deathknight_unholypresence",
+    "name" : "Unholy",
+    "quest" : 46065,
+    "description": "A master of death and decay, spreading infection and controlling undead minions to do her bidding."
+  } ]
+}, {
+  "id" : 7,
+  "name" : "Shaman",
+  "specs" : [ {
+    "icon" : "spell_nature_lightning",
+    "name" : "Elemental",
+    "quest" : 46065,
+    "description": "A spellcaster who harnesses the destructive forces of nature and the elements."
+  }, {
+    "icon" : "spell_shaman_improvedstormstrike",
+    "name" : "Enhancement",
+    "quest" : 45526,
+    "description": "A totemic warrior who strikes foes with weapons imbued with elemental power."
+  }, {
+    "icon" : "spell_nature_magicimmunity",
+    "name" : "Restoration",
+    "quest" : 46035,
+    "description": "A healer who calls upon ancestral spirits and the cleansing power of water to mend allies' wounds."
+  } ]
+}, {
+  "campaign" : [ {
+    "completed" : false,
+    "id" : 41035,
+    "title" : "Felstorm's Plea",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 41036,
+    "title" : "The Dreadlord's Prize",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 41085,
+    "title" : "A Mage's Weapon",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 41114,
+    "title" : "The Champion's Return",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 41125,
+    "title" : "Unlocked Potential",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 41112,
+    "title" : "The Great Akazamzarak",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 41113,
+    "title" : "The Only Way to Travel",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 41124,
+    "title" : "The Tirisgarde Reborn",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 41141,
+    "title" : "A Conjuror's Duty",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42663,
+    "title" : "Rise Champions",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42662,
+    "title" : "Technical Wizardry",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42126,
+    "title" : "Archmage Omniara",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42127,
+    "title" : "Building Our Troops",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42696,
+    "title" : "Tech It Up A Notch",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42433,
+    "title" : "Ancient Magic",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42429,
+    "title" : "Memories of Ebonchill",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42418,
+    "title" : "An Unexpected Visitor",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42434,
+    "title" : "A Covert Operation",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42435,
+    "title" : "Prepare To Be Assimilated",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42166,
+    "title" : "What Is Going On Here",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42206,
+    "title" : "The Next Level Has Arrived",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42149,
+    "title" : "Some Knowledge Shouldn't Be Shared",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42171,
+    "title" : "Final Exit",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42222,
+    "title" : "Empyrean Society Report",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 44098,
+    "title" : "Recruiting Apprentices",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42416,
+    "title" : "The Council Is In Session",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42423,
+    "title" : "Archmage Vargoth's Retreat",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42424,
+    "title" : "Following In His Footsteps",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42451,
+    "title" : "Kalec's Plan",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 44240,
+    "title" : "Orange is the New Purple",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42954,
+    "title" : "A Small Favor",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42955,
+    "title" : "The Proper Way of Things",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42956,
+    "title" : "Ari's Package",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42959,
+    "title" : "Three Is A Lucky Number",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 44689,
+    "title" : "The Might of the Tirisgarde",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42508,
+    "title" : "Not A Toothless Dragon",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42521,
+    "title" : "The Enemy of My Enemy...",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42494,
+    "title" : "More Than Just A Food Vendor",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42493,
+    "title" : "Impending Dooooooom!",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42520,
+    "title" : "A Terrible Loss",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42707,
+    "title" : "Eye of Azshara: A Magical Affliction",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42940,
+    "title" : "When There's a Will, There's a Way",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 42734,
+    "title" : "Into the Oculus",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "id" : 43415,
+    "title" : "A Hero's Weapon",
+    "type" : 2
+  } ],
+  "classMount" : [ {
+    "completed" : false,
+    "icon" : "inv_misc_head_dragon_nexus",
+    "id" : 45844,
+    "text" : "Speak with Archmage Kalec in the Hall of the Guardian.",
+    "title" : "Avocation of Antonidas",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "icon" : "spell_fire_firebolt02",
+    "id" : 45845,
+    "text" : "Speak with Khadgar about the Tri-Disc of Fire. Follow his instructions after you speak with him.",
+    "title" : "Burning Within",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "icon" : "spell_frost_frostbolt02",
+    "id" : 45846,
+    "text" : "Speak with Archmage Cedric near the Dalaran Crater about the Tri-Disc of Frost.",
+    "title" : "Chilled to the Core",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "icon" : "spell_holy_magicalsentry",
+    "id" : 45847,
+    "text" : "Speak to Archmage Celindra about the Tri-Disc of the Arcane here in Dalaran.",
+    "title" : "Close to Home",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "icon" : "inv_magemount",
+    "id" : 45354,
+    "text" : "Complete the trial to purge the excess energy from within the disc fragments.",
+    "title" : "Dispersion of the Discs",
+    "type" : 2
+  } ],
+  "id" : 8,
+  "mountIcon" : "inv_magemount",
+  "name" : "Mage",
+  "specs" : [ {
+    "icon" : "spell_holy_magicalsentry",
+    "name" : "Arcane",
+    "quest" : 45526,
+    "description": "Manipulate the arcane, destroying enemies with overwhelming power."
+  }, {
+    "icon" : "spell_fire_firebolt02",
+    "name" : "Fire",
+    "quest" : 46065,
+    "description": "Ignite enemies with balls of fire and combustive flames."
+  }, {
+    "icon" : "spell_frost_frostbolt02",
+    "name" : "Frost",
+    "quest" : 46127,
+    "description": "Freezes enemies in their tracks and shatters them with Frost magic."
+  } ]
+}, {
+  "id" : 9,
+  "name" : "Warlock",
+  "specs" : [ {
+    "icon" : "spell_shadow_deathcoil",
+    "name" : "Affliction",
+    "quest" : 46127,
+    "description": "A master of shadow magic who specializes in drains and damage-over-time spells."
+  }, {
+    "icon" : "spell_shadow_metamorphosis",
+    "name" : "Demonology",
+    "quest" : 45526,
+    "description": "A master of demons who compels demonic powers to aid her."
+  }, {
+    "icon" : "spell_shadow_rainoffire",
+    "name" : "Destruction",
+    "quest" : 45627,
+    "description": "A master of chaos who calls down fire to burn and demolish enemies."
+  } ]
+}, {
+  "id" : 10,
+  "name" : "Monk",
+  "specs" : [ {
+    "icon" : "spell_monk_brewmaster_spec",
+    "name" : "Brewmaster",
+    "quest" : 45416,
+    "description": "A sturdy brawler who uses liquid fortification and unpredictable movement to avoid damage and protect allies."
+  }, {
+    "icon" : "spell_monk_mistweaver_spec",
+    "name" : "Mistweaver",
+    "quest" : 46035,
+    "description": "A healer who masters the mysterious art of manipulating life energies, aided by the wisdom of the Jade Serpent and Pandaren medicinal techniques."
+  }, {
+    "icon" : "spell_monk_windwalker_spec",
+    "name" : "Windwalker",
+    "quest" : 45627,
+    "description": "A martial artist without peer who pummels foes with hands and fists."
+  } ]
+}, {
+  "id" : 11,
+  "name" : "Druid",
+  "specs" : [ {
+    "icon" : "spell_nature_starfall",
+    "name" : "Balance",
+    "quest" : 46127,
+    "description": "Can take on the form of a powerful Moonkin, balancing the power of Arcane and Nature magic to destroy enemies at a distance."
+  }, {
+    "icon" : "ability_druid_catform",
+    "name" : "Feral",
+    "quest" : 46065,
+    "description": "Takes on the form of a great cat to deal damage with bleeds and bites."
+  }, {
+    "icon" : "ability_racial_bearform",
+    "name" : "Guardian",
+    "quest" : 45416,
+    "description": "Takes on the form of a mighty bear to absorb damage and protect allies."
+  }, {
+    "icon" : "spell_nature_healingtouch",
+    "name" : "Restoration",
+    "quest" : 46035,
+    "description": "Uses heal-over-time Nature spells to keep allies alive."
+  } ],
+  "classMount" : [ {
+    "completed" : false,
+    "icon" : "spell_arcane_teleportstormwind",
+    "id" : 46317,
+    "text" : "Speak with Thisalee Crow in the Dreamgrove.",
+    "title" : "Talon's Call",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "icon" : "ability_priest_angelicfeather",
+    "id" : 46318,
+    "text" : "Assist Thisalee in the defense of the Shrine of Aviana in Hyjal, then return to her in the Dreamgrove.",
+    "title" : "Defense of Aviana",
+    "type" : 2
+  }, {
+    "completed" : false,
+    "icon" : "inv_druidflightform",
+    "id" : 46319,
+    "text" : "Deal with Infazzar the Shade, and retrieve the Idol of Aviana.",
+    "title" : "You Can't Take the Sky from Me",
+    "type" : 2
+  } ],
+  "mountIcon" : "inv_druidflightform",
+  "campaign" : [ 
+    {"completed" : false, "id" : 40643, "title" : "A Summons From Moonglade", "type" : 2 },
+    {"completed" : false, "id" : 41106, "title" : "Call of the Wilds", "type" : 2 },
+    {"completed" : false, "id" : 40644, "title" : "The Dreamway", "type" : 2 },
+    {"completed" : false, "id" : 40645, "title" : "To The Dreamgrove", "type" : 2 },
+    {"completed" : false, "id" : 40646, "title" : "Weapons of Legend", "type" : 2 },
+    {"completed" : false, "id" : 41918, "title" : "The Dreamer Returns", "type" : 2 },
+    {"completed" : false, "id" : 40651, "title" : "The Seed of Ages", "type" : 2 },
+    {"completed" : false, "id" : 41332, "title" : "Ascending the Circle", "type" : 2 },
+    {"completed" : false, "id" : 40652, "title" : "Word on the Winds", "type" : 2 },
+    {"completed" : false, "id" : 40653, "title" : "Making Trails", "type" : 2 },
+    {"completed" : false, "id" : 42516, "title" : "Growing Power", "type" : 2 },
+    {"completed" : false, "id" : 42583, "title" : "Rise Champions", "type" : 2 },
+    {"completed" : false, "id" : 40650, "title" : "Champion: Zen'tabra", "type" : 2 },
+    {"completed" : false, "id" : 42096, "title" : "Champion: Naralex", "type" : 2 },
+    {"completed" : false, "id" : 42584, "title" : "Sister Lilith", "type" : 2 },
+    {"completed" : false, "id" : 42585, "title" : "Recruiting the Troops", "type" : 2 },
+    {"completed" : false, "id" : 42586, "title" : "A Glade Defense", "type" : 2 },
+    {"completed" : false, "id" : 41413, "title" : "What Could Go Wrong?", "type" : 2 },
+    {"completed" : false, "id" : 42588, "title" : "Branching Out", "type" : 2 },
+    {"completed" : false, "id" : 42032, "title" : "Sampling the Nightmare", "type" : 2 },
+    {"completed" : false, "id" : 42031, "title" : "Dire Growth", "type" : 2 },
+    {"completed" : false, "id" : 42033, "title" : "Malorne's Revenge", "type" : 2 },
+    {"completed" : false, "id" : 42034, "title" : "Grip of Nightmare", "type" : 2 },
+    {"completed" : false, "id" : 42035, "title" : "Tracking the Enemy", "type" : 2 },
+    {"completed" : false, "id" : 42036, "title" : "Idol of the Wilds", "type" : 2 },
+    {"completed" : false, "id" : 42038, "title" : "Champion: Broll Bearmantle", "type" : 2 },
+    {"completed" : false, "id" : 42039, "title" : "Champion: Sylendra Gladesong", "type" : 2 },
+    {"completed" : false, "id" : 42037, "title" : "Gathering the Dreamweavers", "type" : 2 },
+    {"completed" : false, "id" : 43991, "title" : "The Protectors", "type" : 2 },
+    {"completed" : false, "id" : 40654, "title" : "Druids of the Claw", "type" : 2 },
+    {"completed" : false, "id" : 44077, "title" : "Eye of Azshara: Essence of Balance", "type" : 2 },
+    {"completed" : false, "id" : 44076, "title" : "Darkheart Thicket: Essence of Regrowth", "type" : 2 },
+    {"completed" : false, "id" : 44075, "title" : "Halls of Valor: Essence of Ferocity", "type" : 2 },
+    {"completed" : false, "id" : 44074, "title" : "Neltharion's Lair: Essence of Tenacity", "type" : 2 },
+    {"completed" : false, "id" : 44232, "title" : "The Grove Provides", "type" : 2 },
+    {"completed" : false, "id" : 42040, "title" : "The Way to Nordrassil", "type" : 2 },
+    {"completed" : false, "id" : 42042, "title" : "Teensy Weensies!", "type" : 2 },
+    {"completed" : false, "id" : 42043, "title" : "Cleaning Up", "type" : 2 },
+    {"completed" : false, "id" : 42044, "title" : "A Dying Dream", "type" : 2 },
+    {"completed" : false, "id" : 42045, "title" : "Communing With Malorne", "type" : 2 },
+    {"completed" : false, "id" : 42046, "title" : "A New Beginning", "type" : 2 },
+    {"completed" : false, "id" : 42048, "title" : "Champion: Mylune", "type" : 2 },
+    {"completed" : false, "id" : 42047, "title" : "Champion: Hamuul Runetotem", "type" : 2 },
+    {"completed" : false, "id" : 43365, "title" : "The Cycle Continues", "type" : 2 },
+    {"completed" : false, "id" : 42719, "title" : "Eye of Azshara: Cleansing the Dreamway", "type" : 2 },
+    {"completed" : false, "id" : 42129, "title" : "The Pendant of Starlight", "type" : 2 },
+    {"completed" : false, "id" : 42049, "title" : "Powering the Portal", "type" : 2 },
+    {"completed" : false, "id" : 42365, "title" : "Focusing the Energies", "type" : 2 },
+    {"completed" : false, "id" : 42051, "title" : "Enter Nightmare", "type" : 2 },
+    {"completed" : false, "id" : 43368, "title" : "Champion: Brightwing", "type" : 2 },
+    {"completed" : false, "id" : 42050, "title" : "Defenders of the Dream", "type" : 2 },
+    {"completed" : false, "id" : 42053, "title" : "The War of the Ancients", "type" : 2 },
+    {"completed" : false, "id" : 42055, "title" : "The Demi-God's Return", "type" : 2 },
+    {"completed" : false, "id" : 42056, "title" : "Champion: Remulos", "type" : 2 },
+    {"completed" : false, "id" : 43409, "title" : "A Hero's Weapon", "type" : 2 }
+  ]
+}, {
+  "id" : 12,
+  "name" : "Demon Hunter",
+  "specs" : [ {
+    "icon" : "ability_demonhunter_specdps",
+    "name" : "Havoc",
+    "quest" : 44925,
+    "description": "A brooding master of warglaives and the destructive power of Fel magic."
+  }, {
+    "icon" : "ability_demonhunter_spectank",
+    "name" : "Vengeance",
+    "quest" : 45416,
+    "description": "Embraces the demon within to incinerate enemies and protect their allies."
+  } ]
+} ]

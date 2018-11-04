@@ -5,12 +5,12 @@ export const getItemIcon = (iconURL)=>{
 const brawlersGuildReputation = [2011, 1690, 2010, 1374,1419,1691];
 
 export const getReputation = (rep, state, stateReputation)=>{
+
     let currentReputation = state.characterData.reputation.find((reputation)=>{
         return reputation.id == rep.id;
     });
-
     if(currentReputation != null){
-        if(rep.faction>=0){
+        if(rep.hasOwnProperty('faction')){
             currentReputation.faction = rep.faction;
         }
         if(rep.subfactions){
@@ -46,7 +46,7 @@ export const getReputation = (rep, state, stateReputation)=>{
     }
     else if(rep.headerFaction == 1){
         currentReputation = {id:rep.id, name:rep.name, expansion:rep.expansion, headerFaction:1};
-        if(rep.faction){
+        if(rep.hasOwnProperty('faction')){
             currentReputation.faction  = rep.faction;
         }
         if(rep.subfactions){
@@ -59,8 +59,8 @@ export const getReputation = (rep, state, stateReputation)=>{
     }
     else{
         if(!rep.depreciated){
-            currentReputation = {id:rep.id, max:3000, name:rep.name, standing:3, value:0, expansion:rep.expansion};
-            if(rep.faction){
+            currentReputation = {id:rep.id, max:3000, name:rep.name, standing:3, value:0, expansion:rep.expansion,};
+            if(rep.hasOwnProperty('faction') ){
                 currentReputation.faction  = rep.faction
             }
             if(rep.subfactions){
@@ -78,20 +78,22 @@ export const getReputation = (rep, state, stateReputation)=>{
 }
 
 export const achievementCheck = (state,achievement) =>{
-    if(achievement.id == 5779){
+    if(achievement.id == 8218 || achievement.id == 8093){
         console.log(achievement);
     }
     let achievementsCompleted = state.characterData.achievements.achievementsCompleted;
     let achievements = state.characterData.achievements;     
     let cri = "";
-    if(!achievement.type || achievement.type == 1){
+    if(!achievement.type || achievement.type == 1 || achievement.type =="achievement"){
         let index = achievementsCompleted.indexOf(achievement.id);
         if(index > -1){
-            achievement.accountCompleted=true;
+            achievement.accountCompleted = true;
             achievement.timeCompleted = state.characterData.achievements.achievementsCompletedTimestamp[index];
+            achievement.completed=true;
+
         }
     }
-    else if(achievement.type== 2){
+    else if(achievement.type == 2 || achievement.type == "quest"){
         achievement.completed = questCheck(state, achievement.id);
         if(!achievement.completed && achievement.alternateId && achievement.alternateId.length>0){
             achievement.alternateId.forEach((id) =>{
@@ -113,28 +115,44 @@ export const achievementCheck = (state,achievement) =>{
             }
         }
     }
+    else if(achievement.type == 5){
+        let rep = state.reputation.find(x=>x.id == achievement.id);
+        if(rep.standing >= achievement.max){
+            achievement.completed = true;
+        }
+        else{
+            achievement.completed = false;
+        }
+
+    }
     if(achievement.criteria){
         let completed = 0;
         let length = 0;
         achievement.criteria.forEach((criteria)=>{
+            if(criteria.type){
+                achievementCheck(state,criteria);
+            }
             if(achievement.accountCompleted){
                 criteria.accountCompleted = true;
             }
-            achievementCheck(state,criteria);
             if(criteria.completed == true && criteria.tooltipId){
                 cri = criteria.tooltipId +":"+cri;
             }
             if(!criteria.faction || criteria.faction == state.characterData.faction){
                 length++;
             }
-            if(criteria.completed){
+            let criteriaPosition = achievements.criteria.indexOf(criteria.id);
+            if(criteriaPosition != -1){
                 completed++;
+                criteria.completed = true;
             }
+
         });
+
         if(achievement.criteriaMax){
             length = achievement.criteriaMax;
         }
-        if (completed >= length){
+        if (length > 0 && completed >= length){
             achievement.completed = true;
         }
 
@@ -150,11 +168,6 @@ export const achievementCheck = (state,achievement) =>{
                 achievementCheck(state,achievement);             
             });
         });
-    }
-    else{
-        if(achievementsCompleted.includes(achievement.id)){
-            achievement.completed=true;
-        } 
     }
     if(cri != null){
         achievement['cri'] = cri.slice(0,-1);

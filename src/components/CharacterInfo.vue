@@ -1,5 +1,5 @@
 <template>
-    <div class="character-info-container">
+    <div class="character-info-container content-container">
         <app-equipment></app-equipment>
         <app-stats></app-stats>
     </div>
@@ -19,11 +19,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
     .character-info-container{
         display:flex;
         flex-flow:row;
         flex-wrap:wrap;
         align-items:center;
+        &.content-container{
+            border-top:none;
+        }
+
     }
 </style>

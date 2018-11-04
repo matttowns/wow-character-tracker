@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container tracker-category-container">
         <app-loremaster :achievements="loremaster"></app-loremaster>
         <app-loremaster :achievements="explorer"></app-loremaster>
     </div>

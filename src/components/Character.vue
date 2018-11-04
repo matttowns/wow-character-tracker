@@ -1,10 +1,10 @@
 <template>
     <div>
         <app-character-info></app-character-info> 
-        <hr>
         <app-talents></app-talents>
-        <hr>
         <app-current-progression></app-current-progression>
+        <app-recent-activity></app-recent-activity>
+
     </div>
 </template>
 
@@ -13,13 +13,15 @@ import Talents from './Talents.vue';
 import CharacterInfo from './CharacterInfo.vue';
 import CurrentProgression from './CurrentProgression.vue';
 import PVPSummary from './PVPSummary.vue';
+import RecentActivity from './RecentActivity.vue';
 
 export default {
     components:{
         appCharacterInfo: CharacterInfo,
         appCurrentProgression: CurrentProgression,
         appTalents: Talents,
-        appPVPSummary: PVPSummary
+        appPVPSummary: PVPSummary,
+        appRecentActivity: RecentActivity
     }
 }
 </script>

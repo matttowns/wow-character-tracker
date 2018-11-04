@@ -5,20 +5,25 @@
                 <div class="tracker-header">
                     <div class="tracker-header-container">
                         <div class="achievement-image">
-                                <img src="http://media.blizzard.com/wow/icons/56/inv_misc_map06.jpg" style="display:flex;vertical-align:middle;" >
+                                <img :src="getIcon(pathfinder.icon, 'large')" style="display:flex;vertical-align:middle;" >
                         </div>
                         <div class="tracker-title">
-                                Pathfinder
+                            <a :href="'//www.wowhead.com/achievement='+pathfinder.id" >
+                                {{pathfinder.title}}
+                            </a>
                         </div>
+                    </div>
+                    <div class="tracker-achievement-description">
+                        {{pathfinder.text}}
                     </div>
                 </div>
                 <div class="tracker-achievements">
-                    <div class="tracker-achievement" v-for="(achievement,index) in pathfinder" v-if="index <= (pathfinder.length-1)/2">
+                    <div class="tracker-achievement" v-for="(achievement,index) in pathfinder.criteria" v-if="index <= (pathfinder.criteria.length-1)/2">
                         <div class="tracker-achievement-header tracker-achievement-details" style="text-align:left">
                             <div class="achievement-image" >
                                 <img :src="getIcon(achievement.icon, 'large')" style="display:flex;vertical-align:middle;" >
                             </div>
-                            <a class="achievement-link" :href="'//www.wowhead.com/achievement='+achievement.id" :data-wowhead="achievement.cri.length>0 ? achievement.id+'&cri='+achievement.cri : achievement.id" >
+                            <a class="achievement-link" :href="'//www.wowhead.com/achievement='+achievement.id" :data-wowhead="achievement.hasOwnProperty('cri') ? achievement.id+'&cri='+achievement.cri : achievement.id" >
                                 <div class="achievement-title" >{{achievement.title}}</div>
                             </a>
                             <div v-if="account && achievement.type == 1" class="achievement-progress" :class="{'completed': achievement.accountCompleted, 'incomplete': !achievement.accountCompleted}">{{progessCompleted(achievement)}}</div>
@@ -42,7 +47,7 @@
                     </div> 
                 </div>
                 <div class="tracker-achievements">
-                    <div class="tracker-achievement" v-for="(achievement,index) in pathfinder" v-if="index > (pathfinder.length-1)/2">
+                    <div class="tracker-achievement" v-for="(achievement,index) in pathfinder.criteria" v-if="index > (pathfinder.criteria.length-1)/2">
                         <div class="tracker-achievement-header tracker-achievement-details" style="text-align:left">
                             <div class="achievement-image" >
                                 <img :src="getIcon(achievement.icon, 'large')" style="display:flex;vertical-align:middle;" >
@@ -58,7 +63,7 @@
                         <p class="tracker-achievement-description" >{{achievement.text}}</p>
                         <template v-if="!achievement.criteriaMax">
                             <div class="achievement-child" v-for="achievement in achievement.criteria" v-if="(!achievement.completed && (!achievement.faction || characterData.faction == achievement.faction))">
-                                <div class="tracker-achievement-header tracker-achievement-details tracker-achievement-child"  >    
+                                <div class="tracker-achievement-header tracker-achievement-details tracker-achievement-child" v-if="!achievement.hasOwnProperty('faction') || characterData.faction == achievement['faction']" >
                                     <div class="criteria-title" >{{achievement.title}}</div>
                                     <div class="criteria-progress" :class="{'completed': achievement.completed, 'incomplete': !achievement.completed}">{{achievement.completed ? "Complete" : "Incomplete" | capitalize}}</div>
                                 </div>  
@@ -128,13 +133,11 @@
                     let completed = 0;
                     let length = 0;
                     if(achievement.criteria.length==0){
-                        console.log(achievement.title)
-                        console.log(achievement.completed);
+
                         length=1;
                         if(achievement.completed){
                             completed=1;
                         }
-                        console.log(length + " : " + completed);
                     }
                     else{
                         achievement.criteria.forEach((criteria) =>{
@@ -145,6 +148,9 @@
                                 completed++;
                             }
                         });
+                    }
+                    if(achievement.id == 13144){
+                        console.log({length,completed});
                     }
                     return {length,completed};
                 }
@@ -159,19 +165,7 @@
         max-width: 1480px;
         margin-left:auto;
         margin-right:auto;
-        border-bottom:1px solid white;
-    }
-    .tracker{
-        margin:1.5em;
-        display:flex;
-        flex-flow:row;
-        flex-wrap:wrap;
-    }
-    .tracker-header{
-        width:100%;
-    }
-    .tracker-achievement-details{
-        margin:.25em 0;
+        border-bottom:1px solid rgba(255,255,255,.35);
     }
 
 </style>

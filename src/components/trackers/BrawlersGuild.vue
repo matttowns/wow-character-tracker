@@ -131,7 +131,6 @@ export default {
             return this.$store.getters.frameItems;
         },
         brawlersProgress(){
-            console.log(this.$store.getters.characterData.reputation.find(x=>x.id == 2011));
             let brawlRep = this.$store.getters.characterData.reputation.find(x=>x.id == 2011);
             if(!brawlRep){
                 return 0;

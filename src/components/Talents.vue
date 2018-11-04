@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container content-container">
         <div class="talent-container">
             <div class="talent-header">
                 <div class="section-header">Talents</div>
@@ -27,7 +27,6 @@ export default {
             return icons;
         },
         talents(){
-            console.log(this.$store.getters.characterData.talents);
             this.$store.getters.characterData.talents[0].show = true;
             return this.$store.getters.characterData.talents
         }
@@ -89,7 +88,7 @@ export default {
                 opacity:1;
             }
             img{
-                border:1px solid lightgrey;
+                border:1px solid rgba(255,255,255,.35);
             }
         }
     }

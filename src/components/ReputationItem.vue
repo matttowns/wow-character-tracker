@@ -1,23 +1,23 @@
 <template>
     <div class="reputation-expansion">
             <div class="section-header">{{expansion.expansion.title}}</div>
-            <div style="display:flex;flex-flow:column; align-items:flex-start; flex-wrap:wrap; width:100%">
-                <div :class="[reputation.subfactions ? 'reputation-parent' : '']" class="reputation" v-for="reputation in expansion.reputations" v-if="(!reputation.faction || reputation.faction == characterData.faction)">
+            <div class="reputation-expansion-content">
+                <div :class="[reputation.subfactions ? 'reputation-parent' : '']" class="reputation" v-for="reputation in expansion.reputations" v-if="(!reputation.hasOwnProperty('faction') || reputation.faction == characterData.faction)">
                     <h6 class="reputation-title" v-if="reputation.headerFaction != 1">{{reputation.name}}</h6>
-                    <h6 class="reputation-standing" v-if="reputation.headerFaction != 1">{{reputationsStanding[reputation.standing+1].charAt(0).toUpperCase() + reputationsStanding[reputation.standing+1].slice(1) }}</h6>
+                    <h6 class="reputation-standing" :class='[reputationsStanding[reputation.standing+1]+"-text"]' v-if="reputation.headerFaction != 1">{{reputationsStanding[reputation.standing+1].charAt(0).toUpperCase() + reputationsStanding[reputation.standing+1].slice(1) }}</h6>
                     <div class="progress" style="position:relative;" v-if="reputation.headerFaction != 1">
-                        <small style="position:absolute;" v-if="reputation.standing < 7"> {{reputation.value}} / {{reputation.max}}</small>
+                        <small class="progress-text"  v-if="reputation.standing < 7"> {{reputation.value}} / {{reputation.max}}</small>
                         <div v-if="reputation.standing < 7" style="color:black;  height:100%;" class="progress-bar" role="progressbar" :style="{width: (reputation.value /reputation.max)*100 +'%'}" aria-valuenow="4" aria-valuemin="0" aria-valuemax="10" :class='reputationsStanding[reputation.standing+1]'></div>
-                        <div v-else class="progress-bar"  role="progressbar" style="width:100%; height:100%;" :class='reputationsStanding[reputation.standing+1]' ></div>
+                        <div v-else class="progress-bar" role="progressbar" style="width:100%; height:100%;" :class='reputationsStanding[reputation.standing+1]' ></div>
                     </div>
                     <h6 class="reputation-title reputation-title-full" v-if="reputation.headerFaction  == 1">{{reputation.name}}</h6>
                     <div class="reputation" v-for="faction in reputation.subfactions" v-if="reputation.subfactions">
                         <h6 class="subfaction-title">{{faction.name}}</h6>
-                        <h6 class="reputation-standing" v-if="faction.friend == 1">{{friendStanding[faction.standing+1].charAt(0).toUpperCase() + friendStanding[faction.standing+1].slice(1) }}</h6>
-                        <h6 class="reputation-standing" v-else-if="faction.brawlers">Rank {{faction.standing}}</h6>
-                        <h6 class="reputation-standing" v-else>{{reputationsStanding[faction.standing+1].charAt(0).toUpperCase() + reputationsStanding[faction.standing+1].slice(1) }}</h6>
+                        <h6 class="reputation-standing" v-if="faction.friend == 1" :class='[reputationsStanding[faction.standing+3]+"-text"]'>{{friendStanding[faction.standing+1].charAt(0).toUpperCase() + friendStanding[faction.standing+1].slice(1) }}</h6>
+                        <h6 class="reputation-standing" :class='[reputationsStanding[faction.standing+1]+"-text"]' v-else-if="faction.brawlers">Rank {{faction.standing}}</h6>
+                        <h6 class="reputation-standing" :class='[reputationsStanding[faction.standing+1]+"-text"]' v-else>{{reputationsStanding[faction.standing+1].charAt(0).toUpperCase() + reputationsStanding[faction.standing+1].slice(1) }}</h6>
                         <div class="progress" style="position:relative;">
-                            <small style="position:absolute; " v-if="faction.brawlers || ((faction.standing < 5 && faction.friend ==1) || (faction.standing < 7 && !faction.friend) )"> {{faction.value}} / {{faction.max}}</small>
+                            <small class="progress-text" v-if="faction.brawlers || ((faction.standing < 5 && faction.friend ==1) || (faction.standing < 7 && !faction.friend) )"> {{faction.value}} / {{faction.max}}</small>
                             <div v-if="faction.brawlers || (faction.friend == 1 && faction.standing < 5) || (!faction.friend && faction.standing < 7) " style="color:black;  height:100%;" class="progress-bar" role="progressbar" :style="{width: (faction.value /faction.max)*100 +'%'}" aria-valuenow="4" aria-valuemin="0" aria-valuemax="10" :class='[faction.friend == 1 ?  reputationsStanding[faction.standing+3] : reputationsStanding[faction.standing+1]]'></div>
                             <div v-else class="progress-bar"  role="progressbar" style="width:100%; height:100%;" :class='[faction.friend == 1 ?  reputationsStanding[faction.standing+3] : reputationsStanding[faction.standing+1]]' ></div>
                         </div>
@@ -59,7 +59,6 @@ export default {
                     {"id": 6, "title": 'Legion'},
             ],
         }
-        
     },
     computed:{
         characterData(){
@@ -69,7 +68,12 @@ export default {
 }
 </script>
 <style lang="scss">
-    .reputation-expansion{
-        border-bottom:2px solid white;
+    .reputation-expansion:after{
+        display:block;
+        width:100%;
+        content:'';
+        height:1px;
+        background-color:rgba(255,255,255,.33);
+        margin-top:2em;
     }
 </style>

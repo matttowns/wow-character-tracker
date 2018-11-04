@@ -1,10 +1,11 @@
 <template>
     <div id="main-frame" class="frame">
         <div class="frame-background"></div>
+                    <div class="close" @click="closeFrame()" >x</div>
+
         <div class="next" @click="nextItem()"  v-if="upperBoundCheck">></div>
         <div class="previous" @click="previousItem()" v-if="lowerBoundCheck"><</div>
         <div class="frame-item frame-center" >
-            <div class="close" @click="closeFrame()" >x</div>
             <div class="frame-image">
                 <img :src="getPetImage(pet.displayId)"> 
             </div>
@@ -123,8 +124,8 @@ export default {
             }
         }
         .close{
-            top:2px;
-            right:10px;
+            top:12px;
+            right:25px;
         }
         .next{
             top:50%;

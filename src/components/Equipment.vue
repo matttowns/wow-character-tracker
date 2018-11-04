@@ -1,10 +1,9 @@
 <template>
     <div class="equipment-container" :style="{backgroundImage: characterData.background}">
-            <div class="equipment justify-content-between"  >
-                <div class="col-4">
+            <div class="equipment justify-content-between">
                     <ul class="equipment-list">
-                        <li style="display:flex; flex:row;" class="list-group-item border-0 equipped-item" v-for="(item, index) in items" v-if="itemSlots.slice(0,8).includes(index)" :style="{ }">
-                            <a class="item-link" target="_blank" :href="'//www.wowhead.com/item='+item.id"  :data-wowhead="getBonus(item)" v-if="item.id">
+                        <li class="equipped-item" v-for="(item, index) in items" v-if="itemSlots.slice(0,8).includes(index)">
+                            <a class="item-link" target="_blank" :href="'//www.wowhead.com/item='+item.id" v-if="item.id" :data-wowhead="getBonus(item)" >
                                 <div class="item">
                                     <img :src="getIcon(item.icon, 'large')"
                                     style="border-style:solid; border-width:1px;" :style="{ borderColor: quality[item.quality].color }">
@@ -15,16 +14,16 @@
 
                                 </div>
                             </a>
-                            <div v-else style="width:52px; height:52px; margin-bottom:4px; background-color:lightgray;"></div>
+                            <div class="item" v-else>
+                                <img src="../assets/empty.png" >
+                            </div>                    
                         </li>
                     </ul>
-                </div>
-                <div class="col-4">
                     <ul class="equipment-list">
-                        <li style="display:flex; flex=row; margin-left:auto;" class="list-group-item text-right equipped-item border-0" v-for="(item, index) in items" v-if="itemSlots.slice(8,16).includes(index)">
-                            <a class="item-link " target="_blank" :href="'//www.wowhead.com/item='+item.id" :data-wowhead="getBonus(item)">
+                        <li class="list-group-item text-right equipped-item" v-for="(item, index) in items" v-if="itemSlots.slice(8,16).includes(index)">
+                            <a class="item-link " target="_blank" :href="'//www.wowhead.com/item='+item.id" v-if="item.id" :data-wowhead="getBonus(item)" >
                                 <div class="item item-right">
-                                    <div class="item-details ">
+                                    <div class="item-details">
                                         <div class="item-name" :style="{ color: quality[item.quality].color }">{{item.name}}<div class="overlay"></div></div>
                                         <div class="item-level">{{item.itemLevel}}</div>
                                     </div>
@@ -32,45 +31,48 @@
                                     style="border-style:solid; border-width:1px;" :style="{ borderColor: quality[item.quality].color }">
                                 </div>
                             </a>
+                            <div class="item" v-else>
+                                <img src="../assets/empty.png" >
+                            </div>     
                         </li>
                     </ul>
-                </div>
             </div>    
             <div class="equipment-weapons">
                 <ul class="equipment-list">
-                    <li style="display:flex; flex:row; margin-right:auto;" class="list-group-item border-0 equipped-item right-item" :style="{width: !items['offHand'].name ? '50%' : '100%' }">
-                        <a class="item-link" target="_blank" :href="'//www.wowhead.com/item='+items['mainHand'].id"  :data-wowhead="getBonus(items['mainHand'])+'&ilvl='+items['mainHand'].itemLevel">
-                            <div class="item item-right item-weapon" :class="{'item-artifact': artifactCheck(items['mainHand'])}" >
-                                
-                                <div class="item-details ">
-                                    <div class="item-name" :style="{ color: quality[items['mainHand'].quality].color }">{{items['mainHand'].name}}
+                    <li class="equipped-item equipped-item-weapon right-item" >
+                        <a class="item-link" target="_blank" :href="'//www.wowhead.com/item='+items['mainHand'].id"  :data-wowhead="getBonus(items['mainHand'])+'&ilvl='+items['mainHand'].itemLevel"  v-if="items['mainHand'].id">
+                            <div class="item item-right item-weapon" :class="{'item-artifact': artifactCheck(items['mainHand'])}">
+                                <div class="item-details">
+                                    <div class="item-name" :style="{color:quality[items['mainHand'].quality].color}">{{items['mainHand'].name}}
                                         <div class="overlay"></div>
                                     </div>
                                     <div class="item-level" ><span :class="quality[items['mainHand'].quality].name">{{items['mainHand'].itemLevel}}</span></div>
                                 </div>
-                                
                                 <img :src="getIcon(items['mainHand'].icon,'large')"
                                     style="border-style:solid; border-width:1px;" :style="{ borderColor: quality[items['mainHand'].quality].color }">
                             </div>
                         </a>
+                        <div class="item" v-else>
+                            <img src="../assets/empty.png" >
+                        </div>
                     </li>
-                    <li style="display:flex; flex:row; margin-right:auto; width:100%" class="list-group-item border-0 equipped-item left-item" :style="{ }" v-if="items['offHand'].name" :data-wowhead="getBonus(items['offHand'])+'&ilvl='+items['offHand'].itemLevel">
-                        <a class="item-link" target="_blank" :href="'//www.wowhead.com/item='+items['offHand'].id" >
-                            <div class="item  item-weapon" :class="{'item-artifact': artifactCheck(items['offHand'])}">
-                                    <img :src="getIcon(items['offHand'].icon,'large')"
-                                    style="border-style:solid; border-width:1px;" :style="{ borderColor: quality[items['offHand'].quality].color }">
-                                    <div class="item-details ">
-                                        <div class="item-name"  :style="{ color: quality[items['offHand'].quality].color }">{{items['offHand'].name}}
-                                         <div class="overlay"></div></div>
-                                         <div class="item-level" ><span :class="quality[items['offHand'].quality].name">{{items['offHand'].itemLevel}}</span></div>
-                                    </div>
-                                    
+                    <li class="equipped-item equipped-item-weapon left-item" :style="{ }" >
+                        <a class="item-link" target="_blank" :href="'//www.wowhead.com/item='+items['offHand'].id"  v-if="items['offHand'].name" :data-wowhead="getBonus(items['offHand'])+'&ilvl='+items['offHand'].itemLevel">
+                            <div class="item  item-weapon" :class="{'item-artifact':artifactCheck(items['offHand'])}">
+                                <img :src="getIcon(items['offHand'].icon,'large')"
+                                    style="border-style:solid; border-width:1px;" :style="{borderColor: quality[items['offHand'].quality].color}">
+                                <div class="item-details">
+                                    <div class="item-name" :style="{color: quality[items['offHand'].quality].color }">{{items['offHand'].name}}
+                                    <div class="overlay"></div></div>
+                                    <div class="item-level"><span :class="quality[items['offHand'].quality].name">{{items['offHand'].itemLevel}}</span></div>
+                                </div>
                             </div>
                         </a>
+                        <div class="item" v-else>
+                                <img src="../assets/empty.png" >
+                            </div>  
                     </li>
                 </ul>
-                 <div class="artifact-level" style="color: #e6cc80;"  v-if="artifactCheck(items['mainHand'])">Artifact Level - {{getArtifactLevel(items['mainHand'])}}</div>
-                 <div class="artifact-level" style="color: #e6cc80;" v-if="artifactCheck(items['offHand'])">Artifact Level - {{getArtifactLevel(items['offHand'])}}</div>
             </div>
     </div>
     
@@ -78,15 +80,15 @@
 <script>
 import Header from './Header.vue';
 import Talents from './Talents.vue';
-
 import {getIcon} from '../mixins/mixins'
 import Stats from './Stats.vue'
+import {mapState} from 'vuex';
 export default {
     mixins: [getIcon],
-  data(){
-      return{
-        itemSlots: ['head', 'neck', 'shoulder', 'back', 'chest', 'shirt', 'tabard', 'wrist', 'hands', 'waist', 'legs', 'feet', 'finger1', 'finger2', 'trinket1', 'trinket2', 'mainHand', 'offHand'],
-        quality:[
+    data(){
+        return{
+            itemSlots: ['head', 'neck', 'shoulder', 'back', 'chest', 'shirt', 'tabard', 'wrist', 'hands', 'waist', 'legs', 'feet', 'finger1', 'finger2', 'trinket1', 'trinket2', 'mainHand', 'offHand'],
+            quality:[
                 {id:0, color: '#9d9d9d', name:'poor'},
                 {id:1, color: '#ffffff', name:'common'},
                 {id:2, color: '#1eff00', name:'uncommon'},
@@ -95,44 +97,12 @@ export default {
                 {id:5, color: '#ff8000', name:'legendary'},
                 {id:6, color: '#e6cc80', name:'artifact'},
                 {id:7, color: '#00ccff', name:'heirloom'}
-        ],
-        itemsCreated:false,
-      }
-  },
-  created(){
-     /* if(!this.itemsCreated){
-        this.itemSlots.forEach((slot) => {     
-            this.items[slot] = {icon: '', quality:0};
-            if(this.items.hasOwnProperty(slot)){   
-                this.items[slot] = this.items[slot];
-                this.items[slot].bonus = this.items[slot].bonusLists.join(":");
-                let gem = "";
-                if(this.items[slot].tooltipParams.gem0){
-                    gem = this.items[slot].tooltipParams.gem0;
-                }
-                if(this.items[slot].tooltipParams.gem1){
-                    gem += ":"+this.items[slot].tooltipParams.gem1;
-                }
-                if(this.items[slot].tooltipParams.gem2){
-                    gem += ":"+this.items[slot].tooltipParams.gem2;
-                }
-                if(this.items[slot].tooltipParams.set){
-                    console.log(this.items[slot].tooltipParams.set);
-                    this.items[slot].set = this.items[slot].tooltipParams.set.join(":");
-                }
-                this.items[slot].gems = gem;
-            }
-        });   
-        this.itemsCreated = true;      
-      }*/
+            ],
+            itemsCreated:false,
+        }
     },
     computed:{
-      characterData(){
-          return this.$store.getters.characterData;
-      },
-      items(){
-          return this.$store.getters.items;
-      },
+      ...mapState(['characterData', 'items'])
     },
     components:{
         appStats: Stats,
@@ -169,17 +139,18 @@ export default {
                 }
                 bonusString += "transmog="+item.appearance.itemId;                
             }
-            return bonusString;
-        },
-        getArtifactLevel(weapon){
-            let level = 0;
-            weapon.artifactTraits.forEach((trait) =>{
-                level += trait.rank;
-            });
-            if(weapon.relics){
-                level -= weapon.relics.length;
+            if(item.azeriteEmpoweredItem && item.azeriteEmpoweredItem.azeritePowers.length>0){
+                if(bonusString.length>0){
+                    bonusString+="&";
+                }
+                bonusString += "azerite-powers=";
+                for(let i=0;i<item.azeriteEmpoweredItem.azeritePowers.length;i++){
+                    bonusString+= item.azeriteEmpoweredItem.azeritePowers[i].id +":";
+                }             
+                bonusString = bonusString.substring(0, bonusString.length-1);
             }
-            return level;
+            
+            return bonusString;
         },
         artifactCheck(weapon){
             if(weapon.artifactId > 0){
@@ -191,11 +162,24 @@ export default {
 }
 </script>
 <style lang="scss">
+    .equipped-item-weapon{
+        display:flex;
+        flex-flow:row;
+        margin-right:auto;
+        &.left-item{
+            margin-left:.5em;
+        }
+        &.right-item{
+            margin-right:.5em;
+        }
+    }
     .equipment-container{
+        border:1px solid rgba(255,255,255,.5);
+        margin:1em 0;
         padding:1em 0;
         background-position:center;
         background-size:cover;
-         -webkit-background-size: cover;
+        -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         position:relative;
@@ -218,15 +202,18 @@ export default {
     }
 
     .equipment{
-        display: flex;flex-flow:row;
+        display: flex;
+        flex-flow:row;
         justify-content:space-between;
-        padding-left:1em; padding-right:1em;
+        padding-left:1em; 
+        padding-right:1em;
         max-width: 900px;
         margin-left:auto;
         margin-right:auto;
     }
     .equipment-list{
         padding:0px;
+        list-style:none;
     }
     .equipment-list img{
         height:35px; width:35px;
@@ -249,15 +236,12 @@ export default {
     }
     .equipment-weapons .equipment-list li{
         width:100%;
-        margin-left:.5em;
-        margin-right:.5em;
-
-        .right-item{
-            justify-content: flex-end;
-        }
-        .left-item{
-            justify-content: flex-start;
-        }
+    }
+    .right-item{
+        justify-content: flex-end;
+    }
+    .left-item{
+        justify-content: flex-start;
     }
     .item-link{
         text-decoration:none;
@@ -291,7 +275,7 @@ export default {
                 position:relative;
                 max-width:220px;
                 font-size:.875em;
-                font-weight:500;
+                font-weight:600;
                 align-self:flex-start;
                 .overlay{
                     position:absolute;
@@ -299,7 +283,7 @@ export default {
                     padding:1em 0;
                     width:100%;
                     top:-1em;
-                    filter: blur(75px);
+                    filter: blur(50px);
                     opacity:.75;
                     background-color:#000;
                 }

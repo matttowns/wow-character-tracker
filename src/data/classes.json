@@ -1,6 +1,7 @@
 [ {
   "id" : 1,
   "name" : "Warrior",
+  "color":"#C79C6E",
   "specs" : [ {
     "icon" : "ability_warrior_savageblow",
     "name" : "Arms",
@@ -21,6 +22,7 @@
 }, {
   "id" : 2,
   "name" : "Paladin",
+  "color":"#F58CBA",
   "specs" : [ {
     "icon" : "spell_holy_holybolt",
     "name" : "Holy",
@@ -40,6 +42,7 @@
 }, {
   "id" : 3,
   "name" : "Hunter",
+  "color":"#ABD473",
   "specs" : [ {
     "icon" : "ability_hunter_bestialdiscipline",
     "name" : "Beast Mastery",
@@ -59,6 +62,7 @@
 }, {
   "id" : 4,
   "name" : "Rogue",
+  "color":"#FFF569",
   "specs" : [ {
     "icon" : "ability_rogue_deadlybrew",
     "name" : "Assassination",
@@ -78,6 +82,7 @@
 }, {
   "id" : 5,
   "name" : "Priest",
+  "color":"#FFFFFF",
   "specs" : [ {
     "icon" : "spell_holy_powerwordshield",
     "name" : "Discipline",
@@ -97,6 +102,7 @@
 }, {
   "id" : 6,
   "name" : "Death Knight",
+  "color":"#C41F3B",
   "specs" : [ {
     "icon" : "spell_deathknight_bloodpresence",
     "name" : "Blood",
@@ -116,6 +122,7 @@
 }, {
   "id" : 7,
   "name" : "Shaman",
+  "color":"#0070DE",
   "specs" : [ {
     "icon" : "spell_nature_lightning",
     "name" : "Elemental",
@@ -152,11 +159,6 @@
     "completed" : false,
     "id" : 41114,
     "title" : "The Champion's Return",
-    "type" : 2
-  }, {
-    "completed" : false,
-    "id" : 41125,
-    "title" : "Unlocked Potential",
     "type" : 2
   }, {
     "completed" : false,
@@ -393,6 +395,7 @@
   "id" : 8,
   "mountIcon" : "inv_magemount",
   "name" : "Mage",
+  "color":"#69CCF0",
   "specs" : [ {
     "icon" : "spell_holy_magicalsentry",
     "name" : "Arcane",
@@ -412,6 +415,7 @@
 }, {
   "id" : 9,
   "name" : "Warlock",
+  "color":"#9482C9",
   "specs" : [ {
     "icon" : "spell_shadow_deathcoil",
     "name" : "Affliction",
@@ -431,6 +435,7 @@
 }, {
   "id" : 10,
   "name" : "Monk",
+  "color":"#00FF96",
   "specs" : [ {
     "icon" : "spell_monk_brewmaster_spec",
     "name" : "Brewmaster",
@@ -450,6 +455,7 @@
 }, {
   "id" : 11,
   "name" : "Druid",
+  "color":"#FF7D0A",
   "specs" : [ {
     "icon" : "spell_nature_starfall",
     "name" : "Balance",
@@ -554,6 +560,7 @@
 }, {
   "id" : 12,
   "name" : "Demon Hunter",
+  "color":"#A330C9",
   "specs" : [ {
     "icon" : "ability_demonhunter_specdps",
     "name" : "Havoc",

@@ -1,10 +1,10 @@
 <template>
-    <div class="container">
+    <div class="container tracker-category-container">
         <app-loading v-if="!draenorLoaded" message="Checking off your progress!"></app-loading>
         <template v-else>
-            <app-pathfinder :pathfinder="pathfinder"></app-pathfinder>
-            <app-loremaster :achievements="pathfinder[1]"></app-loremaster>
-            <app-loremaster :achievements="pathfinder[0]"></app-loremaster>
+            <app-pathfinder :pathfinder="pathfinderAchievements"></app-pathfinder>
+            <app-loremaster :achievements="pathfinderAchievements.criteria[1]"></app-loremaster>
+            <app-loremaster :achievements="pathfinderAchievements.criteria[0]"></app-loremaster>
         </template>
     </div>
 </template>
@@ -23,7 +23,7 @@
             this.$store.dispatch('initDraenor');
         },
         computed:{
-            pathfinder(){
+            pathfinderAchievements(){
                 return this.$store.getters.draenorPathfinder;
             },
             draenorLoaded(){

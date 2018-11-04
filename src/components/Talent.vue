@@ -19,7 +19,6 @@
                         <img class="talent-icon" :src="getIcon(selectedTalent.spell.icon, 'medium')">
                         <div class="talent-name">{{selectedTalent.spell.name}}</div>
                     </template>
-                    </div>
                 </div>
             </div>
         </div>
@@ -73,6 +72,7 @@ export default {
         text-align:center;
         font-size:1em;
         color:white;
+        display: flex;
         @media screen and (min-width:992px){
             width:32.5%;
             font-size:1em;
@@ -80,25 +80,35 @@ export default {
         .spec-details-content{
             margin:1em;
             padding:20px;
-            border:1px solid white;
-            background:rgba(131, 123, 123, 0.842);
+            border:1px solid rgba(255,255,255,.35);
+            background-color:rgba(20,20,40,1);
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            p{
+                margin:.25em;
+            }
         }
         h3{
             font-size:1.5em;
             margin:.25em;
+            font-weight:400;
+            color:orange;
         }
     }
     .spec-icon{
         height:44px;
         width:44px;
-                border:1px solid lightgrey;
+                border:1px solid rgba(255,255,255,.35);
 
     }
     .talents{
         width:100%;
         display:flex;
         flex-wrap:wrap;
-        color:white;
+        color:orange;
+        flex-grow:1;
         @media screen and (min-width:992px){
             width:67.5%;
             font-size:1em;
@@ -106,8 +116,9 @@ export default {
     }
     .talents-content{
         margin:1em;
-        border:1px solid white;
-        background:rgba(131, 123, 123, 0.842);
+        border:1px solid rgba(255,255,255,.35);
+        //background:rgba(131, 123, 123, 0.842);
+        background-color:rgba(20,20,40,1);
         padding:15px;
         display:flex;
         flex-flow:row;
@@ -118,7 +129,8 @@ export default {
         display:flex;
         width:100%;
         align-items:center;
-        padding:.25em 0;
+        padding:.125em 0;
+        margin:.125em 0;
         @media screen and (min-width:480px){
             width:50%;
             font-size:.875em;
@@ -128,7 +140,7 @@ export default {
             font-size:1em;
         }
         @media screen and (min-width:992px){
-            padding:0;
+            padding:.5em 0;
         }
         .talent-level{
             width:40px;
@@ -145,7 +157,7 @@ export default {
     }
     .talent-icon{
         margin:0 .5em;
-        border:1px solid lightgrey;
+        border:1px solid rgba(255,255,255,.35);
     }
     .talent-link{
         color:white;

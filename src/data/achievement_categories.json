@@ -1,9 +1,10 @@
 [
   {
     "id": 92,
-    "name": "General"
+    "name": "Character"
   },
   {
+    "id": 96,
     "categories": [
       {
         "id": 14861,
@@ -36,12 +37,16 @@
       {
         "id": 15252,
         "name": "Legion"
+      },
+      {
+        "id": 15284,
+        "name": "Battle for Azeroth"
       }
     ],
-    "id": 96,
     "name": "Quests"
   },
   {
+    "id": 97,
     "categories": [
       {
         "id": 14777,
@@ -74,12 +79,16 @@
       {
         "id": 15257,
         "name": "Legion"
+      },
+      {
+        "id": 15298,
+        "name": "Battle for Azeroth"
       }
     ],
-    "id": 97,
     "name": "Exploration"
   },
   {
+    "id": 95,
     "categories": [
       {
         "id": 15266,
@@ -106,10 +115,6 @@
         "name": "Isle of Conquest"
       },
       {
-        "id": 14881,
-        "name": "Strand of the Ancients"
-      },
-      {
         "id": 15073,
         "name": "Battle for Gilneas"
       },
@@ -130,20 +135,8 @@
         "name": "Deepwind Gorge"
       },
       {
-        "id": 14901,
-        "name": "Wintergrasp"
-      },
-      {
-        "id": 15075,
-        "name": "Tol Barad"
-      },
-      {
-        "id": 15241,
-        "name": "Ashran"
-      },
-      {
-        "id": 15265,
-        "name": "The Timeless Isle"
+        "id": 15292,
+        "name": "Seething Shore"
       },
       {
         "id": 15092,
@@ -155,17 +148,13 @@
       },
       {
         "id": 15283,
-        "name": "Legion"
-      },
-      {
-        "id": 15292,
-        "name": "Seething Shore"
+        "name": "World"
       }
     ],
-    "id": 95,
     "name": "Player vs. Player"
   },
   {
+    "id": 168,
     "categories": [
       {
         "id": 14808,
@@ -214,12 +203,20 @@
       {
         "id": 15255,
         "name": "Legion Raid"
+      },
+      {
+        "id": 15285,
+        "name": "Battle Dungeon"
+      },
+      {
+        "id": 15286,
+        "name": "Battle Raid"
       }
     ],
-    "id": 168,
     "name": "Dungeons & Raids"
   },
   {
+    "id": 169,
     "categories": [
       {
         "id": 170,
@@ -230,18 +227,14 @@
         "name": "Fishing"
       },
       {
-        "id": 172,
-        "name": "First Aid"
-      },
-      {
         "id": 15071,
         "name": "Archaeology"
       }
     ],
-    "id": 169,
     "name": "Professions"
   },
   {
+    "id": 201,
     "categories": [
       {
         "id": 14864,
@@ -270,12 +263,16 @@
       {
         "id": 15258,
         "name": "Legion"
+      },
+      {
+        "id": 15305,
+        "name": "Battle for Azeroth"
       }
     ],
-    "id": 201,
     "name": "Reputation"
   },
   {
+    "id": 155,
     "categories": [
       {
         "id": 160,
@@ -326,10 +323,10 @@
         "name": "Brawler's Guild"
       }
     ],
-    "id": 155,
     "name": "World Events"
   },
   {
+    "id": 15117,
     "categories": [
       {
         "id": 15118,
@@ -344,10 +341,10 @@
         "name": "Level"
       }
     ],
-    "id": 15117,
     "name": "Pet Battles"
   },
   {
+    "id": 15246,
     "categories": [
       {
         "id": 15247,
@@ -362,68 +359,48 @@
         "name": "Appearances"
       }
     ],
-    "id": 15246,
     "name": "Collections"
   },
   {
+    "id": 15301,
     "categories": [
       {
-        "id": 15256,
-        "name": "Artifacts"
+        "id": 14901,
+        "name": "Wintergrasp"
       },
       {
-        "id": 15276,
-        "name": "Missions"
-      }
-    ],
-    "id": 15275,
-    "name": "Class Hall"
-  },
-  {
-    "categories": [
-      {
-        "id": 15238,
-        "name": "Buildings"
+        "id": 15075,
+        "name": "Tol Barad"
       },
       {
-        "id": 15239,
-        "name": "Followers"
-      },
-      {
-        "id": 15249,
-        "name": "Invasions"
-      },
-      {
-        "id": 15240,
-        "name": "Missions"
-      },
-      {
-        "id": 15242,
-        "name": "Monuments"
-      },
-      {
-        "id": 15250,
-        "name": "Shipyard"
-      }
-    ],
-    "id": 15237,
-    "name": "Draenor Garrison"
-  },
-  {
-    "categories": [
-      {
-        "id": 15229,
-        "name": "Mists of Pandaria"
+        "id": 15302,
+        "name": "Pandaria Scenarios"
       },
       {
         "id": 15222,
         "name": "Proving Grounds"
+      },
+      {
+        "id": 15303,
+        "name": "Draenor Garrison"
+      },
+      {
+        "id": 15304,
+        "name": "Legion Class Hall"
+      },
+      {
+        "id": 15307,
+        "name": "Island Expeditions"
+      },
+      {
+        "id": 15308,
+        "name": "War Effort"
       }
     ],
-    "id": 15165,
-    "name": "Scenarios"
+    "name": "Expansion Features"
   },
   {
+    "id": 15234,
     "categories": [
       {
         "id": 15277,
@@ -434,18 +411,26 @@
         "name": "Raids"
       },
       {
+        "id": 172,
+        "name": "Professions"
+      },
+      {
         "id": 15279,
         "name": "Player vs. Player"
       },
       {
         "id": 15280,
         "name": "Currencies"
+      },
+      {
+        "id": 15411,
+        "name": "Expansion Features"
       }
     ],
-    "id": 15234,
     "name": "Legacy"
   },
   {
+    "id": 81,
     "categories": [
       {
         "id": 15269,
@@ -476,7 +461,6 @@
         "name": "Promotions"
       }
     ],
-    "id": 81,
     "name": "Feats of Strength"
   }
 ]

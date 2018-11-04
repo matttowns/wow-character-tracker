@@ -1,67 +1,76 @@
 <template>
-    <div class="progression-container">
-        <div class="section-header">Raid Progression</div>
-        <ul class="progression-raids">
-            <li class="progression-raid" v-for="(raid,index) in raids">
-                <div class="raid-blocks">         
-                    <div class="raid-block">
-                        <div class="raid-image"><img class="raid-image" :src="getRaidIcon(raid.icon)"></div>
-                        <div class="raid-name">{{raid.name}}</div>
-                        <div class="raid-difficulty-block">
-                            <div class="raid-difficulty">LFR</div>
-                            <div class="raid-content progress-block">
-                                <div class="raid-progress-block" :class="[raid.lfrPercentage == '100%' ? 'raid-complete' : 'raid-incomplete' ]" :style="{width: raid.lfrPercentage}"></div>
-                                <div class="raid-progression-overlay">{{raid.lfrProgression}}</div>
+    <div class="container content-container">
+        <div class="progression-container">
+            <div class="section-header-container">
+                <div class="section-header">Raid Progression</div>
+                <app-dropdown :options="expansions" :defaultSelection="selectedExpansion" v-on:selected-change="selectedExpansion=$event"></app-dropdown>   
+            </div>
+
+            <ul class="progression-raids">
+                <li class="progression-raid" v-for="(raid,index) in raids">
+                    <div class="raid-blocks">         
+                        <div class="raid-block">
+                            <div class="raid-image"><img class="raid-image" :src="getRaidIcon(raid.icon)"></div>
+                            <div class="raid-name">{{raid.name}}</div>
+                            <div class="raid-difficulty-block" v-if="raid.lfrProgression">
+                                <div class="raid-difficulty">LFR</div>
+                                <div class="raid-content progress-block">
+                                    <div class="raid-progress-block" :class="[raid.lfrPercentage == '100%' ? 'raid-complete' : 'raid-incomplete' ]" :style="{width: raid.lfrPercentage}"></div>
+                                    <div class="raid-progression-overlay">{{raid.lfrProgression}}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="raid-difficulty-block">
-                            <div class="raid-difficulty">Normal</div>
-                            <div class="raid-content progress-block">
-                                <div class="raid-progress-block" :class="[raid.normalPercentage == '100%' ? 'raid-complete' : 'raid-incomplete' ]" :style="{width: raid.normalPercentage}"></div>
-                                <div class="raid-progression-overlay">{{raid.normalProgression}}</div>
+                            <div class="raid-difficulty-block" v-if="raid.normalProgression">
+                                <div class="raid-difficulty" >Normal</div>
+                                <div class="raid-content progress-block">
+                                    <div class="raid-progress-block" :class="[raid.normalPercentage == '100%' ? 'raid-complete' : 'raid-incomplete' ]" :style="{width: raid.normalPercentage}"></div>
+                                    <div class="raid-progression-overlay">{{raid.normalProgression}}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="raid-difficulty-block">
-                            <div class="raid-difficulty">Heroic</div>
-                            <div class="raid-content progress-block">
-                                <div class="raid-progress-block" :class="[raid.heroicPercentage == '100%' ? 'raid-complete' : 'raid-incomplete' ]" :style="{width: raid.heroicPercentage}"></div>
-                                <div class="raid-progression-overlay">{{raid.heroicProgression}}</div>
+                            <div class="raid-difficulty-block" v-if="raid.heroicProgression">
+                                <div class="raid-difficulty" >Heroic</div>
+                                <div class="raid-content progress-block">
+                                    <div class="raid-progress-block" :class="[raid.heroicPercentage == '100%' ? 'raid-complete' : 'raid-incomplete' ]" :style="{width: raid.heroicPercentage}"></div>
+                                    <div class="raid-progression-overlay">{{raid.heroicProgression}}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="raid-difficulty-block">
-                            <div class="raid-difficulty">Mythic</div>
-                            <div class="raid-content progress-block">
-                                <div class="raid-progress-block" :class="[raid.mythicPercentage == '100%' ? 'raid-complete' : 'raid-incomplete' ]" :style="{width: raid.mythicPercentage}"></div>
-                                <div class="raid-progression-overlay">{{raid.mythicProgression}}</div>
+                            <div class="raid-difficulty-block"  v-if="raid.mythicProgression">
+                                <div class="raid-difficulty">Mythic</div>
+                                <div class="raid-content progress-block">
+                                    <div class="raid-progress-block" :class="[raid.mythicPercentage == '100%' ? 'raid-complete' : 'raid-incomplete' ]" :style="{width: raid.mythicPercentage}"></div>
+                                    <div class="raid-progression-overlay">{{raid.mythicProgression}}</div>
+                                </div>
                             </div>
-                        </div>
-                    </div>                        
-                </div>
-            </li>
-        </ul>
+                        </div>                        
+                    </div>
+                </li>
+            </ul>            
+        </div>
     </div>
 </template>
 
 <script>
+    import Dropdown from './general/dropdown/Dropdown.vue'
     export default {
         data(){
             return{
-                raidIcons:[
-                    'antorus-the-burning-throne',
-                    'tomb-of-sargeras',
-                    'the-nighthold',
-                    'trial-of-valor',
-                    'the-emerald-nightmare'
-                ],
-                difficulty:[1,3,4,5]
+                difficulty:[1,3,4,5],
+                selectedExpansion: 7,
+                expansions:[
+                    {display: 'Battle for Azeroth', value:7},
+                    {display: 'Legion', value:6},
+                    {display: 'Warlords of Draenor', value:5},
+                    {display: 'Mists of Pandaria', value:4},
+                    {display: 'Cataclysm', value:3},
+                    {display: 'Wrath of the Lich King', value:2},
+                    {display: 'The Burning Crusade', value:1},
+                    {display: 'Classic', value:0},
+                ]
             }
         },
         computed:{
             raids(){
-                let raids = this.$store.getters.characterData.progression.raids.filter(x=>x.expansion == 6).reverse();
+                let raids = this.$store.getters.characterData.progression.raids.filter(x=>x.expansionId == this.selectedExpansion).reverse();
                 raids.forEach((raid, index)=>{
-                    raid.icon = this.raidIcons[index];
-
                     this.difficulty.forEach((difficulty)=>{
                         let killCount = 0;
                         let property = '';
@@ -100,7 +109,7 @@
                 let expansionRaids=[];
                 this.expansions.slice().reverse().forEach((expansion) => {
                     let raids = this.raids.filter((raid)=>{
-                        return raid.expansion == expansion.id;
+                        return raid.expansionId == expansion.id;
                     });
                     raids = raids.reverse();
                     expansionRaids.push({expansion, raids});
@@ -117,6 +126,9 @@
                
                 
             }
+        },
+        components:{
+            appDropdown:Dropdown
         }
     }
 </script>
@@ -128,6 +140,7 @@
         display: flex;
         flex-flow:row;
         flex-wrap:wrap;
+        margin:0 -.5em
     }
 
     .progression-raid{
@@ -141,10 +154,13 @@
             max-width:50%;
         } 
         @media screen and (min-width:992px){
+            width:33.33%;
+            max-width:33.33%;
+        }
+        @media screen and (min-width:1200px){
             width:25%;
             max-width:25%;
-
-        } 
+        }  
     }
 
     .raid-blocks{
@@ -163,19 +179,22 @@
     }
     
     .progress-block{
-        border:1px solid lightgrey;
+        border:1px solid rgba(255,255,255,.35);
         position:relative;
         flex-grow:1;
+        box-shadow:inset 0 0 16px #000;
+        background-color:#181818;
     }
     
     .raid-progress-block{
         height:25px;
         text-align:center;
+        
         &.raid-complete{
-            background-color:green;
+            background:linear-gradient(to right, darken(green,5%), lighten(green,5%));
         }
         &.raid-incomplete{
-            background-color:orange;
+            background:linear-gradient(to right, darken(orange,5%), lighten(orange,5%));
         }
     }
     .raid-progression-overlay{
@@ -184,7 +203,7 @@
         width:100%;
         height:100%;
         color:white;
-        font-weight:600;
+        font-weight:400;
         display: flex;
         align-items:center;
         justify-content:center;
@@ -202,7 +221,6 @@
     }
     .raid-name{
         color:orange;
-        margin-left:1em;
         width:100%;
         text-align:center;
         font-size:1.125em;
@@ -230,15 +248,20 @@
     }
 
     .raid-block{
-        margin:1em;
-        border:1px solid lightgray;
-        display:flex;
-        flex-flow:row;
-        flex-wrap:wrap;
+        margin:.5em;
+        border:1px solid rgba(255,255,255,.33);
         padding-bottom:.5em;
+        background-color:rgba(20,20,40,1);
     }
     .progression-container{
         margin:0 1em;
+        .dropdown{
+            margin-bottom:1em;
+            @media screen and (min-width:768px){
+                margin-bottom:0;
+            }
+        }
     }
+
 </style>
 

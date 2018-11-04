@@ -2,29 +2,39 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
 import objectiveData from '../data/objectiveData';
-
+import raids from '../data/raids.json';
+import reputations from '../data/reputations.json';
+import trackers from '../data/trackers.json';
+import pets from '../data/pets.json';
+import achievements from '../data/achievements.json'
+import classes from '../data/classes.json'
+import mounts from '../data/mounts.json'
 import {getReputation, achievementCheck, questCheck, setItems} from '../helpers/helpers'
+import {config} from '../config.js';
 
 Vue.use(Vuex);
+
 
 const state = {
     characterName:'',
     realm:'',
     region:'',
     realmSlug:'',
-    achievementCategories: [],
+    achievements: [],
     achievementsLoaded:false,
     characterData: {},
     characterLoaded:false,
     classesLoaded:false,
     reputation:[],
-    pathfinder:[],
+    battlePathfinder:[],
+    legionPathfinder:[],
     classMount:[],
     mageTower:[],
     argus:[],
     mageTowerCompleted:false,
     classMountCompleted:false,
     argusCompleted:false,
+    battlePathfinderCompleted:false,
     legionPathfinderCompleted:false,
     draenorPathfinderCompleted:false,
     draenorPathfinder:[],
@@ -60,8 +70,9 @@ const state = {
         {expansion:4, raids:5},
         {expansion:5, raids:3},
         {expansion:6, raids:5},
+        {expansion:7, raids:2},
     ],
-    encounters:[{id:8638, bosses:[2076,2074,2070,2075,2064,2082,2088,2069,2073,2063,2092]}]
+    encounters:[{id:9389, bosses:[2144,2141,2128,2136,2134,2145,2135,2122]}]
 };
 
 const mutations = {
@@ -69,7 +80,7 @@ const mutations = {
        state.characterData= {};
        state.characterLoaded =false;
        state.reputation= [];
-       state.pathfinder = [];
+       state.legionPathfinder = [];
        state.mageTower = [];
        state.classMount = [];
        state.argus = [];
@@ -98,7 +109,8 @@ const mutations = {
        state.items={};        
     },
     'GET_CHARACTER_DATA'(state,characterResponse){       
-        state.characterData = characterResponse;               
+        state.characterData = characterResponse;       
+        console.log(state.characterData.talents);
         state.characterLoaded = true;
         setItems(state);
         if(state.characterData.class == 11){
@@ -110,15 +122,11 @@ const mutations = {
         else{
             state.characterData.talents = state.characterData.talents.slice(0,3);
         }
+        state.characterData.progression.raids.push(state.characterData.progression.raids.splice(21,1)[0]);
         state.characterData.progression.raids.forEach((raid, index)=>{
-            let accumulator = 0;
-            for(let i = 0; i < state.raids.length; i++){
-                if(index < state.raids[i].raids + accumulator){
-                    raid.expansion = i;
-                    break;
-                }
-                accumulator +=state.raids[i].raids;
-            }
+
+            raid.expansionId = raids[index].expansionId ;
+            raid.icon = raids[index].urlSlug;
             let encounter  = state.encounters.find(x=>x.id == raid.id);
             if(encounter){
                 encounter.bosses.forEach((boss,index)=>{
@@ -126,67 +134,31 @@ const mutations = {
                 });
             }
         });
-        state.characterData.thumbnail = 'http://render-'+state.characterData.region+'.worldofwarcraft.com/character/' + state.characterData.thumbnail.replace(/\bavatar\b~?/g, 'inset');
-        state.characterData.background = 'url('+state.characterData.thumbnail.replace(/\binset\b~?/g, 'main')+')';
-        axios.get('https://vuejs-character-tracker.firebaseio.com/trackers.json')
-        .then(response => {        
-            if(response.data){          
-                state.trackerAchievements = response.data;
-                state.achievementsLoaded =true;
-                axios.get('https://vuejs-character-tracker.firebaseio.com/classes.json')
-                .then(response => {
-                    if(response.data){
-                        state.classes = response.data;
-                        console.log(state.characterData.talents);
-                        state.characterData.talents.forEach((spec)=>{
-                            if(!spec.spec){
-                                spec.spec={};
-                                state.classes[state.characterData.class-1].specs.forEach((classSpec)=>{
-                                    if(!state.characterData.talents.find(x=>x.spec.name == classSpec.name)){
-                                        console.log(classSpec.description);
-                                        spec.spec.name = classSpec.name;
-                                        spec.spec.icon = classSpec.icon;
-                                        spec.spec.description = classSpec.description;
-                                    }
-                                });
-                            }
-                            else{
-                                let trimStart =  spec.spec.description.indexOf("Preferred Weapon");
-                                spec.spec.description =  spec.spec.description.substr(0,trimStart);
-                            }
-                        });
-                        state.classesLoaded=true;
-
-                    }
-                })
-                .catch(e => {
-                    console.log(e);
-                    this.errors.push(e)
-                });
+        state.characterData.smallThumbnail = 'http://render-'+state.characterData.region+'.worldofwarcraft.com/character/' + state.characterData.thumbnail;
+        state.characterData.thumbnail = state.characterData.smallThumbnail.replace(/\bavatar\b~?/g, 'inset');
+        state.characterData.background = 'url('+state.characterData.thumbnail.replace(/\binset\b~?/g, 'main')+')';   
+        state.trackerAchievements = trackers;
+        state.achievementsLoaded =true;
+        let specs = [];
+        state.characterData.talents.forEach((spec,index)=>{
+            if(spec.hasOwnProperty('spec')){
+                let trimStart =  spec.spec.description.indexOf("Preferred Weapon");
+                spec.spec.description =  spec.spec.description.substr(0,trimStart);
+                specs.push(spec);
             }
-        })
-        .catch(e => {
-                console.log(e);
-                this.errors.push(e)
         });
-        axios.get('https://vuejs-character-tracker.firebaseio.com/achievements.json')
-        .then(response => {      
-            if(response.data){          
-                state.achievementCategories = response.data;
-                state.achievementCategories.forEach((achievement)=>{
-                    achievementCheck(state,achievement);
-                })
-            }
-        })
-        .catch(e => {
-                console.log(e);
-                this.errors.push(e)
-        });
+        state.characterData.talents = specs;
+        state.classes = classes;
+        state.classesLoaded=true;
+        state.achievements = achievements;
+        state.achievements.forEach((achievement)=>{
+            achievementCheck(state,achievement);
+        });        
     },
     'INIT_REPUTATION'(state, reputation){
         state.reputation = [];
         reputation.forEach((rep)=>{  
-        getReputation(rep, state, state.reputation);
+            getReputation(rep, state, state.reputation);
         });
         state.reputation.sort((a,b)=> 
         {
@@ -229,9 +201,9 @@ const mutations = {
 
     'GET_RAID_RANKINGS'(state,rankings){
         state.rankings = rankings;
-        let raid = state.characterData.progression.raids.find(x => x.id == "8638");
+        let raid = state.characterData.progression.raids.find(x => x.expansionId == 7);
         rankings.forEach((ranking)=> {
-            let boss = raid.bosses.find(x => x.encounter == ranking.encounter);
+            let boss = raid.bosses.find(x => x.encounter == ranking.encounterID);
             if(boss && ranking.difficulty == 4){
                 boss.heroicRanking = Math.floor((((ranking.outOf-ranking.rank)/ranking.outOf) * 100),2);
             }
@@ -240,30 +212,34 @@ const mutations = {
             }
         });       
     },
+    'INIT_BATTLE_PATHFINDER'(state){
+        state.battlePathfinder = objectiveData.battlePathfinder;
+        achievementCheck(state,state.battlePathfinder);
+        state.battlePathfinderLoaded = true;
+        state.battleLoremaster = state.battlePathfinder.criteria[1];
+        state.battlePathfinderCompleted = true;
+    }, 
     'INIT_LEGION_PATHFINDER'(state){
-        // state.pathfinder = objectiveData.pathfinder;
-         state.pathfinder = state.trackerAchievements.pathfinder;
-         state.pathfinder.forEach((achievement) => {
+         state.legionPathfinder = objectiveData.legionPathfinder;
+         state.legionPathfinder.criteria.forEach((achievement) => {
              if(achievement.id == "10994"){
-                 achievement.criteria = state.classes[state.characterData.class-1].campaign;
+                 achievement.criteria = classes[state.characterData.class-1].campaign;
              }
-             achievementCheck(state,achievement);
          });
-         state.legionathfinderLoaded = true;
-         state.legionLoremaster = state.pathfinder[1];
+         achievementCheck(state,state.legionPathfinder);
+
+         state.legionPathfinderLoaded = true;
+         state.legionLoremaster = state.legionPathfinder[1];
          state.legionPathfinderCompleted = true;
     }, 
     'INIT_DRAENOR_PATHFINDER'(state){
         state.draenorPathfinder = objectiveData.draenorPathfinder;
-        state.draenorPathfinder.forEach((achievement) => {
-            achievementCheck(state,achievement);    
-        });
+        achievementCheck(state,state.draenorPathfinder);    
         state.draenorPathfinderCompleted = true;
     },
     'GET_PANDARIA_LOREMASTER'(state){
         state.pandariaLoremaster = objectiveData.pandariaLoremaster;
         achievementCheck(state,state.pandariaLoremaster);
-        
     },
     'GET_PANDARIA_EXPLORER'(state){
         state.pandariaExplorer = objectiveData.pandariaExplorer;
@@ -304,7 +280,7 @@ const mutations = {
         achievementCheck(state,state.exploreOutland);
     },
     'GET_MAGE_TOWER'(state){
-        state.classes[state.characterData.class-1].specs.forEach((spec)=>{
+        classes[state.characterData.class-1].specs.forEach((spec)=>{
             let mageTowerQuest = state.trackerAchievements.magetower.find(x=>x.id == spec.quest);
             mageTowerQuest.icon = spec.icon;
             mageTowerQuest.completed = questCheck(state,mageTowerQuest.id);
@@ -321,11 +297,11 @@ const mutations = {
     },
     'INIT_CLASS_MOUNT'(state){
         state.classMount = objectiveData.classMount;
-        if(state.classes[state.characterData.class-1].classMount){
-            state.classes[state.characterData.class-1].classMount.forEach((quest)=>{
+        if(classes[state.characterData.class-1].classMount){
+            classes[state.characterData.class-1].classMount.forEach((quest)=>{
                 state.classMount.criteria.push(quest);
             });
-            state.classMount.icon = state.classes[state.characterData.class-1].mountIcon;
+            state.classMount.icon = classes[state.characterData.class-1].mountIcon;
         }
         achievementCheck(state,state.classMount);
         state.classMountCompleted = true;
@@ -392,7 +368,6 @@ const actions = {
     },*/
     initCharacter:({commit},characterDetails = null)=>{
         return new Promise((resolve,reject) => {
-            console.log(characterDetails);
             let characterName = "";
             let realm = "";
             let region = "";
@@ -401,7 +376,7 @@ const actions = {
                 realm = characterDetails.realm;
                 region = characterDetails.region;
             }
-            axios.get('https://'+region+'.api.battle.net/wow/character/'+realm+'/'+characterName+'?fields=achievements&fields=pets&fields=quests&fields=mounts&fields=reputation&fields=items&fields=talents&fields=guild&fields=titles&fields=stats&fields=progression&locale=en_GB&apikey=g3umfbjnfjqtghwetv63tvxk6w6f7e5w')
+            axios.get('https://'+region+'.api.battle.net/wow/character/'+realm+'/'+characterName+'?fields=achievements&fields=pets&fields=quests&fields=mounts&fields=reputation&fields=feed&fields=items&fields=talents&fields=guild&fields=titles&fields=stats&fields=progression&fields=statistics&locale=en_GB&apikey='+config.BLIZZARD_KEY)
                 .then((response) =>{
                     commit('RESET_ARMORY');
                     response.data['realmSlug']=realm;
@@ -410,6 +385,7 @@ const actions = {
                     resolve();
                 })
                 .catch((e)=>{
+                    console.log(e);
                     if(e.response.status === 404){
                         commit('CHARACTER_NOT_FOUND');
                         reject();
@@ -422,20 +398,11 @@ const actions = {
         commit('INIT_ARGUS');
     },
     initReputation:({commit}) =>{
-        axios.get('https://vuejs-character-tracker.firebaseio.com/reputation.json')
-        .then(response => {
-            if(response.data){
-                const reputation = response.data;
-                commit('INIT_REPUTATION', reputation);
-            }
-        })
-        .catch(e => {
-            console.log(e);
-            this.errors.push(e)
-        });
+        const reputation = reputations;
+        commit('INIT_REPUTATION', reputation);
     },
     initRankings:({commit}) =>{
-        axios.get('https://www.warcraftlogs.com:443/v1/rankings/character/'+state.characterData.name.toLowerCase()+'/'+state.characterData.realmSlug+'/EU?api_key=69295a99955929341cfcacafc54e5cd4')
+        axios.get('https://www.warcraftlogs.com:443/v1/rankings/character/'+state.characterData.name.toLowerCase()+'/'+state.characterData.realmSlug+'/EU?api_key='+config.WARCRAFT_LOGS_KEY)
         .then(response =>{ 
             const rankings = response.data;
             commit('GET_RAID_RANKINGS', rankings);
@@ -446,36 +413,21 @@ const actions = {
         });        
     },
     initPetData:({commit}) =>{
-        axios.get('https://vuejs-character-tracker.firebaseio.com/pets.json')
-        .then(response =>{ 
-            const petData = response.data;         
-            for(var i=0;i<petData.length;i++){
-                delete petData[i].canBattle;
-                delete petData[i].canObtain;
-                delete petData[i].canTrade;
-                delete petData[i].source;
-                delete petData[i].stats;
-                delete petData[i].strongAgainst;
-                delete petData[i].weakAgainst;
-                delete petData[i].unique;            
-            }
-            commit('GET_PET_DATA', petData);
-        })
-        .catch(e => {
-            console.log(e);
-            this.errors.push(e)
-        });
+        const petData = pets;         
+        for(var i=0;i<petData.length;i++){
+            delete petData[i].canBattle;
+            delete petData[i].canObtain;
+            delete petData[i].canTrade;
+            delete petData[i].source;
+            delete petData[i].stats;
+            delete petData[i].strongAgainst;
+            delete petData[i].weakAgainst;
+            delete petData[i].unique;            
+        }
+        commit('GET_PET_DATA', petData);
     },
     initMountData:({commit}) =>{
-        axios.get('https://vuejs-character-tracker.firebaseio.com/mounts.json')
-        .then(response =>{ 
-            const mounts = response.data;
-            commit('GET_MOUNT_DATA', mounts);
-        })
-        .catch(e => {
-            console.log(e);
-            this.errors.push(e)
-        });
+        commit('GET_MOUNT_DATA', mounts);
     },
     changeFrameItem: ({commit}, payload) =>{
         commit('CHANGE_FRAME_ITEM', payload);
@@ -485,6 +437,9 @@ const actions = {
     },
     closeFrame:({commit}, payload)=>{
         commit('CLOSE_FRAME', payload);
+    },
+    initBattle:({commit}, payload)=>{
+        commit('INIT_BATTLE_PATHFINDER');
     },
     initLegion:({commit}, payload)=>{
         commit('INIT_LEGION_PATHFINDER');
@@ -537,8 +492,11 @@ const getters = {
     raids: state=>{
         return state.raids;
     },
-    pathfinder: state => {
-        return state.pathfinder;
+    battlePathfinder: state => {
+        return state.battlePathfinder;
+    },
+    legionPathfinder: state => {
+        return state.legionPathfinder;
     },
     mageTower: state => {
         return state.mageTower;
@@ -609,8 +567,11 @@ const getters = {
     greenFire:state=>{
         return state.greenFire;
     },
-    achievementCategories:state=>{
-        return state.achievementCategories;
+    achievements:state=>{
+        return state.achievements;
+    },
+    battleCompleted:state=>{
+        return state.battlePathfinderCompleted;
     },
     legionCompleted:state=>{
         return state.mageTowerCompleted && state.classMountCompleted && state.argusCompleted && state.legionPathfinderCompleted;
@@ -620,6 +581,35 @@ const getters = {
     },
     achievementsLoaded:state=>{
         return state.achievementsLoaded;
+    },
+    battlegroundStats:state=>{
+        if(state.characterLoaded){
+            const battlegrounds = [
+                {name:'Arathi Basin', totalId: 55, winsId: 51 },
+                {name: 'Alterac Valley', totalId: 53, winsId: 49},
+                {name: 'Battle for Gilneas', totalId: 5236, winsId: 5237},
+                {name: 'Eye of the Storm', totalId: 54, winsId: 50},
+                {name: 'Seething Shore', totalId: 12710, winsId: 12712},
+                {name: 'Strand of the Ancients', totalId: 1549, winsId: 1550},
+                {name: 'Twin Peaks', totalId: 5232, winsId: 5233},
+                {name: 'Warsong Gulch', totalId: 52, winsId: 105},
+                {name: 'Silvershard Mines', totalId: 7829, winsId: 7830},
+                {name: 'Temple of Kotmogu', totalId: 7825, winsId: 7826},
+                {name: 'Isle of Conquest', totalId: 4096, winsId: 4097},
+                {name: 'Deepwind Gorge', totalId: 8374, winsId: 8373}
+            ];
+            battlegrounds.forEach((battleground)=>{
+                battleground.total = state.characterData.statistics.subCategories[9].subCategories[1].statistics.find(x=>x.id==battleground.totalId).quantity;
+                battleground.wins = state.characterData.statistics.subCategories[9].subCategories[1].statistics.find(x=>x.id==battleground.winsId).quantity;
+            });
+            return battlegrounds;
+        }
+
+
+        return {};
+    },
+    recentActivity:state=>{
+        return state.characterData.feed;
     }
 };
 

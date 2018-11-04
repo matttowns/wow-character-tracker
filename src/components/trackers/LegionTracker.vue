@@ -1,10 +1,10 @@
 <template>
-    <div class="container">
+    <div class="container tracker-category-container">
         <app-loading v-if="!legionLoaded" message="Checking off your progress!"></app-loading>
         <template v-else>
             <app-pathfinder :pathfinder="pathfinder"></app-pathfinder>
-            <app-loremaster :achievements="pathfinder[1]"></app-loremaster>
-            <app-loremaster :achievements="pathfinder[0]"></app-loremaster>
+            <app-loremaster :achievements="pathfinder.criteria[1]"></app-loremaster>
+            <app-loremaster :achievements="pathfinder.criteria[0]"></app-loremaster>
             <app-loremaster :achievements="argus"></app-loremaster>
             <app-loremaster :achievements="classMount"></app-loremaster>
             <!--<app-mage-tower ></app-mage-tower>-->
@@ -29,7 +29,7 @@
             appLoading:Loading
         },
         created(){
-            if(this.$store.getters.pathfinder.length == 0){
+            if(this.$store.getters.legionPathfinder.length == 0){
                 this.$store.dispatch('initLegion');
             }
         },
@@ -41,7 +41,7 @@
                  return false;
             },
             pathfinder(){
-                return this.$store.getters.pathfinder;
+                return this.$store.getters.legionPathfinder;
             },
             argus(){
                 return this.$store.getters.argus;

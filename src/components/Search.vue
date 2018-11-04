@@ -7,10 +7,6 @@
                     </div>
                     <div class="search-input">
                         <label class="search-label">Region</label>
-                        <!--<select v-model="region" >
-                            <option>EU</option>
-                            <option>US</option>
-                        </select>-->
                         <fieldset>
                             <div class="region-fields">
                                 <div class="checkbox">
@@ -117,10 +113,6 @@ export default {
         position:fixed;
         width:100%;
         left:0;
-        background-color:#333339;
-        @media screen and (min-width:768px){
-            background-color:white;
-        }
         button{
             &.button-enabled{
                 cursor:pointer;
@@ -153,6 +145,7 @@ export default {
 
             }
             background-color:#333339;
+            border:1px solid rgba(255,255,255,.33);
             color:black;
             .search-content{
                 padding:.5em;

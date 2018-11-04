@@ -1,21 +1,26 @@
 <template>
     <div>
-        <div class="main">
-          <app-header v-if="dataLoaded && !searchCheck" style="z-index:1; position:relative;"></app-header>
+        <div class="main" >
+          <app-header v-if="dataLoaded && !searchCheck" style=" position:relative;"></app-header>
           <router-view v-if="dataLoaded || searchCheck" ></router-view>
         </div>
         <app-frame v-if="frameOpen" :pet="currentFrameItem" :type="frameType"></app-frame>
-        
     </div>
 </template>
 
 <script>
+
+import TopHeader from './components/TopHeader.vue';
 import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
 import Frame from './components/general/Frame.vue';
+import achievements from './data/achievements.json'
 
 export default {
   components: {
+    appTopHeader: TopHeader,
     appHeader: Header,
+    appFooter: Footer,
     appFrame:Frame
   },
   created() {
@@ -52,6 +57,11 @@ export default {
 </script>
 
 <style lang="scss">
+    $edgeColor:#170e09;
+    $backgroundColor:rgb(51, 51, 57);
+    html{
+        margin-left: calc(100vw - 100%);
+    }
     body{
         font-size: 16px;
         color: #333;
@@ -59,54 +69,27 @@ export default {
         padding: 0;
         font-family:Open Sans;
         width:100%;
-        background-color:rgb(51, 51, 57);
+        background-color:$edgeColor;
     }
-
-    .table{
-        display:flex;
-        flex-wrap:wrap;
+    .content-container{
+        padding-bottom:2em;
+        border-bottom:1px solid rgba(255,255,255,.25);
+        @media screen and (min-width:992px){
+            border-top:none;
+            padding-top:1em;
+        }
     }
-    .table.sub-table{
-        margin:0;
-        width:100%;
-        flex-wrap:wrap;
-        display:flex;
-        max-height:0;
-        transition: max-height 0.4s linear;
-        overflow:hidden;
-    }
-    .table.sub-table.show{
-        transition: max-height 0.4s linear;
+    .page-container{
+        border-top:1px solid rgb(182, 145, 76);
+        margin:0 1em;
+        @media screen and (min-width:992px){
+            border-top:0;
+        }
     }
     @for $i from 1 through 18{
         .sub-table-#{$i}.show{
-            max-height: (50 * $i) * 1px ;
+            max-height: (50 * $i) * 1px;
         }
-    }
-        
-    .table-cell{
-        box-sizing:border-box;
-        flex-grow:1;
-        width:100%;
-        overflow:hidden;
-        list-style:none;
-        color:black;
-        text-align:center;
-        padding:.5em;
-        background-color: lighten(darkgrey, 15%);
-        cursor:pointer;
-    }
-    .table-cell.table-cell-child{
-        background-color: lighten(darkgrey, 30%);
-        color:black;
-        cursor:default;
-    }
-
-    .table-cell.table-header{
-        background:darkgrey;
-        color:black;
-        font-weight:bold;
-        cursor:default;
     }
 
     @for $i from 1 through 8{
@@ -126,7 +109,7 @@ export default {
         display: flex;
         align-items:center;
         line-height:25px;
-        border:1px solid lightgray;
+        border:1px solid rgba(255,255,255,.35);
         box-shadow:inset 0 0 16px #000;
         background-color:#181818;
         small{
@@ -140,11 +123,14 @@ export default {
         }
     }
     .main{
-        max-width:1480px;
         margin-left:auto;
         margin-right:auto;
-                min-height:100vh;
-                position:relative;
+        max-width:1480px;
+        min-height:100vh;
+        position:relative;
+        @media screen and (min-width:768px){
+            padding:0 2em;
+        }
     }
 
     .centered-text{
@@ -152,9 +138,55 @@ export default {
     }
 
     .section-header{
-        font-size:1.75em;
+        font-size:1.5em;
         margin:1em 0;
         color:white;
-        font-weight:600;
+        font-weight:400;
+        text-transform:uppercase;
+    }
+
+    .section-sub-header{
+        font-size:1.25em;
+        margin:1em 0;
+        color:white;
+        font-weight:400;
+        text-align:center;
+        text-transform:uppercase;     
+    }
+
+    .section-header-container{
+        justify-content:space-between;
+        display:flex;
+        flex-flow:row;
+                flex-wrap:wrap;
+                align-items:center;
+
+        .section-header, .section-header-dropdown{
+            width:100%;
+            @media screen and (min-width:768px){
+                width:50%;
+            }
+        }
+    }
+
+    .section-header-dropdown{
+        align-self: center;  
+        font-size:.875em;
+        text-align:center;
+        text-transform:uppercase;
+        background-color:orange;
+        color:black;
+        border:none;
+        padding:.75em;
+        cursor:pointer;
+        &:focus{
+            outline:0;
+        }
+        option{
+            color:black;
+        }
+        &:after{
+            font-size:1.25em;
+        }
     }
 </style>

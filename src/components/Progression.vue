@@ -1,35 +1,25 @@
 <template>
-    <div class="progression-container">
+    <div class="progression-container page-container">
         <div v-for="expansion in raidsByExpansion" class="progression-expansion">
             <div class="section-header">{{expansion.expansion.title}}</div>
-            <div class="table" v-for="(raid,raidCount) in expansion.raids" :class="[raid.id == 8638 ? 'table--5cols' : 'table--4cols']" style="margin-bottom:1em">
-                <div class="table-cell table-cell-2 table-cell--third table-header">{{raid.name}}</div>
-                <div class="table-cell table-cell-1 table-header"><span class="progression-full">Progression</span><span class="progression-short">#</span></div>
-                <div class="table-cell table-cell-1 table-header">Kills</div>
-                <div class="table-cell table-cell-1 table-header" v-if="raid.id == 8638">Rank</div>
-                <template v-for="(difficulty, index) in reverseDifficulty" v-if="difficultyCheck(raid, difficulty.id)">
-                    <div class="table-cell table-cell-2" @click="showBosses">{{difficulty.name}}</div>
-                    <div class="table-cell table-cell-1" @click="showBosses">{{progression(raid.id, difficulty.id)}}</div>
-                    <div class="table-cell table-cell-1" @click="showBosses">{{killCount(raid.id, difficulty.id)}}</div>
-                    <div class="table-cell table-cell-1" v-if="raid.id == 8638" v-html="averageRanking(raid.id, difficulty.id)" @click="showBosses"></div>
-                    <div class="table sub-table" :class="[raid.id == 8638 ? 'table--5cols' : 'table--4cols',subTableLength(raid, difficulty.id)]">
-                        <template v-for="boss in raid.bosses" v-if="bossDifficultyCheck(boss,difficulty.id)">
-                            <div class="table-cell table-cell table-cell-2 table-cell-child">{{boss.name}}</div>
-                            <div class="table-cell table-cell-1 table-cell-child">{{bossKillCount(boss, difficulty.id) >0? "&#10004": "x"}}</div>
-                            <div class="table-cell table-cell-1 table-cell-child">{{bossKillCount(boss, difficulty.id)}}</div>
-                            <div class="table-cell table-cell-1 table-cell-child" v-if="raid.id == 8638" v-html="bossRanking(boss, difficulty.id)"></div>   
-                        </template> 
-                    </div>       
-                </template>
-            </div>
+            <app-table v-for="raid in expansion.raids" :sortable="false" :headings="getRaidHeadings(raid)" :tableData="getRaidTableData(raid)"></app-table>
         </div> 
     </div>
 </template>
 
 <script>
+    import { mapState } from 'vuex'
+    import Table from './general/table/Table.vue'
+
 export default {
     data(){
         return{
+            headings:[
+                {name:'Raid', value: 'raid', columns:6, alignment:'left'},
+                {name:'Progression', value: 'progression', columns:1, shortDisplay:'#'},
+                {name:'Kills', value: 'kills', columns:1},
+                {name:'Rank', value: 'rank', columns:1, type:'html'}
+            ],
             difficulty:[
                 {"id":1, "name":"LFR"},
                 {"id":3, "name":"Normal"},
@@ -44,11 +34,15 @@ export default {
                 {"id": 4, "title": 'Mists of Pandaria'},
                 {"id": 5, "title": 'Warlords of Draenor'},
                 {"id": 6, "title": 'Legion'},
+                {"id": 7, "title": 'Battle for Azeroth'},
             ],
         }
     },
     created() {
         this.$store.dispatch('initRankings');
+    },
+    components:{
+        appTable: Table
     },
     computed:{
         reverseRaids() {
@@ -57,9 +51,7 @@ export default {
         reverseDifficulty() {
             return this.difficulty.reverse();
         },
-        rankings(){
-            return this.$store.getters.rankings;
-        },
+        ...mapState(['rankings']),
         raids(){
             return this.$store.getters.characterData.progression.raids;
         },
@@ -67,7 +59,7 @@ export default {
             let expansionRaids=[];
             this.expansions.slice().reverse().forEach((expansion) => {
                 let raids = this.raids.filter((raid)=>{
-                    return raid.expansion == expansion.id;
+                    return raid.expansionId == expansion.id;
                 });
                 raids = raids.reverse();
                 expansionRaids.push({expansion, raids});
@@ -76,6 +68,57 @@ export default {
         }
     },  
     methods:{
+        getRaidTableData(raid){
+            let tableData = [];
+            this.reverseDifficulty.forEach((difficulty)=>{
+                if(this.difficultyCheck(raid,difficulty.id)){
+                    let bossData = [];
+                    raid.bosses.forEach((boss)=>{
+                        if(this.bossDifficultyCheck(boss,difficulty.id)){
+                            if(raid.expansionId == 7){
+                                bossData.push(
+                                    {name: {value:boss.name, display:boss.name}, 
+                                    progression: {value: this.bossKillCount(boss, difficulty.id) >0? 1: 0, display:this.bossKillCount(boss, difficulty.id) >0? "&#10004": "x"}, 
+                                    kills: {value: this.bossKillCount(boss, difficulty.id), display:this.bossKillCount(boss, difficulty.id)}, 
+                                    rank:this.bossRanking(boss, difficulty.id)});
+                            }
+                            else{
+                                bossData.push(
+                                   {name: {value:boss.name, display:boss.name}, 
+                                    progression: {value: this.bossKillCount(boss, difficulty.id) >0? 1: 0, display:this.bossKillCount(boss, difficulty.id) >0? "&#10004": "x"}, 
+                                    kills: {value: this.bossKillCount(boss, difficulty.id), display:this.bossKillCount(boss, difficulty.id)}});
+                            }
+                        }
+                    });
+                    if(raid.expansionId == 7){
+                        tableData.push(
+                            {raid:{value:difficulty.name, display:difficulty.name}, 
+                            progression:{value: this.progression(raid.id, difficulty.id), display:this.progression(raid.id, difficulty.id)}, 
+                            kills:{value: this.killCount(raid.id, difficulty.id), display:this.killCount(raid.id, difficulty.id)},  
+                            rank:{value: this.averageRanking(raid.id, difficulty.id),display: this.averageRanking(raid.id, difficulty.id)}, 
+                            subTable:bossData});
+                    }
+                    else{
+                        tableData.push(
+                            {raid:{value:difficulty.name, display:difficulty.name}, 
+                            progression:{value: this.progression(raid.id, difficulty.id), display:this.progression(raid.id, difficulty.id)}, 
+                            kills:{value: this.killCount(raid.id, difficulty.id), display:this.killCount(raid.id, difficulty.id)}, 
+                            subTable:bossData});
+                    }
+                }
+            });
+            return tableData;
+        },
+        getRaidHeadings(raid){
+            let headings = this.headings;
+            if(raid.expansionId == 7){
+                return [{name:raid.name, value:'raid', columns:6, alignment:'left'}, this.headings[1], this.headings[2], this.headings[3]];
+
+            }
+            else{
+                return [{name:raid.name, value:'raid', columns:6, alignment:'left'}, this.headings[1], this.headings[2]];
+            }
+        },
         subTableLength(raid,difficulty){
             let bosses = 0;
             let property = '';
@@ -163,7 +206,7 @@ export default {
             let currentRaid = this.raids.find(x=>x.id == raidId);
             if(currentRaid){
                 currentRaid.bosses.forEach((boss)=>{
-                    let rank = this.rankings.find(x=> (x.encounter == boss.encounter) && x.difficulty == difficulty);
+                    let rank = this.rankings.find(x=> (x.encounterID == boss.encounter) && x.difficulty == difficulty);
                     if(rank){
                         bossRankings.push((((rank.outOf-rank.rank)/rank.outOf) * 100));
                     }
@@ -181,13 +224,13 @@ export default {
             return "-";          
         },
         bossRanking(boss, difficulty){
-            let ranking = this.rankings.find(x=> (x.encounter == boss.encounter) && x.difficulty == difficulty);
+            let ranking = this.rankings.find(x=> (x.encounterID == boss.encounter) && x.difficulty == difficulty);
             if(ranking){
                 let rank = ((ranking.outOf-ranking.rank)/ranking.outOf) * 100;
                 let quality = this.rankColor(rank);
-                return "<a class='log-link "+quality+" ranking' href='https://www.warcraftlogs.com/reports/"+ranking.reportID+"/#fight="+ranking.fightID+"'>" + Math.floor(rank,2) + "</a>";
+                return {value:Math.floor(rank,2), display:"<a class='log-link "+quality+" ranking' target='_blank' href='https://www.warcraftlogs.com/reports/"+ranking.reportID+"/#fight="+ranking.fightID+"'>" + Math.floor(rank,2) + "</a>"};
             }
-            return "-";          
+            return {value:-1, description:'-'};          
         },
         rankColor(rank){
             let quality = "";
@@ -338,30 +381,7 @@ export default {
         font-weight:600;
         text-shadow:.5px .5px #000;
     }
-    .progression-expansion{
-        color:white;
-        padding-bottom:1em;
-        border-bottom:2px solid white;
-        @media screen and (min-width:768px){
-            max-width:1480px;
-            margin-left:auto;
-            margin-right:auto;
-            .table{
-                max-width:1000px;
-                margin-left:auto;
-                margin-right:auto;
-            }
-        }
-    }
-    .progression-expansion h2{
-        margin-top:0;
-        padding-top:1em;
-        @media screen and (min-width:768px){
-            order:2;
-            margin-bottom:1em;
-            text-align:left;
-        }
-    }
+
     .container{
         width:100%;
     }

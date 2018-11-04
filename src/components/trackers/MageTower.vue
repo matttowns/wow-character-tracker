@@ -66,13 +66,11 @@
                     let completed = 0;
                     let length = 0;
                     if(achievement.criteria.length==0){
-                        console.log(achievement.title)
-                        console.log(achievement.completed);
+
                         length=1;
                         if(achievement.completed){
                             completed=1;
                         }
-                        console.log(length + " : " + completed);
                     }
                     else{
                         achievement.criteria.forEach((criteria) =>{
@@ -97,7 +95,7 @@
         max-width: 1480px;
         margin-left:auto;
         margin-right:auto;
-        border-bottom:1px solid white;
+        border-bottom:1px solid rgba(255,255,255,.35);
     }
 
 </style>

@@ -3,11 +3,12 @@
         <div class="mobile-menu" :class="[isMobileOpen ? 'mobile-menu-active' : '']">
             <button class="mobile-menu-close-button" @click="closeMobileMenu()"><i class="fas fa-times"></i></button>
             <ul class="mobile-menu-nav">
-                <router-link  v-on:click.native="closeMobileMenu()" :to="{ name: 'character', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link" >Equipment</a></router-link>
+                <router-link  v-on:click.native="closeMobileMenu()" :to="{ name: 'character', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link" >Character</a></router-link>
                 <router-link  v-on:click.native="closeMobileMenu()" :to="{ name: 'reputation', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Reputation</a></router-link>
                 <router-link  v-on:click.native="closeMobileMenu()" :to="{ name: 'achievements', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Achievements</a></router-link>
                 <router-link  v-on:click.native="closeMobileMenu()" :to="{ name: 'progression', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Progression</a></router-link>
                 <router-link  v-on:click.native="closeMobileMenu()" :to="{ name: 'pets', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Collections</a></router-link>
+                <router-link  v-on:click.native="closeMobileMenu()" :to="{ name: 'pvp', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Player Vs Player</a></router-link>
                 <router-link  v-on:click.native="closeMobileMenu()" :to="{ name: 'legion', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Tracker</a></router-link>
                 <router-link  v-on:click.native="closeMobileMenu()" :to="{ name: 'search'}" activeClass="active" tag="li" class="nav-item nav-search" exact><a class="nav-link">Search</a></router-link>
             </ul>             
@@ -17,13 +18,14 @@
                 <button class="mobile-menu-button" @click="openMobileMenu()"><i class="fas fa-bars"></i></button>
                 <div class="character-details">
                     <div class="character-image">
-                        <img :src="[characterData.thumbnail]">
+                        <img :src="[characterData.thumbnail]" class="character-image-large">
+                        <img :src="[characterData.smallThumbnail]" class="character-image-small">
                     </div>
                     <div class="character-text character-main-text">
-                        <div class="title" style="margin:8px 0">
-                            <h4 v-if="title && title.position == 1 ">{{title.text}}</h4>
+                        <div class="title">
+                            <h4 class="character-title" v-if="title && title.position == 1 ">{{title.text}}</h4>
                             <h1 :style="{color:classes[characterData.class-1].color}">{{ characterData.name }}</h1>
-                            <h4 v-if="title && title.position == 0">{{title.text}}</h4>
+                            <h4 class="character-title" v-if="title && title.position == 0">{{title.text}}</h4>
                         </div>
                     </div>
                     <div class="character-text">
@@ -35,35 +37,23 @@
                         </div>
                         <div class="character-class"><span class="text-line">{{characterData.level}} {{races.find(x=>x.id == characterData.race).name}} {{currentSpec.spec.name}} <span :style="{color:classes[characterData.class-1].color}" >{{classes[characterData.class-1].name}}</span></span> <span class="text-line">{{guildName}} {{characterData.realm}}</span></div>
                     </div>    
-                    <!--<app-search></app-search>-->          
                 </div>
-
                 <ul class="nav-menu">
-                    <router-link :to="{ name: 'character', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link" >Equipment</a></router-link>
-                    <router-link :to="{ name: 'reputation', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Reputation</a></router-link>
-                    <router-link :to="{ name: 'achievements', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Achievements</a></router-link>
+                    <router-link :to="{ name: 'character', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link" >Character</a></router-link>
+                    <router-link :to="{ name: 'achievements', params: { realm: realmName, character: characterName }}" :class="{'active': isRoute('achievementCategory')}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Achievements</a></router-link>
+                    <router-link :to="{ name: 'pets', params: { realm: realmName, character: characterName }}" :class="{'active': isRoute('collections')}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Collections</a></router-link>
                     <router-link :to="{ name: 'progression', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Progression</a></router-link>
-                    <router-link :to="{ name: 'pets', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Collections</a></router-link>
-                    <router-link :to="{ name: 'legion', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Tracker</a></router-link>
+                    <router-link :to="{ name: 'reputation', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Reputation</a></router-link>
+                    <router-link :to="{ name: 'pvp', params: { realm: realmName, character: characterName }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Player Vs Player</a></router-link>                    
+                    <router-link :to="{ name: 'battle', params: { realm: realmName, character: characterName }}" :class="{'active': isRoute('tracker')}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">Tracker</a></router-link>
                     <router-link :to="{ name: 'search'}" activeClass="active" tag="li" class="nav-item nav-search" exact><a class="nav-link">Search</a></router-link>
                 </ul> 
-                <!--<ul class="nav-menu-mobile">
-                    <router-link to="/" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link" >E</a></router-link>
-                    <router-link to="/reputation" activeClass="active" tag="li" class="nav-item"><a class="nav-link">R</a></router-link>
-                    <router-link to="/progression" activeClass="active" tag="li" class="nav-item"><a class="nav-link">P</a></router-link>
-                    <router-link to="/collections" activeClass="active" tag="li" class="nav-item"><a class="nav-link">C</a></router-link>
-                    <router-link to="/tracker" activeClass="active" tag="li" class="nav-item"><a class="nav-link">T</a></router-link>
-                </ul> -->
             </div>    
         </div>
     </div>
 </template>
 
 <script>
-import Reputation from './Reputation.vue';
-import Progression from './Progression.vue';
-import Search from './Search.vue';
-
 
 export default {
     data(){
@@ -90,7 +80,7 @@ export default {
                 {id:29, name: 'Void Elf'},
                 {id:30, name: 'Lightforged Draenei'},
             ],
-            classes : [
+            classes1 : [
                 {id:1, color:'#C79C6E', name: 'Warrior', 
                     specs: [{name: 'Arms', icon:'ability_warrior_savageblow',quest:44925}, {name:'Fury', icon:'ability_warrior_innerrage', quest:46065}, {name:'Protection', icon:'ability_warrior_defensivestance', quest:45416}]},
                 {id:2, color:'#F58CBA', name: 'Paladin', specs: [{name: 'Holy', icon:'spell_holy_holybolt',quest:46035}, {name:'Protection', icon:'ability_paladin_shieldofthetemplar', quest:45416}, {name:'Retribution', icon:'spell_holy_auraoflight', quest:45526}]},
@@ -164,17 +154,15 @@ export default {
             ]
         }
     },
-    components:{
-        appReputation: Reputation,
-        appProgression: Progression,
-        appSearch: Search
-    },
     computed:{
         characterData(){
             return this.$store.getters.characterData;
         },
         characterName(){
             return this.$route.params.character;
+        },
+        classes(){
+            return this.$store.getters.classes;
         },
         realmName(){
             return this.$route.params.realm;
@@ -208,7 +196,6 @@ export default {
                     }
                 }
             });
-            console.log(currentTitle);
             if(currentTitle.hasOwnProperty("text")){
                 return currentTitle;
             }
@@ -228,13 +215,6 @@ export default {
         guildName(){
             return (this.characterData.guild ? "<"+this.characterData.guild.name+">" : "");
         }
-        /*displayStats(){
-            let stats = [];
-            this.armoryStats.forEach((stat) =>{
-                stats.push({name: stat, value: this.stats[stat]});
-            });
-            return stats;
-        },*/
     },
     methods:{
         openMobileMenu(){
@@ -242,7 +222,10 @@ export default {
         },
         closeMobileMenu(){
             this.isMobileOpen = false;
-        }
+        },
+        isRoute(routeName){
+            return this.$route.matched.some(route=> route.name === routeName);
+        },
     }
 }
 </script>
@@ -255,29 +238,45 @@ export default {
         max-width:1480px;
         margin-left:auto;
         margin-right:auto;
-        border-bottom:2px solid white;
+        @media screen and (min-width:768px){
+             border-bottom:none;       
+        }
     }
-    .character-info h1, .character-info h4, .character-info h5{
+    .character-info h1, .character-title, .character-info h5{
         margin:5px 0;
         color:white;
         text-shadow:2px 2px #333;
+    }
+    .character-title{
+        font-weight:400;
     }
     .nav-menu{
         @media screen and (min-width:992px){
             display:flex;
         }
+        @media screen and (min-width:1200px){
+            font-size:1em;
+        }
         &.sub-menu{
             display:flex;
             font-size:.875em;
+            padding:0;
+            .nav-item{
+                padding:.75em 0;
+            }
         }
         display: none;
         flex-flow:row;
-        padding:0;
-        margin:.25em 0;
+        font-size:.9125em;
+        padding:.75em 0;
+        margin:0;
+        border-bottom:1px solid orange;
         flex-wrap:wrap;
         .nav-item{
             list-style:none;
-            padding:1em .5em;
+            &:first-of-type{
+                padding-left:0;
+            }
             &.nav-search{
                 margin-left:auto;
             }
@@ -295,7 +294,7 @@ export default {
                 }
             }
             .nav-link{
-                padding:.5em;
+                padding:.75em;
                 text-decoration:none;
                 text-transform:uppercase;
                 font-weight:500;
@@ -305,8 +304,6 @@ export default {
     }
     .header{
         position:relative;
-    }
-    .header-container{
     }
     .character-scores,.character-class{
         width:100%;
@@ -320,27 +317,38 @@ export default {
     }
     .character-details{
         display:flex;
-        font-size:.9125em;
+        font-size:1em;
         flex-wrap:wrap;
-        margin-bottom:.5em;
+        padding:.5em 0;
         @media screen and (min-width:480px){
-            font-size:1.125em;            
             flex-flow:row;
-        }
-        @media screen and (min-width:768px){
-            font-size:1.25em;            
-            flex-flow:row;
+            font-size:1.125em;
+            margin-right:2em;
         }
     }
-
     .text-line{
         display:inline-block;
     }
-
     .character-image{
         display:none;
+        .character-image-large{
+            display:none;
+        }
         @media screen and (min-width: 768px){
-           display:flex;
+            display:flex;
+            min-width:100px;
+            .character-image-small{
+                display:block;    
+            }
+        }
+        @media screen and (min-width:992px){
+            .character-image-small{
+                display:none;
+            }
+            .character-image-large{
+                display:block;
+                
+            }
         }
         align-items:center;
         min-width:225px;
@@ -359,12 +367,23 @@ export default {
             @media screen and (min-width:480px){
                 width:auto;
             }
-            @media screen and (min-width:768px){
-                padding-right:2em; border-right:1px solid white; margin:1em;
+            @media screen and (min-width:992px){
+                padding-right:2em; 
             }
         }
         .title{
             white-space: nowrap;
+            margin:auto 0px;
+
+            h1{
+                width:100%;
+                @media screen and(min-width:480px){
+                    font-size:1.5em;
+                }
+                @media screen and (min-width:992px){
+                    font-size:2em; 
+                }
+            }
         }
     }
 
@@ -382,6 +401,9 @@ export default {
         height:100vh;
         width:100vw;
         position:fixed;
+        @media screen and(min-width:768px){
+            margin:0 -2em;
+        }
         background-color:rgba(0,0,0,.95);
         z-index:9999;
         align-items:center;
@@ -389,15 +411,12 @@ export default {
         visibility:hidden;
         display:flex;
         opacity:0;
-          transition: visibility 0s linear 500ms, opacity 500ms;
-
+        transition: visibility 0s linear 500ms, opacity 500ms;
         &.mobile-menu-active{
             visibility:visible;
             opacity:1;
-              transition: visibility 0s linear 0s, opacity 500ms;
-
+            transition: visibility 0s linear 0s, opacity 500ms;
         }
-
         .mobile-menu-nav{
             text-align:center;
             display:flex;
@@ -406,13 +425,19 @@ export default {
             color:orange;
             text-transform:uppercase;
             padding:0;
+            @media screen and(min-width:768px){
+                font-size:1.5em;
+            }
             .nav-item{
                 margin:1em 0;
             }
             a{
-                
                 text-decoration:none;
                 &:visited{
+                    color:orange;
+                }
+                color:orange;
+                &:hover{
                     color:orange;
                 }
             }
@@ -425,7 +450,11 @@ export default {
             color:white;
             cursor:pointer;
             background-color:transparent;
-            font-size:1.5em;
+            font-size:1.75em;
+            @media screen and(min-width:480px){
+                font-size:2.25em;
+            }
+            
         }
     .mobile-menu-close-button{  
         top:15px;
@@ -434,6 +463,9 @@ export default {
     .mobile-menu-button{
         top:20px;
         right:10px;
+        @media screen and (min-width:768px){
+            right:-22px;
+        }
         @media screen and (min-width:992px){
             display:none;
         }

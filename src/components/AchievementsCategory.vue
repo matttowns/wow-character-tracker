@@ -1,8 +1,10 @@
 <template>
-    <div class="achievements-container">
+    <div class="achievements-container page-container">
         <app-loading v-if="!achievementsLoaded" message="Checking your achievements!"></app-loading>
         <div class="achievements" v-else> 
-            <app-dropdown :options="categoryList" :defaultSelection="subCategoryIndex+1" class="achievements-dropdown"></app-dropdown>
+            <div class="achievements-dropdown-container">
+                <app-dropdown :options="categoryList" :defaultSelection="subCategoryIndex+1" class="achievements-dropdown"></app-dropdown>
+            </div>
             <ul class="nav-menu sub-menu">
                 <router-link v-for="category in categories" :to="{ name: 'achievementCategory', params: { subcategory: category.url }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">{{category.name}}</a></router-link>
             </ul>
@@ -70,7 +72,6 @@ export default {
             let index = this.achievementData.findIndex((category)=>{
                 return selectedCategory == category.name.replace(/\s+/g, '-').toLowerCase();
             });  
-            console.log(index);
             return index;
         },
         subCategoryIndex(){
@@ -162,6 +163,7 @@ export default {
         max-width:1480px;
         margin-left:auto;
         margin-right:auto;
+
         .nav-menu{
             margin:0;
             display:none;
@@ -169,13 +171,18 @@ export default {
                 display:flex;
             }
         }
-        .achievements-dropdown{
-            display:block;
-            margin:1em auto;
+        .achievements-dropdown-container{
+            border-bottom:1px solid orange;
             @media screen and (min-width:992px){
                 display:none;
             }
+            .achievements-dropdown{
+                display:block;
+                margin:1em auto;
+
+            }
         }
+
         .achievements{
             & > .achievement-window{
                 border-top:1px solid rgba(255,255,255,.33);
@@ -245,10 +252,8 @@ export default {
         font-size:1.15em;
         color:orange;
         font-weight:400;
-        text-align:center;
-        @media screen and (min-width:480px){
-            text-align:left;
-        }
+        text-align:left;
+
         &.achievement-title-account{
             color:#0081ff;
         }
@@ -256,16 +261,11 @@ export default {
     .achievement-text{
         color:lightgrey;
         font-size:.9125em;
-        text-align:center;
-        @media screen and (min-width:480px){
-            text-align:left;
-        }
+        text-align:left;
+
     }
     .achievement-points{
-        text-align:center;
-        @media screen and (min-width:480px){
-            text-align:right;
-        }
+        text-align:right;
         font-size:1.125em;
         svg{
             color:orange;
@@ -275,10 +275,8 @@ export default {
     }
     .achievement-completion{
         width:90px;
-        text-align:center;
-        @media screen and (min-width:480px){
-            text-align:right;
-        }
+        text-align:right;
+
     }
     .achievement-date{
         font-size:.75em;

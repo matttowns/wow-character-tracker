@@ -149,9 +149,6 @@
                             }
                         });
                     }
-                    if(achievement.id == 13144){
-                        console.log({length,completed});
-                    }
                     return {length,completed};
                 }
                 return false;

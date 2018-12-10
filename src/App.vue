@@ -3,6 +3,7 @@
         <div class="main" >
           <app-header v-if="dataLoaded && !searchCheck" style=" position:relative;"></app-header>
           <router-view v-if="dataLoaded || searchCheck" ></router-view>
+          <app-loading v-else  :message="'Loading ' + characterName + ' - ' + serverName"></app-loading>
         </div>
         <app-frame v-if="frameOpen" :pet="currentFrameItem" :type="frameType"></app-frame>
     </div>
@@ -13,6 +14,7 @@
 import TopHeader from './components/TopHeader.vue';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
+import Loading from './components/general/Loading.vue';
 import Frame from './components/general/Frame.vue';
 import achievements from './data/achievements.json'
 
@@ -21,9 +23,10 @@ export default {
     appTopHeader: TopHeader,
     appHeader: Header,
     appFooter: Footer,
-    appFrame:Frame
+    appFrame:Frame,
+    appLoading:Loading
   },
-  created() {
+  mounted() {
     if(this.$route.name != "search"){
         let searchDetails = {"region": this.$route.params.region, "name":this.$route.params.character, "realm":this.$route.params.realm};
         this.$store.dispatch('initCharacter', searchDetails);
@@ -51,8 +54,18 @@ export default {
     },
     searchCheck(){
         return this.$route.name == "search";
+    },
+    characterName(){
+          return this.$route.params.character[0].toUpperCase() + this.$route.params.character.slice(1,this.$route.params.character.length);
+    },
+    serverName(){
+        let serverName = this.$route.params.realm.split("-");
+        serverName.forEach((word, index, array)=>{
+            array[index] = word[0].toUpperCase() + word.slice(1,word.length);
+        });
+        return serverName.join(" ");
     }
-  }
+  },
 }
 </script>
 

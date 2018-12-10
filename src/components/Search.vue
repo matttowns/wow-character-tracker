@@ -44,34 +44,24 @@
 </template>
 
 <script>
-import axios from "axios";
+import realmList from '../data/realms.json';
 export default {
     data(){
         return{
             region:"",
-            realms:[],
             selectedRealm:"",
             characterName:"",
             region:"",
             searchButtonText: "Search",
             isButtonDisabled: true,
-            searchError: false
+            searchError: false,
         }
     },
     computed:{
         realmsByRegion(){
-            return this.realms.filter(x=>x.region==this.region);
-        }
-    },
-    created(){
-        axios.get('https://vuejs-character-tracker.firebaseio.com/realms.json')
-        .then(response =>{ 
-            this.realms = response.data;
-        })
-        .catch(e => {
-            console.log(e);
-            this.errors.push(e)
-        });       
+            return realmList.filter(x=>x.region==this.region);
+        },
+        
     },
     methods:{
         search(){
@@ -102,8 +92,6 @@ export default {
         }
     }
 }
-
-
 </script>
 
 <style lang="scss">
@@ -131,7 +119,6 @@ export default {
             transition: all .5s;
             width:100px;
             cursor:default;
-
         }
         height:100%;
         display:flex;

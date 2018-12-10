@@ -66,7 +66,7 @@ export default {
             return this.$store.getters.frameItems;
         }
     },
-    created(){
+    mounted(){
         this.collectionList = this.collection;
     },
     methods:{

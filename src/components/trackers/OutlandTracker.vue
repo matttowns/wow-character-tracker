@@ -1,23 +1,30 @@
 <template>
     <div class="container tracker-category-container">
-        <app-loremaster :achievements="loremaster"></app-loremaster>
-        <app-loremaster :achievements="explorer"></app-loremaster>
+        <app-loading v-if="!outlandLoaded" message="Checking off your progress!"></app-loading>
+        <template v-else>
+            <app-loremaster :achievements="loremaster"></app-loremaster>
+            <app-loremaster :achievements="explorer"></app-loremaster>
+        </template>
     </div>
 </template>
 
 <script>
     import Pathfinder from './Pathfinder.vue'
     import Loremaster from './Loremaster.vue'
-    
+    import Loading from './../general/Loading.vue';
+
     export default {
         components:{
             appPathfinder: Pathfinder,
-            appLoremaster: Loremaster
+            appLoremaster: Loremaster,
+            appLoading: Loading
         },
-        created(){
-            if(this.$store.getters.exploreOutland.length == 0){
-                this.$store.dispatch('initOutland');
-            }
+        mounted(){
+            setTimeout(()=>{
+                if(!this.outlandLoaded){
+                    this.$store.dispatch('initOutland');
+                }
+            }, 100);
         },
         computed:{
             explorer(){
@@ -26,8 +33,10 @@
             loremaster(){
                 return this.$store.getters.outlandLoremaster;
             },
+            outlandLoaded(){
+                return this.$store.getters.outlandCompleted;
+            }
         }
-        
     }
 </script>
 

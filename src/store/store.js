@@ -39,14 +39,22 @@ const state = {
     draenorPathfinderCompleted:false,
     draenorPathfinder:[],
     pandariaLoremaster:[],
+    pandariaLoremasterCompleted:false,
     explorePandaria:[],
+    explorePandariaCompleted:false,
     greenFire:[],    
     cataclysmLoremaster:[],
+    cataclysmLoremasterCompleted:false,
     exploreCataclysm:[],
+    exploreCataclysmCompleted:false,
     wrathLoremaster:[],
+    wrathLoremasterCompleted:false,
     exploreWrath:[],
+    exploreWrathCompleted:false,
     outlandLoremaster:[],
+    outlandLoremasterCompleted:false,
     exploreOutland:[],
+    exploreOutlandCompleted:false,
     collectedPets:[],
     petsLoaded: false,
     mountsLoaded: false,
@@ -110,7 +118,6 @@ const mutations = {
     },
     'GET_CHARACTER_DATA'(state,characterResponse){       
         state.characterData = characterResponse;       
-        console.log(state.characterData.talents);
         state.characterLoaded = true;
         setItems(state);
         if(state.characterData.class == 11){
@@ -218,6 +225,7 @@ const mutations = {
         state.battlePathfinderLoaded = true;
         state.battleLoremaster = state.battlePathfinder.criteria[1];
         state.battlePathfinderCompleted = true;
+
     }, 
     'INIT_LEGION_PATHFINDER'(state){
          state.legionPathfinder = objectiveData.legionPathfinder;
@@ -240,10 +248,16 @@ const mutations = {
     'GET_PANDARIA_LOREMASTER'(state){
         state.pandariaLoremaster = objectiveData.pandariaLoremaster;
         achievementCheck(state,state.pandariaLoremaster);
+        state.pandariaLoremasterCompleted = true;
+        state.explorePandariaCompleted = true;
+
     },
     'GET_PANDARIA_EXPLORER'(state){
         state.pandariaExplorer = objectiveData.pandariaExplorer;
         achievementCheck(state,state.pandariaExplorer);
+        state.explorePandariaCompleted = true;
+        state.pandariaLoremasterCompleted = true;
+
     },
     'GET_GREEN_FIRE'(state){
         state.greenFire = objectiveData.greenFire;
@@ -258,26 +272,33 @@ const mutations = {
     'GET_CATACLYSM_LOREMASTER'(state){
         state.cataclysmLoremaster = objectiveData.cataclysmLoremaster;
         achievementCheck(state,state.cataclysmLoremaster);
+        state.cataclysmLoremasterCompleted = true;
+
     },
     'GET_CATACLYSM_EXPLORER'(state){
         state.exploreCataclysm = objectiveData.exploreCataclysm;
         achievementCheck(state,state.exploreCataclysm);
+        state.exploreCataclysmCompleted = true;
     },
     'GET_WRATH_LOREMASTER'(state){
         state.wrathLoremaster = objectiveData.northrendLoremaster;
         achievementCheck(state,state.wrathLoremaster);
+        state.wrathLoremasterCompleted = true;
     },
     'GET_WRATH_EXPLORER'(state){
         state.exploreWrath= objectiveData.exploreNorthrend;
         achievementCheck(state,state.exploreWrath);
+        state.exploreWrathCompleted = true;
     },
     'GET_OUTLAND_LOREMASTER'(state){
         state.outlandLoremaster = objectiveData.outlandLoremaster;
         achievementCheck(state,state.outlandLoremaster);
+        state.outlandLoremasterCompleted = true;
     },
     'GET_OUTLAND_EXPLORER'(state){
         state.exploreOutland= objectiveData.exploreOutland;
         achievementCheck(state,state.exploreOutland);
+        state.exploreOutlandCompleted = true;
     },
     'GET_MAGE_TOWER'(state){
         classes[state.characterData.class-1].specs.forEach((spec)=>{
@@ -578,6 +599,18 @@ const getters = {
     },
     draenorCompleted:state=>{
         return state.draenorPathfinderCompleted;
+    },
+    pandariaCompleted:state=>{
+        return state.explorePandariaCompleted && state.pandariaLoremasterCompleted;
+    },
+    cataclysmCompleted:state=>{
+        return state.exploreCataclysmCompleted && state.cataclysmLoremasterCompleted;
+    },
+    wrathCompleted:state=>{
+        return state.exploreWrathCompleted && state.wrathLoremasterCompleted;
+    },
+    outlandCompleted:state=>{
+        return state.exploreOutlandCompleted && state.outlandLoremasterCompleted;
     },
     achievementsLoaded:state=>{
         return state.achievementsLoaded;

@@ -19,8 +19,12 @@
             appLoremaster: Loremaster,
             appLoading: Loading
         },
-        created(){
-            this.$store.dispatch('initDraenor');
+        mounted(){
+            setTimeout(()=>{
+                if(!this.draenorLoaded){
+                    this.$store.dispatch('initDraenor');
+                }
+            }, 100);
         },
         computed:{
             pathfinderAchievements(){

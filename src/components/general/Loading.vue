@@ -2,7 +2,7 @@
     <div class="loading">
         <div class="loading-container">
             <i class="fas fa-spinner fa-spin loading-icon"></i>
-            <h5>{{message}}</h5>
+            <div class="loading-message">{{message}}</div>
         </div>
     </div>
 </template>
@@ -32,9 +32,10 @@ export default {
         padding:1em;
         width:200px;
         .loading-icon{
-            font-size:5em;
+            font-size: 4.5em;
         }
-        h5{
+        .loading-message{
+            margin-top:1.5em;
             font-size:1.25em;
             margin-bottom:0;
             text-align:center;

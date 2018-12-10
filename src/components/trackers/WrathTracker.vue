@@ -1,23 +1,30 @@
 <template>
     <div class="container tracker-category-container">
-        <app-loremaster :achievements="loremaster"></app-loremaster>
-        <app-loremaster :achievements="explorer"></app-loremaster>
+        <app-loading v-if="!wrathLoaded" message="Checking off your progress!"></app-loading>
+        <template v-else>
+            <app-loremaster :achievements="loremaster"></app-loremaster>
+            <app-loremaster :achievements="explorer"></app-loremaster>
+        </template>
     </div>
 </template>
 
 <script>
+    import Loading from './../general/Loading.vue';
     import Pathfinder from './Pathfinder.vue'
     import Loremaster from './Loremaster.vue'
     
     export default {
         components:{
             appPathfinder: Pathfinder,
-            appLoremaster: Loremaster
+            appLoremaster: Loremaster,
+            appLoading:Loading
         },
-        created(){
-            if(this.$store.getters.exploreWrath.length == 0){
-                this.$store.dispatch('initWrath');
-            }
+        mounted(){
+            setTimeout(()=>{
+                if(!this.wrathLoaded){
+                    this.$store.dispatch('initWrath');
+                }
+            }, 100);
         },
         computed:{
             explorer(){
@@ -26,6 +33,9 @@
             loremaster(){
                 return this.$store.getters.wrathLoremaster;
             },
+            wrathLoaded(){
+                return this.$store.getters.wrathCompleted;
+            }
         }
         
     }

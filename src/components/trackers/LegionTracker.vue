@@ -28,10 +28,12 @@
             appBrawlersGuild: BrawlersGuild,
             appLoading:Loading
         },
-        created(){
-            if(this.$store.getters.legionPathfinder.length == 0){
-                this.$store.dispatch('initLegion');
-            }
+        mounted(){
+            setTimeout(()=>{
+                if(!this.legionLoaded){
+                    this.$store.dispatch('initLegion');
+                }
+            }, 100);
         },
         computed:{
             legionLoaded(){

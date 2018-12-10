@@ -10,7 +10,6 @@ import Pets from './components/Pets.vue';
 import Mounts from './components/Mounts.vue';
 import Tracker from './components/Tracker.vue';
 import BattleTracker from './components/trackers/BattleTracker.vue';
-
 import LegionTracker from './components/trackers/LegionTracker.vue';
 import DraenorTracker from './components/trackers/DraenorTracker.vue';
 import PandariaTracker from './components/trackers/PandariaTracker.vue';
@@ -20,10 +19,8 @@ import OutlandTracker from './components/trackers/OutlandTracker.vue';
 import ClassicTracker from './components/trackers/ClassicTracker.vue';
 import Search from './components/Search.vue';
 
-
 export const routes= [
     { path: '', name:'search', component: Search },
-
     { path: '/:region/:realm/:character', name:'character', component: Character,
     meta:{ title: 'Character'} },
     { path: '/:region/:realm/:character/progression', name:'progression', component: Progression,
@@ -60,7 +57,4 @@ export const routes= [
     ]},
     { path: '/:region/:realm/:character/pvp/', name: 'pvp', component: PvP,
         meta:{ title: 'Player vs Player'}},
-
-    
-
 ];

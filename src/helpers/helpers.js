@@ -78,9 +78,6 @@ export const getReputation = (rep, state, stateReputation)=>{
 }
 
 export const achievementCheck = (state,achievement) =>{
-    if(achievement.id == 8218 || achievement.id == 8093){
-        console.log(achievement);
-    }
     let achievementsCompleted = state.characterData.achievements.achievementsCompleted;
     let achievements = state.characterData.achievements;     
     let cri = "";
@@ -141,6 +138,7 @@ export const achievementCheck = (state,achievement) =>{
             if(!criteria.faction || criteria.faction == state.characterData.faction){
                 length++;
             }
+
             let criteriaPosition = achievements.criteria.indexOf(criteria.id);
             if(criteriaPosition != -1){
                 completed++;

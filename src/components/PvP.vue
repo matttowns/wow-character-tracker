@@ -1,5 +1,7 @@
 <template>
-    <app-battlegrounds v-if="dataLoaded"></app-battlegrounds>
+    <div class="page-container">
+        <app-battlegrounds v-if="dataLoaded"></app-battlegrounds>      
+    </div>
 </template>
 
 <script>

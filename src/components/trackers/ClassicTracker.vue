@@ -14,7 +14,7 @@
             appPathfinder: Pathfinder,
             appLoremaster: Loremaster
         },
-        created(){
+        mounted(){
             if(this.$store.getters.pathfinder.length == 0){
                 this.$store.dispatch('initPandaria');
             }

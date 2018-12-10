@@ -79,78 +79,12 @@ export default {
                 {id:28, name: 'Highmountain Tauren'},
                 {id:29, name: 'Void Elf'},
                 {id:30, name: 'Lightforged Draenei'},
-            ],
-            classes1 : [
-                {id:1, color:'#C79C6E', name: 'Warrior', 
-                    specs: [{name: 'Arms', icon:'ability_warrior_savageblow',quest:44925}, {name:'Fury', icon:'ability_warrior_innerrage', quest:46065}, {name:'Protection', icon:'ability_warrior_defensivestance', quest:45416}]},
-                {id:2, color:'#F58CBA', name: 'Paladin', specs: [{name: 'Holy', icon:'spell_holy_holybolt',quest:46035}, {name:'Protection', icon:'ability_paladin_shieldofthetemplar', quest:45416}, {name:'Retribution', icon:'spell_holy_auraoflight', quest:45526}]},
-                {id:3, color:'#ABD473', name: 'Hunter', specs: [{name: 'Beast Mastery', icon:'ability_hunter_bestialdiscipline',quest:45627}, {name:'Marksmanship', icon:'ability_hunter_focusedaim', quest:46127}, {name:'Survival', icon:'ability_hunter_camouflage', quest:44925}]},
-                {id:4, color:'#FFF569', name: 'Rogue', specs: [{name: 'Assassination', icon:'ability_rogue_deadlybrew',quest:45526}, {name:'Outlaw', icon:'inv_sword_30', quest:46065}, {name:'Subtlety', icon:'ability_stealth', quest:44925}]},
-                {id:5, color:'#FFFFFF', name: 'Priest', specs: [{name: 'Discipline', icon:'spell_holy_powerwordshield',quest:45627}, {name:'Holy', icon:'spell_holy_guardianspirit', quest:46035}, {name:'Shadow', icon:'spell_shadow_shadowwordpain', quest:46127}]},
-                {id:6, color:'#C41F3B', name: 'Death Knight', specs: [{name: 'Blood', icon:'spell_deathknight_bloodpresence',quest:45416}, {name:'Frost', icon:'spell_deathknight_frostpresence', quest:44925}, {name:'Unholy', icon:'spell_deathknight_unholypresence', quest:46065}]},
-                {id:7, color:'#0070DE', name: 'Shaman', specs: [{name: 'Elemental', icon:'spell_nature_lightning',quest:46065}, {name:'Enhancement', icon:'spell_shaman_improvedstormstrike', quest:45526}, {name:'Restoration', icon:'spell_nature_magicimmunity', quest:46035}]},
-                {id:8, color:'#69CCF0', name: 'Mage', 
-                    specs: [
-                        {name: 'Arcane', icon:'spell_holy_magicalsentry',quest:45526}, 
-                        {name:'Fire', icon:'spell_fire_firebolt02', quest:46065}, 
-                        {name:'Frost', icon:'spell_frost_frostbolt02', quest:46127}],
-                    campaign: [
-                            {id: 41035, title:'Felstorm\'s Plea', type:2, completed:false},
-                            {id: 41036, title:'The Dreadlord\'s Prize', type:2, completed:false},
-                            {id: 41085, title:'A Mage\'s Weapon', type:2, completed:false},
-                            {id: 41114, title:'The Champion\'s Return', type:2, completed:false},
-                            {id: 41125, title:'Unlocked Potential', type:2, completed:false},
-                            {id: 41112, title:'The Great Akazamzarak', type:2, completed:false},
-                            {id: 41113, title:'The Only Way to Travel', type:2, completed:false},
-                            {id: 41124, title:'The Tirisgarde Reborn', type:2, completed:false},
-                            {id: 41141, title:'A Conjuror\'s Duty', type:2, completed:false},
-                            {id: 42663, title:'Rise Champions', type:2, completed:false},
-                            {id: 42662, title:'Technical Wizardry', type:2, completed:false},
-                            {id: 42126, title:'Archmage Omniara', type:2, completed:false},
-                            {id: 42127, title:'Building Our Troops', type:2, completed:false},
-                            {id: 42696, title:'Tech It Up A Notch', type:2, completed:false},
-                            {id: 42433, title:'Ancient Magic', type:2, completed:false},
-                            {id: 42429, title:'Memories of Ebonchill', type:2, completed:false},
-                            {id: 42418, title:'An Unexpected Visitor', type:2, completed:false},
-                            {id: 42434, title:'A Covert Operation', type:2, completed:false},
-                            {id: 42435, title:'Prepare To Be Assimilated', type:2, completed:false},
-                            {id: 42166, title:'What Is Going On Here', type:2, completed:false},
-                            {id: 42206, title:'The Next Level Has Arrived',  type:2,completed:false},
-                            {id: 42149, title:'Some Knowledge Shouldn\'t Be Shared', type:2, completed:false},
-                            {id: 42171, title:'Final Exit', type:2, completed:false},
-                            {id: 42222, title:'Empyrean Society Report', type:2, completed:false},
-                            {id: 44098, title:'Recruiting Apprentices', type:2, completed:false},
-                            {id: 42416, title:'The Council Is In Session',  type:2,completed:false},
-                            {id: 42423, title:'Archmage Vargoth\'s Retreat', type:2, completed:false},
-                            {id: 42424, title:'Following In His Footsteps', type:2, completed:false},
-                            {id: 42451, title:'Kalec\'s Plan', type:2, completed:false},
-                            {id: 44240, title:'Orange is the New Purple', type:2, completed:false},
-                            {id: 42954, title:'A Small Favor', type:2, completed:false},
-                            {id: 42955, title:'The Proper Way of Things', type:2, completed:false},
-                            {id: 42956, title:'Ari\'s Package', type:2, completed:false},
-                            {id: 42959, title:'Three Is A Lucky Number', type:2, completed:false},
-                            {id: 44689, title:'The Might of the Tirisgarde', type:2, completed:false},
-                            {id: 42508, title:'Not A Toothless Dragon', type:2, completed:false},
-                            {id: 42521, title:'The Enemy of My Enemy...',  type:2,completed:false},
-                            {id: 42494, title:'More Than Just A Food Vendor', type:2, completed:false},
-                            {id: 42493, title:'Impending Dooooooom!', type:2, completed:false},
-                            {id: 42520, title:'A Terrible Loss', type:2, completed:false},
-                            {id: 42707, title:'Eye of Azshara: A Magical Affliction', type:2, completed:false},
-                            {id: 42940, title:'When There\'s a Will, There\'s a Way', type:2, completed:false},
-                            {id: 42734, title:'Into the Oculus', type:2, completed:false},
-                            {id: 43415, title:'A Hero\'s Weapon', type:2,completed:false},                                
-                        ],
-                        classMount:[
-                            {id: 45844, title:'Avocation of Antonidas', text:'Speak with Archmage Kalec in the Hall of the Guardian.', type:2,completed:false},
-                            {id: 45845, title:'Burning Within', text:'Speak with Khadgar about the Tri-Disc of Fire. Follow his instructions after you speak with him.', type:2,completed:false},                          
-                            {id: 45846, title:'Chilled to the Core',text:'Speak with Archmage Cedric near the Dalaran Crater about the Tri-Disc of Frost.',  type:2,completed:false},                          
-                            {id: 45847, title:'Close to Home', text:'Speak to Archmage Celindra about the Tri-Disc of the Arcane here in Dalaran.', type:2,completed:false},                          
-                            {id: 45354, title:'Dispersion of the Discs',text:'Complete the trial to purge the excess energy from within the disc fragments.',  type:2,completed:false},                          
-                        ]},
-                {id:9, color:'#9482C9', name: 'Warlock', specs: [{name: 'Affliction', icon:'spell_shadow_deathcoil',quest:46127}, {name:'Demonology', icon:'spell_shadow_metamorphosis', quest:45526}, {name:'Destruction', icon:'spell_shadow_rainoffire', quest:45627}]},
-                {id:10,color:'#00FF96',  name: 'Monk', specs: [{name: 'Brewmaster', icon:'spell_monk_brewmaster_spec',quest:45416}, {name:'Mistweaver', icon:'spell_monk_mistweaver_spec', quest:46035}, {name:'Windwalker', icon:'spell_monk_windwalker_spec', quest:45627}]},
-                {id:11,color:'#FF7D0A',  name: 'Druid', specs: [{name: 'Balance', icon:'spell_nature_starfall',quest:46127}, {name:'Feral', icon:'ability_druid_catform', quest:46065}, {name:'Guardian', icon:'ability_racial_bearform', quest:45416}, {name:'Restoration', icon:'spell_nature_healingtouch', quest:46035}]},
-                {id:12,color:'#A330C9',  name: 'Demon Hunter', specs: [{name: 'Havoc', icon:'ability_demonhunter_specdps',quest:44925}, {name:'Vengeance', icon:'ability_demonhunter_spectank', quest:45416}]}
+                {id:31, name: 'Zandalari Troll'},
+                {id:32, name: 'Kul Tiran'},
+                {id:33, name: 'Human'},
+                {id:34, name: 'Dark Iron Dwarf'},
+                {id:35, name: 'Vulpera'},
+                {id:36, name: 'Mag\'har Orc'},
             ]
         }
     },
@@ -184,7 +118,6 @@ export default {
                     else if(title.name.startsWith("%s, ")){
                         currentTitle.text = title.name.substr(4);
                         currentTitle.position = 0;
-
                     }
                     else if(title.name.endsWith(" %s")){
                          currentTitle.text = title.name.slice(0,-3);
@@ -224,8 +157,8 @@ export default {
             this.isMobileOpen = false;
         },
         isRoute(routeName){
-            return this.$route.matched.some(route=> route.name === routeName);
-        },
+            return this.$route.matched.some(route => route.name === routeName);
+        }
     }
 }
 </script>
@@ -241,7 +174,7 @@ export default {
         @media screen and (min-width:768px){
              border-bottom:none;       
         }
-    }
+    } 
     .character-info h1, .character-title, .character-info h5{
         margin:5px 0;
         color:white;
@@ -265,7 +198,7 @@ export default {
                 padding:.75em 0;
             }
         }
-        display: none;
+        display:none;
         flex-flow:row;
         font-size:.9125em;
         padding:.75em 0;
@@ -305,7 +238,7 @@ export default {
     .header{
         position:relative;
     }
-    .character-scores,.character-class{
+    .character-scores, .character-class{
         width:100%;
         margin:4px 0;
         color:white;
@@ -346,8 +279,7 @@ export default {
                 display:none;
             }
             .character-image-large{
-                display:block;
-                
+                display:block;  
             }
         }
         align-items:center;
@@ -356,7 +288,6 @@ export default {
             width:100%;
         }
     }
-
     .character-text{
         display:flex;
         flex-wrap:wrap;
@@ -374,7 +305,6 @@ export default {
         .title{
             white-space: nowrap;
             margin:auto 0px;
-
             h1{
                 width:100%;
                 @media screen and(min-width:480px){
@@ -386,7 +316,6 @@ export default {
             }
         }
     }
-
     .ilvl-icon{
         font-size:1em;
         height:1em;
@@ -395,8 +324,7 @@ export default {
         display:inline-block;
         vertical-align:-2.25px;
         padding-left:1em;
-    }
-    
+    }  
     .mobile-menu{
         height:100vh;
         width:100vw;
@@ -444,18 +372,17 @@ export default {
         }
     }
     .mobile-menu-button, .mobile-menu-close-button{
-            position:absolute;
-            border:none;
-            background-color:none;
-            color:white;
-            cursor:pointer;
-            background-color:transparent;
-            font-size:1.75em;
-            @media screen and(min-width:480px){
-                font-size:2.25em;
-            }
-            
+        position:absolute;
+        border:none;
+        background-color:none;
+        color:white;
+        cursor:pointer;
+        background-color:transparent;
+        font-size:1.75em;
+        @media screen and (min-width:480px){
+            font-size:2.25em;
         }
+    }
     .mobile-menu-close-button{  
         top:15px;
         right:12px;

@@ -1,5 +1,5 @@
 <template>
-    <div class="content-container">
+    <div class="battleground-container">
         <div class="section-header">Battlegrounds</div>
         <app-table :headings="headings" :tableData="tableData"></app-table>
     </div>

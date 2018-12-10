@@ -1,4 +1,4 @@
-# armory
+# Warcraft Character Tracker
 
 > A Vue.js project
 

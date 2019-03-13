@@ -2495,5 +2495,420 @@
                 "availableInHeroicMode": true
             }
         ]
+    },
+    {
+        "id": 8670,
+        "name": "Battle of Dazar'alor",
+        "urlSlug": "battle-of-dazaralor",
+        "description": "For ages untold, Dazar'alor has stood at the center of the great and powerful Zandalari empire. Its guards have thwarted numerous attempts on King Rastakhan's life, and it has endured trials both ancient and new. But as war reaches the shores of Zuldazar, the Alliance embarks on a daring gambit to besiege the golden pyramid and sever the Zandalari's bond to the Horde.",
+        "location": {
+            "id": 8670,
+            "name": "Dazar'alor"
+        },
+        "expansionId": 7,
+        "bosses":[
+            {
+                "id": 144683,
+                "name": "Champion of the Light",
+                "urlSlug": "champion-of-the-light",
+                "description": "Ra'wani and her troops are the first line of defense against the Alliance, sworn to lay down their lives for their city. Standing together, they empower and heal each other while fending off the incoming invaders.",
+                "zoneId": 8670,
+                "availableInNormalMode": true,
+                "availableInHeroicMode": true,
+                "health": 240346,
+                "heroicHealth": 0,
+                "level": 121,
+                "heroicLevel": 0,
+                "journalId": 2344,
+                "npcs": [
+                  {
+                    "id": 144683,
+                    "name": "Ra'wani Kanae",
+                    "urlSlug": "rawani-kanae",
+                    "creatureDisplayId": 88796
+                  },
+                  {
+                    "id": 147895,
+                    "name": "Rezani Disciple",
+                    "urlSlug": "rezani-disciple",
+                    "creatureDisplayId": 89804
+                  },
+                  {
+                    "id": 147896,
+                    "name": "Zandalari Crusader",
+                    "urlSlug": "zandalari-crusader",
+                    "creatureDisplayId": 89805
+                  }
+                ],
+                "encounterFaction": 0
+              },
+              {
+                "id": 144680,
+                "name": "Champion of the Light",
+                "urlSlug": "champion-of-the-light",
+                "description": "As vanguard for the Alliance's assault on Dazar'alor, Frida Ironbellows leads her troops with fervor and conviction. Her battle prowess and unwavering faith in the Light make her a force to be reckoned with.",
+                "zoneId": 8670,
+                "availableInNormalMode": true,
+                "availableInHeroicMode": true,
+                "health": 240346,
+                "heroicHealth": 0,
+                "level": 121,
+                "heroicLevel": 0,
+                "journalId": 2333,
+                "npcs": [
+                  {
+                    "id": 144680,
+                    "name": "Frida Ironbellows",
+                    "urlSlug": "frida-ironbellows",
+                    "creatureDisplayId": 88795
+                  },
+                  {
+                    "id": 145898,
+                    "name": "Anointed Disciple",
+                    "urlSlug": "anointed-disciple",
+                    "creatureDisplayId": 89232
+                  },
+                  {
+                    "id": 145903,
+                    "name": "Darkforged Crusader",
+                    "urlSlug": "darkforged-crusader",
+                    "creatureDisplayId": 89233
+                  }
+                ],
+                "encounterFaction": 1
+              },
+              {
+                "id": 144691,
+                "name": "Jadefire Masters",
+                "urlSlug": "jadefire-masters",
+                "description": "To the untrained eye, Ma'ra Grimfang and Anathos Firecaller may seem like a mismatched pair. The truth, however, is that their coordination is second to none. Their combined assault is powerful enough to level the most formidable foes.",
+                "zoneId": 8670,
+                "availableInNormalMode": true,
+                "availableInHeroicMode": true,
+                "health": 9914265,
+                "heroicHealth": 0,
+                "level": 123,
+                "heroicLevel": 0,
+                "journalId": 2323,
+                "npcs": [
+                  {
+                    "id": 144691,
+                    "name": "Ma'ra Grimfang",
+                    "urlSlug": "mara-grimfang",
+                    "creatureDisplayId": 89008
+                  },
+                  {
+                    "id": 144692,
+                    "name": "Anathos Firecaller",
+                    "urlSlug": "anathos-firecaller",
+                    "creatureDisplayId": 89010
+                  }
+                ],
+                "encounterFaction": 0
+              },
+              {
+                "id": 144637,
+                "name": "Grong",
+                "urlSlug": "grong",
+                "description": "After volunteering to become a living super weapon, the once-intelligent Grong devolved into a giant rampaging behemoth. But though his mind may have deteriorated, Grong's strength is more immense than it has ever been.",
+                "zoneId": 8670,
+                "availableInNormalMode": true,
+                "availableInHeroicMode": true,
+                "health": 43361,
+                "heroicHealth": 0,
+                "level": 120,
+                "heroicLevel": 0,
+                "journalId": 2325,
+                "npcs": [
+                  {
+                    "id": 144637,
+                    "name": "Grong",
+                    "urlSlug": "grong",
+                    "creatureDisplayId": 88863
+                  },
+                  {
+                    "id": 146500,
+                    "name": "Goblin Gyrocopter",
+                    "urlSlug": "goblin-gyrocopter",
+                    "creatureDisplayId": 89712
+                  },
+                  {
+                    "id": 144876,
+                    "name": "Apetagonizer 3000",
+                    "urlSlug": "apetagonizer-3000",
+                    "creatureDisplayId": 29080
+                  }
+                ],
+                "encounterFaction": 1
+              },
+              {
+                "id": 144638,
+                "name": "Grong the Revenant",
+                "urlSlug": "grong-the-revenant",
+                "description": "Once willing to sacrifice everything to serve the Alliance, the mighty Grong has been raised from the dead and pitted against his former friends. Fighting on behalf of the Horde would be anathema to this noble soul, whose only hope for release is a clean death.",
+                "zoneId": 8670,
+                "availableInNormalMode": true,
+                "availableInHeroicMode": true,
+                "health": 721038,
+                "heroicHealth": 0,
+                "level": 122,
+                "heroicLevel": 0,
+                "journalId": 2340,
+                "npcs": [
+                  {
+                    "id": 144638,
+                    "name": "Grong the Revenant",
+                    "urlSlug": "grong-the-revenant",
+                    "creatureDisplayId": 89250
+                  },
+                  {
+                    "id": 144982,
+                    "name": "Death Specter",
+                    "urlSlug": "death-specter",
+                    "creatureDisplayId": 89722
+                  }
+                ],
+                "encounterFaction": 0
+              },
+              {
+                "id": 144690,
+                "name": "Jadefire Masters",
+                "urlSlug": "jadefire-masters",
+                "description": "Though they began training together only recently, Manceroy and Mestrah have perfected their teamwork and now present a united front. With both fire and fists, they stand ready to strike down any who challenge the Alliance.",
+                "zoneId": 8670,
+                "availableInNormalMode": true,
+                "availableInHeroicMode": true,
+                "health": 9914265,
+                "heroicHealth": 0,
+                "level": 123,
+                "heroicLevel": 0,
+                "journalId": 2341,
+                "npcs": [
+                  {
+                    "id": 144690,
+                    "name": "Mestrah",
+                    "urlSlug": "mestrah",
+                    "creatureDisplayId": 89013
+                  },
+                  {
+                    "id": 144693,
+                    "name": "Manceroy Flamefist",
+                    "urlSlug": "manceroy-flamefist",
+                    "creatureDisplayId": 89012
+                  }
+                ],
+                "encounterFaction": 1
+              },
+              {
+                "id": 145261,
+                "name": "Opulence",
+                "urlSlug": "opulence",
+                "description": "Long ago, King Dazar had his golden treasury enchanted so that it would rise against anyone except its rightful owner. Many an unsuspecting thief has been slain by the very riches they coveted, serving as an important lesson to those who would steal from the throne.",
+                "zoneId": 8670,
+                "availableInNormalMode": true,
+                "availableInHeroicMode": true,
+                "health": 30043228,
+                "heroicHealth": 0,
+                "level": 123,
+                "heroicLevel": 0,
+                "journalId": 2342,
+                "npcs": [
+                  {
+                    "id": 145261,
+                    "name": "Opulence",
+                    "urlSlug": "opulence",
+                    "creatureDisplayId": 89251
+                  }
+                ],
+                "encounterFaction": -1
+              },
+              {
+                "id": 144747,
+                "name": "Conclave of the Chosen",
+                "urlSlug": "conclave-of-the-chosen",
+                "description": "Deep within Dazar'alor lies a chamber built to honor six of Zandalar's greatest loa, guarded by their most devout followers. Trespassers who dare enter this sacred hall are soon met with primal fury like none they have ever seen.",
+                "zoneId": 8670,
+                "availableInNormalMode": true,
+                "availableInHeroicMode": true,
+                "health": 4206052,
+                "heroicHealth": 0,
+                "level": 123,
+                "heroicLevel": 0,
+                "journalId": 2330,
+                "npcs": [
+                  {
+                    "id": 144747,
+                    "name": "Pa'ku's Aspect",
+                    "urlSlug": "pakus-aspect",
+                    "creatureDisplayId": 89050
+                  },
+                  {
+                    "id": 144767,
+                    "name": "Gonk's Aspect",
+                    "urlSlug": "gonks-aspect",
+                    "creatureDisplayId": 89051
+                  },
+                  {
+                    "id": 144963,
+                    "name": "Kimbul's Aspect",
+                    "urlSlug": "kimbuls-aspect",
+                    "creatureDisplayId": 89053
+                  },
+                  {
+                    "id": 144941,
+                    "name": "Akunda's Aspect",
+                    "urlSlug": "akundas-aspect",
+                    "creatureDisplayId": 89052
+                  }
+                ],
+                "encounterFaction": -1
+              },
+              {
+                "id": 145616,
+                "name": "King Rastakhan",
+                "urlSlug": "king-rastakhan",
+                "description": "For over two hundred years, King Rastakhan has ruled the Zandalari empire. Since the fall of Rezan, he has turned to a new patron--Bwonsamdi, the loa of death. The dark bargain he has made grants him the power to crush his enemies... but at what cost?",
+                "zoneId": 8670,
+                "availableInNormalMode": true,
+                "availableInHeroicMode": true,
+                "health": 240577,
+                "heroicHealth": 0,
+                "level": 120,
+                "heroicLevel": 0,
+                "journalId": 2335,
+                "npcs": [
+                  {
+                    "id": 145616,
+                    "name": "King Rastakhan",
+                    "urlSlug": "king-rastakhan",
+                    "creatureDisplayId": 89115
+                  },
+                  {
+                    "id": 145644,
+                    "name": "Bwonsamdi",
+                    "urlSlug": "bwonsamdi",
+                    "creatureDisplayId": 75961
+                  },
+                  {
+                    "id": 146320,
+                    "name": "Prelate Za'lan",
+                    "urlSlug": "prelate-zalan",
+                    "creatureDisplayId": 83392
+                  },
+                  {
+                    "id": 146326,
+                    "name": "Headhunter Gal'wana",
+                    "urlSlug": "headhunter-galwana",
+                    "creatureDisplayId": 48525
+                  },
+                  {
+                    "id": 146322,
+                    "name": "Siegebreaker Roka",
+                    "urlSlug": "siegebreaker-roka",
+                    "creatureDisplayId": 82629
+                  },
+                  {
+                    "id": 146328,
+                    "name": "Rastari Honorguard",
+                    "urlSlug": "rastari-honorguard",
+                    "creatureDisplayId": 79770
+                  }
+                ],
+                "encounterFaction": -1
+              },
+              {
+                "id": 144796,
+                "name": "Mekkatorque",
+                "urlSlug": "mekkatorque",
+                "description": "Unrivaled in their ingenuity, Gelbin Mekkatorque's inventions have been instrumental to the Alliance's attack on Dazar'alor. His state-of-the-art armor is outfitted with the latest--and deadliest--ordnance that gnomish engineering can offer.",
+                "zoneId": 8670,
+                "availableInNormalMode": true,
+                "availableInHeroicMode": true,
+                "health": 6008646,
+                "heroicHealth": 0,
+                "level": 121,
+                "heroicLevel": 0,
+                "journalId": 2334,
+                "npcs": [
+                  {
+                    "id": 144796,
+                    "name": "High Tinker Mekkatorque",
+                    "urlSlug": "high-tinker-mekkatorque",
+                    "creatureDisplayId": 89236
+                  },
+                  {
+                    "id": 144942,
+                    "name": "Spark Bot",
+                    "urlSlug": "spark-bot",
+                    "creatureDisplayId": 28573
+                  },
+                  {
+                    "id": 148450,
+                    "name": "Explosive Sheep",
+                    "urlSlug": "explosive-sheep",
+                    "creatureDisplayId": 3886
+                  }
+                ],
+                "encounterFaction": -1
+              },
+              {
+                "id": 146256,
+                "name": "Stormwall Blockade",
+                "urlSlug": "stormwall-blockade",
+                "description": "Brother Joseph and Sister Katherine are devout worshippers of the waves. These proud Kul Tirans would gladly risk their lives to ensure the safety of their compatriots. Their command over sea and storm is awesome to behold, as are the ancient and powerful rituals they practice.",
+                "zoneId": 8670,
+                "availableInNormalMode": true,
+                "availableInHeroicMode": true,
+                "health": 3304755,
+                "heroicHealth": 0,
+                "level": 120,
+                "heroicLevel": 0,
+                "journalId": 2337,
+                "npcs": [
+                  {
+                    "id": 146256,
+                    "name": "Laminaria",
+                    "urlSlug": "laminaria",
+                    "creatureDisplayId": 90322
+                  },
+                  {
+                    "id": 146251,
+                    "name": "Sister Katherine",
+                    "urlSlug": "sister-katherine",
+                    "creatureDisplayId": 89304
+                  },
+                  {
+                    "id": 146253,
+                    "name": "Brother Joseph",
+                    "urlSlug": "brother-joseph",
+                    "creatureDisplayId": 89306
+                  }
+                ],
+                "encounterFaction": -1
+              },
+              {
+                "id": 146416,
+                "name": "Lady Jaina Proudmoore",
+                "urlSlug": "lady-jaina-proudmoore",
+                "description": "As the Alliance fleet withdraws from Daza'alor, Lady Jaina Proudmoore stays behind with a handful of Kul Tiran vessels to slow the Horde's pursuit. Storm clouds gather overhead as Jaina leads her pursuers deeper into the Great Sea, where she will attempt to turn the odds in her favor.",
+                "zoneId": 8670,
+                "availableInNormalMode": true,
+                "availableInHeroicMode": true,
+                "health": 27639770,
+                "heroicHealth": 0,
+                "level": 123,
+                "heroicLevel": 0,
+                "journalId": 2343,
+                "npcs": [
+                  {
+                    "id": 146416,
+                    "name": "Lady Jaina Proudmoore",
+                    "urlSlug": "lady-jaina-proudmoore",
+                    "creatureDisplayId": 87892
+                  }
+                ],
+                "encounterFaction": -1
+              }
+        ]
     }
 ]

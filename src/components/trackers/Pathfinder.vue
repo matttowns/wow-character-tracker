@@ -41,7 +41,7 @@
                             </div>                       
                         </template>
                         <div class="progress progress-tracker" style="position:relative; margin-left:0; width:95%;" v-else>
-                            <small style="position:absolute; width:100%;"> {{criteriaCount(achievement).completed >= achievement.criteriaMax ? achievement.criteriaMax : criteriaCount(achievement).completed}} / {{achievement.criteriaMax}}</small>
+                            <small> {{criteriaCount(achievement).completed >= achievement.criteriaMax ? achievement.criteriaMax : criteriaCount(achievement).completed}} / {{achievement.criteriaMax}}</small>
                             <div style="color:red; background-color:green; height:100%" class="progress-bar" :style="{width: (criteriaCount(achievement).completed >= achievement.criteriaMax ? achievement.criteriaMax : criteriaCount(achievement).completed /achievement.criteriaMax)*100 +'%'}"></div>
                         </div>
                     </div> 
@@ -70,7 +70,7 @@
                             </div>                       
                         </template>
                         <div class="progress progress-tracker" style="position:relative; margin-left:0; width:95%;" v-else>
-                            <small style="position:absolute; width:100%;"> {{criteriaCount(achievement).completed >= achievement.criteriaMax ? achievement.criteriaMax : criteriaCount(achievement).completed}} / {{achievement.criteriaMax}}</small>
+                            <small> {{criteriaCount(achievement).completed >= achievement.criteriaMax ? achievement.criteriaMax : criteriaCount(achievement).completed}} / {{achievement.criteriaMax}}</small>
                             <div style="color:red; background-color:green; height:100%" class="progress-bar" :style="{width: (criteriaCount(achievement).completed >= achievement.criteriaMax ? achievement.criteriaMax : criteriaCount(achievement).completed /achievement.criteriaMax)*100 +'%'}"></div>
                         </div>
                     </div> 

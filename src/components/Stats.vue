@@ -15,7 +15,7 @@
             <ul class="stat-list">
                 <li class="power" v-for="stat in powerStats" :key="stat.name">
                      <div class="power-bar" style="position:relative;">
-                        <small class="stat-values" style="position:absolute;width:100%;"><span class="stat-name">{{ getPowerColor(stat.display.toLowerCase()).name}}</span><span class="stat-value">{{stat.value.toLocaleString('en-US')}}</span></small>
+                        <small class="stat-values"><span class="stat-name">{{ getPowerColor(stat.display.toLowerCase()).name}}</span><span class="stat-value">{{stat.value.toLocaleString('en-US')}}</span></small>
                         <div style="height:100%; width:100%" class="progress-bar" :style="{backgroundColor: getPowerColor(stat.display.toLowerCase()).color}" role="progressbar"></div>
                     </div>
                 </li>                
@@ -124,7 +124,7 @@
     .stats-container{
         width:100%;
         flex:1 0 auto;
-        @media screen and (min-width:1200px) {
+        @include breakpoint('xl') {
             width:35%;
             border-top:none;
             padding-top:0;
@@ -149,7 +149,7 @@
     .stat-block{
         flex-grow:1;
         font-size:.875em;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             font-size: 1em;
         }
     }
@@ -193,6 +193,11 @@
     .stat-values{
         display:flex;
         font-size:1.25em;
+        position:absolute;
+        width:100%;
+        @include compatibility("ie"){
+            top:0;
+        }
     }
     .stat-info{
         display:flex;

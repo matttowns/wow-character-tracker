@@ -6,11 +6,11 @@
                 <app-dropdown :options="categoryList" :defaultSelection="subCategoryIndex+1" class="achievements-dropdown"></app-dropdown>
             </div>
             <ul class="nav-menu sub-menu">
-                <router-link v-for="category in categories" :to="{ name: 'achievementCategory', params: { subcategory: category.url }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">{{category.name}}</a></router-link>
+                <router-link v-for="category in categories" :key="category.id" :to="{ name: 'achievementCategory', params: { subcategory: category.url }}" activeClass="active" tag="li" class="nav-item" exact><a class="nav-link">{{category.name}}</a></router-link>
             </ul>
             <router-link :to="{ name:'achievements'}" class="achievement-return">< Back to achievements</router-link>           
             <template v-if="achievements.length>0 ">
-                <div class="achievement-window" v-for="(achievement, index) in achievements">
+                <div class="achievement-window" v-for="achievement in achievements" :key="achievement.id">
                     <div class="achievement" :class="{'achievement-incomplete': !achievement.completed, 'achievement-with-reward': achievement.reward}">
                         <div class="achievement-icon"><img :src="getIcon(achievement.icon, 'large')"></div>
                         <div class="achievement-details">
@@ -167,13 +167,13 @@ export default {
         .nav-menu{
             margin:0;
             display:none;
-            @media screen and (min-width:992px){
+            @include breakpoint('lg'){
                 display:flex;
             }
         }
         .achievements-dropdown-container{
             border-bottom:1px solid orange;
-            @media screen and (min-width:992px){
+            @include breakpoint('lg'){
                 display:none;
             }
             .achievements-dropdown{
@@ -225,14 +225,14 @@ export default {
         font-size:.75em;
         color:lightgrey;
         margin-top:1em;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             margin-top:0;
         }
     }
     .achievement-details{
         text-align:left;
         flex:1;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             padding-left:2em;
             padding-right:2em;
         }
@@ -244,7 +244,7 @@ export default {
             border:1px solid lightgray;
         }
         display:none;
-        @media screen and (min-width:480px){
+        @include breakpoint('sm'){
             display:block;
         }
     }

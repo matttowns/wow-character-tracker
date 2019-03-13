@@ -171,7 +171,7 @@ export default {
         max-width:1480px;
         margin-left:auto;
         margin-right:auto;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
              border-bottom:none;       
         }
     } 
@@ -184,10 +184,10 @@ export default {
         font-weight:400;
     }
     .nav-menu{
-        @media screen and (min-width:992px){
+        @include breakpoint('lg'){
             display:flex;
         }
-        @media screen and (min-width:1200px){
+        @include breakpoint('xl'){
             font-size:1em;
         }
         &.sub-menu{
@@ -253,7 +253,7 @@ export default {
         font-size:1em;
         flex-wrap:wrap;
         padding:.5em 0;
-        @media screen and (min-width:480px){
+        @include breakpoint('sm'){
             flex-flow:row;
             font-size:1.125em;
             margin-right:2em;
@@ -274,7 +274,7 @@ export default {
                 display:block;    
             }
         }
-        @media screen and (min-width:992px){
+        @include breakpoint('lg'){
             .character-image-small{
                 display:none;
             }
@@ -295,10 +295,10 @@ export default {
         margin:0 1em;
         &.character-main-text{
             width:45%;
-            @media screen and (min-width:480px){
+            @include breakpoint('sm'){
                 width:auto;
             }
-            @media screen and (min-width:992px){
+            @include breakpoint('lg'){
                 padding-right:2em; 
             }
         }
@@ -310,7 +310,7 @@ export default {
                 @media screen and(min-width:480px){
                     font-size:1.5em;
                 }
-                @media screen and (min-width:992px){
+                @include breakpoint('lg'){
                     font-size:2em; 
                 }
             }
@@ -379,7 +379,7 @@ export default {
         cursor:pointer;
         background-color:transparent;
         font-size:1.75em;
-        @media screen and (min-width:480px){
+        @include breakpoint('sm'){
             font-size:2.25em;
         }
     }
@@ -390,10 +390,10 @@ export default {
     .mobile-menu-button{
         top:20px;
         right:10px;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             right:-22px;
         }
-        @media screen and (min-width:992px){
+        @include breakpoint('lg'){
             display:none;
         }
     }

@@ -9,7 +9,7 @@
         </div>
         <div class="talents">
             <div class="talents-content">
-                <div class="talent-details" v-for="(selectedTalent, index) in sortedTalents" >
+                <div class="talent-details" v-for="selectedTalent in sortedTalents" :key="selectedTalent.spell.id">
                     <div class="talent-level">{{selectedTalent.level}}</div>
                     <template v-if="selectedTalent.spell.id != 0">
                         <a class="talent-link" :href="'http://wowhead.com/spell='+selectedTalent.spell.id" ><img class="talent-icon" :src="getIcon(selectedTalent.spell.icon, 'medium')"></a>
@@ -63,7 +63,7 @@ export default {
         display:flex;
         flex-flow:column;
         width:100%;
-        @media screen and (min-width:992px){
+        @include breakpoint('lg'){
             flex-flow:row;
         }
     }
@@ -73,7 +73,8 @@ export default {
         font-size:1em;
         color:white;
         display: flex;
-        @media screen and (min-width:992px){
+        
+        @include breakpoint('lg'){
             width:32.5%;
             font-size:1em;
         }
@@ -86,6 +87,9 @@ export default {
             flex-flow: column;
             justify-content: center;
             align-items: center;
+            @include compatibility('ie'){
+                display:block;
+            }
             p{
                 margin:.25em;
             }
@@ -109,9 +113,9 @@ export default {
         flex-wrap:wrap;
         color:orange;
         flex-grow:1;
-        @media screen and (min-width:992px){
+        @include breakpoint('lg'){
             width:67.5%;
-            font-size:1em;
+            font-size:1em;        
         }
     }
     .talents-content{
@@ -131,16 +135,16 @@ export default {
         align-items:center;
         padding:.125em 0;
         margin:.125em 0;
-        @media screen and (min-width:480px){
+        @include breakpoint('sm'){
             width:50%;
             font-size:.875em;
         }
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             width:33.33%;
             font-size:1em;
         }
-        @media screen and (min-width:992px){
-            padding:.5em 0;
+        @include breakpoint('lg'){
+             padding:.5em 0;
         }
         .talent-level{
             width:40px;

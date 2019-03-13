@@ -109,10 +109,10 @@ export default {
         flex-flow:row;
         flex-wrap:wrap;
         border-top:1px solid orange;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             padding-top:1em;
         }
-        @media screen and (min-width:992px){
+        @include breakpoint('lg'){
             border-top:none;
             padding-top:1em;
         }
@@ -120,13 +120,13 @@ export default {
     .collection-window{
         display:flex;
         width:100%;
-        @media screen and (min-width:480px){
+        @include breakpoint('sm'){
             width:50%;
         }
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             width:25%;
         }
-        @media screen and (min-width:992px){
+        @include breakpoint('lg'){
             width:20%;
         }
     }
@@ -137,7 +137,7 @@ export default {
         color:white;
         text-transform:uppercase;
         margin:1em 0;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             width:50%;
             margin:0.25em 0;
             font-size:1.25em;
@@ -147,7 +147,7 @@ export default {
         display:flex;
         width:100%;
         justify-content:flex-start;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             width:50%;
             justify-content:flex-end;
         }
@@ -161,16 +161,22 @@ export default {
         margin:.25em;
         text-align:center;
         width:100%;
+        @include compatibility('ie'){
+            display:block;
+        }
         cursor:pointer;
         &:hover{
             border:1px solid orange;
         }
+        .collection-item-image{
+            width:100%;
+        }
         img{
             width:65%;
-            @media screen and (min-width:480px){
+            @include breakpoint('sm'){
                 width:75%;
             }
-            @media screen and (min-width:768px){
+            @include breakpoint('md'){
                 width:100%;
             }
         }
@@ -184,7 +190,7 @@ export default {
         margin:1em;
         text-align:center;
         vertical-align:center;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             font-size:1em;
         }
         .collection-item-name{
@@ -232,7 +238,7 @@ export default {
         display:flex;
         flex-flow:column;
         flex-wrap:wrap;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             flex-flow:row;
         }
     }

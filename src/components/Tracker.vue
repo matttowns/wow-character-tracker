@@ -54,14 +54,14 @@ import Dropdown from './general/dropdown/Dropdown.vue'
         .tracker-dropdown{
             color:black;
             margin: 1em auto;
-            @media screen and (min-width:992px){
+            @include breakpoint('lg'){
                 display:none;
             }
         }
         .nav-menu{
             margin:0;
             display:none;
-            @media screen and (min-width:992px){
+            @include breakpoint('lg'){
                 display:flex;
             }
         }
@@ -90,7 +90,7 @@ import Dropdown from './general/dropdown/Dropdown.vue'
     }
     .tracker-title{
         font-size:1.0625em;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             font-size:1.5em;
         }
         margin:.75em 0;
@@ -143,7 +143,7 @@ import Dropdown from './general/dropdown/Dropdown.vue'
         flex-flow:row;
         align-items:center;
         color:white;
-        @media screen and (min-width:480px){
+        @include breakpoint('sm'){
             padding-right:40px;
         }
         justify-content: space-between;
@@ -163,7 +163,7 @@ import Dropdown from './general/dropdown/Dropdown.vue'
         .achievement-link-nopadding
         {
             padding-right:20px;
-            @media screen and (min-width:768px){
+            @include breakpoint('md'){
                 padding-right:0;
             }
             padding-left:0;
@@ -193,6 +193,13 @@ import Dropdown from './general/dropdown/Dropdown.vue'
 
     .progress-tracker{
         margin-bottom:1em;
+        small{
+            position:absolute; 
+            width:100%;
+            @include compatibility("ie"){
+                top:0;
+            }
+        }
     }
     .tracker{
         margin:1.5em;

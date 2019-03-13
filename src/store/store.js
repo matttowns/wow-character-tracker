@@ -14,8 +14,8 @@ import {config} from '../config.js';
 
 Vue.use(Vuex);
 
-
 const state = {
+    accessToken:'',
     characterName:'',
     realm:'',
     region:'',
@@ -116,8 +116,9 @@ const mutations = {
        state.characterNotFound=false;
        state.items={};        
     },
-    'GET_CHARACTER_DATA'(state,characterResponse){       
-        state.characterData = characterResponse;       
+    'GET_CHARACTER_DATA'(state,characterResponse){  
+        state.accessToken = characterResponse.token;     
+        state.characterData = characterResponse.data;       
         state.characterLoaded = true;
         setItems(state);
         if(state.characterData.class == 11){
@@ -129,9 +130,7 @@ const mutations = {
         else{
             state.characterData.talents = state.characterData.talents.slice(0,3);
         }
-        state.characterData.progression.raids.push(state.characterData.progression.raids.splice(21,1)[0]);
         state.characterData.progression.raids.forEach((raid, index)=>{
-
             raid.expansionId = raids[index].expansionId ;
             raid.icon = raids[index].urlSlug;
             let encounter  = state.encounters.find(x=>x.id == raid.id);
@@ -189,8 +188,11 @@ const mutations = {
             let foundPet = petData.find((element)=>{
                 return element.creatureId == pet.creatureId;
             });
-            pet.displayId = foundPet.displayId;
-            pet.family = foundPet.family;
+            if(foundPet){
+                pet.displayId = foundPet.displayId;
+                pet.family = foundPet.family;
+            }
+
         });
         state.petsLoaded = true;
     },
@@ -392,27 +394,37 @@ const actions = {
             let characterName = "";
             let realm = "";
             let region = "";
+            let accessToken = "";
             if(characterDetails){
                 characterName = characterDetails.name;
                 realm = characterDetails.realm;
                 region = characterDetails.region;
             }
-            axios.get('https://'+region+'.api.battle.net/wow/character/'+realm+'/'+characterName+'?fields=achievements&fields=pets&fields=quests&fields=mounts&fields=reputation&fields=feed&fields=items&fields=talents&fields=guild&fields=titles&fields=stats&fields=progression&fields=statistics&locale=en_GB&apikey='+config.BLIZZARD_KEY)
-                .then((response) =>{
-                    commit('RESET_ARMORY');
-                    response.data['realmSlug']=realm;
-                    response.data['region']=region;
-                    commit('GET_CHARACTER_DATA',response.data);
-                    resolve();
+            axios({
+                baseURL: 'https://eu.battle.net/oauth/token',
+                auth: { username: config.CLIENT_ID, password: config.BLIZZARD_KEY},
+                params: { grant_type:'client_credentials'}  
+            }).then(response => {
+                accessToken = response.data.access_token;
+                axios.get('https://'+region+'.api.blizzard.com/wow/character/'+realm+'/'+characterName+'?fields=achievements&fields=pets&fields=quests&fields=mounts&fields=reputation&fields=feed&fields=items&fields=talents&fields=guild&fields=titles&fields=stats&fields=progression&fields=statistics&locale=en_GB&access_token='+response.data.access_token)
+                    .then((response) =>{
+                        commit('RESET_ARMORY');
+                        response.data['realmSlug']=realm;
+                        response.data['region']=region;
+                        let payload = {data:response.data, token:accessToken};
+                        commit('GET_CHARACTER_DATA',payload);
+                        resolve();
+                    })
+                    .catch((e)=>{
+                        console.log(e);
+                        if(e.response.status === 404){
+                            commit('CHARACTER_NOT_FOUND');
+                            reject();
+                        };
+                    });
                 })
-                .catch((e)=>{
-                    console.log(e);
-                    if(e.response.status === 404){
-                        commit('CHARACTER_NOT_FOUND');
-                        reject();
-                    };
-                });
-            })
+            });
+
             
     },
     initArgus:({commit}) => {
@@ -473,8 +485,7 @@ const actions = {
     },
     initPandaria:({commit}, payload)=>{
         commit('GET_PANDARIA_LOREMASTER');
-        commit('GET_GREEN_FIRE');
-        
+        commit('GET_GREEN_FIRE');        
       // commit('GET_PANDARIA_EXPLORER');
     },
     initCataclysm:({commit}, payload)=>{
@@ -492,6 +503,9 @@ const actions = {
 };
 
 const getters = {
+    accessToken: state=>{
+        return state.accessToken;
+    },
     characterData: state => {
         return state.characterData;
     },

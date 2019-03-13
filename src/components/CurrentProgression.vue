@@ -7,7 +7,7 @@
             </div>
 
             <ul class="progression-raids">
-                <li class="progression-raid" v-for="(raid,index) in raids">
+                <li class="progression-raid" v-for="raid in raids" :key="raid.id">
                     <div class="raid-blocks">         
                         <div class="raid-block">
                             <div class="raid-image"><img class="raid-image" :src="getRaidIcon(raid.icon)"></div>
@@ -149,15 +149,15 @@
         display: flex;
         flex-flow:column;
         flex-grow:1;
-        @media screen and (min-width:480px){
+        @include breakpoint('sm'){
             width:50%;
             max-width:50%;
         } 
-        @media screen and (min-width:992px){
+        @include breakpoint('lg'){
             width:33.33%;
             max-width:33.33%;
         }
-        @media screen and (min-width:1200px){
+        @include breakpoint('xl'){
             width:25%;
             max-width:25%;
         }  
@@ -167,6 +167,9 @@
         display: flex;
         flex-flow:row;
         flex-grow:1;
+        @include compatibility('ie'){
+            flex: 0 0 auto;
+        }
 
     }
     .raid-content{
@@ -257,7 +260,7 @@
         margin:0 1em;
         .dropdown{
             margin-bottom:1em;
-            @media screen and (min-width:768px){
+            @include breakpoint('md'){
                 margin-bottom:0;
             }
         }

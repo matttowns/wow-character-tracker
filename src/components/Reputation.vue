@@ -1,7 +1,7 @@
 <template>
     <div class="reputation-container page-container">
         <app-loading v-if="!reputationLoaded" message="Fetching reputation..."></app-loading>
-        <app-reputation-item v-for="expansion in reputationByExpansion" :expansion="expansion" v-else></app-reputation-item>
+        <app-reputation-item v-for="expansion in reputationByExpansion" :expansion="expansion" :key="expansion.id" v-else></app-reputation-item>
     </div>
 </template>
 
@@ -69,7 +69,7 @@
     .reputation-expansion{
         color:white;
         padding-bottom:1em;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             max-width:1480px;
             margin-left:auto;
             margin-right:auto;
@@ -138,7 +138,7 @@
     .reputation-expansion h2{
         margin-top:0;
         padding-top:1em;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             order:2;
             margin-bottom:1em;
             text-align:left;
@@ -158,7 +158,7 @@
         font-size:.875em;
         margin:.5em 0;
         font-weight:400;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             width:10%;
             order:2;
             text-align:left;
@@ -170,7 +170,7 @@
         font-size:.9125em;
         margin:.5em 0;
         font-weight:400;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             width:25%;
             order:0;
             text-align:right;
@@ -185,7 +185,7 @@
         margin:0;
         &.reputation-title-full{
             margin-right:50%;
-            @media screen and (min-width:768px){
+            @include breakpoint('md'){
                 margin-right:75%;
             }
         }
@@ -193,11 +193,14 @@
     .reputation-parent > .reputation{
         padding-top:10px;
         padding-bottom:0;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             order:3;
         }
     }
     .progress-text{
         position:absolute;
+        @include compatibility("ie"){
+            top:0px;
+        }
     }
 </style>

@@ -1,5 +1,3 @@
-   
-  
  const battlePathfinder = {id:12989, title:'Battle for Azeroth Pathfinder, Part One', trackCriteria:true, text:'Complete the Kul Tiras and Zandalari achievements listed below.', icon:'inv_misc_map04', criteria:[
     {id:12988, title: 'Battle for Azeroth Explorer', trackCriteria:true, text:'Explore the regions of Kul Tiras and Zandalar.', completed: false, accountCompleted:false,  icon:'inv_misc_tabard_explorersguild', type:1, criteria:[
     {id:12556, title: 'Explore Tiragarde Sound', text:'Explore Tiragarde Sound, revealing the covered areas of the world map.', trackCriteria:true, completed: false,accountCompleted:false,  icon:'inv_tiragardesound', type:1, criteria:[
@@ -29,7 +27,6 @@
         {"id": 41695, tooltipId: "48655", title: "Iceveil Glacier", type:3, "max": 1}, 
         {"id": 41696, tooltipId: "48657", title: "Waycrest Manor", type:3, "max": 1}, 
     ]},
-    
     {id:12558, title: 'Explore Stormsong Valley', text:'Explore Stormsong Valley, revealing the covered areas of the world map.', trackCriteria:true, completed: false, accountCompleted:false,  icon:'inv_stormsongvalley', type:1, criteria:[
         {"id": 40978, tooltipId: "48632", title: "Brennadam", type:3, "max": 1},    
         {"id": 40979, tooltipId: "48634", title: "Briarback Kraul", type:3, "max": 1}, 

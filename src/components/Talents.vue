@@ -4,10 +4,10 @@
             <div class="talent-header">
                 <div class="section-header">Talents</div>
                 <ul class="talent-icons">
-                    <li v-for="(icon, index) in talentIcons" :class="[selectedIndex() == index ? 'selected' : '']" @click="swapTalents(index)"><img :src="getIcon(talentIcons[index],'medium')"></li>
+                    <li v-for="(icon, index) in talentIcons" :key="index" :class="[selectedIndex() == index ? 'selected' : '']" @click="swapTalents(index)"><img :src="getIcon(talentIcons[index],'medium')"></li>
                 </ul>
             </div>
-            <app-talent v-for="talent in talents" :talent="talent" v-if="talent.show"></app-talent>
+            <app-talent v-for="(talent,index) in talents" :talent="talent" v-if="talent.show" :key="index"></app-talent>
         </div>
 
     </div>

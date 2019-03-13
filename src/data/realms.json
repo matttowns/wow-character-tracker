@@ -1,0 +1,2567 @@
+[
+    {
+        "name": "Aegwynn",
+        "region": "US",
+        "slug": "aegwynn"
+    },
+    {
+        "name": "Aerie Peak",
+        "region": "US",
+        "slug": "aerie-peak"
+    },
+    {
+        "name": "Agamaggan",
+        "region": "US",
+        "slug": "agamaggan"
+    },
+    {
+        "name": "Aggramar",
+        "region": "US",
+        "slug": "aggramar"
+    },
+    {
+        "name": "Akama",
+        "region": "US",
+        "slug": "akama"
+    },
+    {
+        "name": "Alexstrasza",
+        "region": "US",
+        "slug": "alexstrasza"
+    },
+    {
+        "name": "Alleria",
+        "region": "US",
+        "slug": "alleria"
+    },
+    {
+        "name": "Altar of Storms",
+        "region": "US",
+        "slug": "altar-of-storms"
+    },
+    {
+        "name": "Alterac Mountains",
+        "region": "US",
+        "slug": "alterac-mountains"
+    },
+    {
+        "name": "Aman'Thul",
+        "region": "US",
+        "slug": "amanthul"
+    },
+    {
+        "name": "Andorhal",
+        "region": "US",
+        "slug": "andorhal"
+    },
+    {
+        "name": "Anetheron",
+        "region": "US",
+        "slug": "anetheron"
+    },
+    {
+        "name": "Antonidas",
+        "region": "US",
+        "slug": "antonidas"
+    },
+    {
+        "name": "Anub'arak",
+        "region": "US",
+        "slug": "anubarak"
+    },
+    {
+        "name": "Anvilmar",
+        "region": "US",
+        "slug": "anvilmar"
+    },
+    {
+        "name": "Arathor",
+        "region": "US",
+        "slug": "arathor"
+    },
+    {
+        "name": "Archimonde",
+        "region": "US",
+        "slug": "archimonde"
+    },
+    {
+        "name": "Area 52",
+        "region": "US",
+        "slug": "area-52"
+    },
+    {
+        "name": "Argent Dawn",
+        "region": "US",
+        "slug": "argent-dawn"
+    },
+    {
+        "name": "Arthas",
+        "region": "US",
+        "slug": "arthas"
+    },
+    {
+        "name": "Arygos",
+        "region": "US",
+        "slug": "arygos"
+    },
+    {
+        "name": "Auchindoun",
+        "region": "US",
+        "slug": "auchindoun"
+    },
+    {
+        "name": "Azgalor",
+        "region": "US",
+        "slug": "azgalor"
+    },
+    {
+        "name": "Azjol-Nerub",
+        "region": "US",
+        "slug": "azjolnerub"
+    },
+    {
+        "name": "Azralon",
+        "region": "US",
+        "slug": "azralon"
+    },
+    {
+        "name": "Azshara",
+        "region": "US",
+        "slug": "azshara"
+    },
+    {
+        "name": "Azuremyst",
+        "region": "US",
+        "slug": "azuremyst"
+    },
+    {
+        "name": "Baelgun",
+        "region": "US",
+        "slug": "baelgun"
+    },
+    {
+        "name": "Balnazzar",
+        "region": "US",
+        "slug": "balnazzar"
+    },
+    {
+        "name": "Barthilas",
+        "region": "US",
+        "slug": "barthilas"
+    },
+    {
+        "name": "Black Dragonflight",
+        "region": "US",
+        "slug": "black-dragonflight"
+    },
+    {
+        "name": "Blackhand",
+        "region": "US",
+        "slug": "blackhand"
+    },
+    {
+        "name": "Blackrock",
+        "region": "US",
+        "slug": "blackrock"
+    },
+    {
+        "name": "Blackwater Raiders",
+        "region": "US",
+        "slug": "blackwater-raiders"
+    },
+    {
+        "name": "Blackwing Lair",
+        "region": "US",
+        "slug": "blackwing-lair"
+    },
+    {
+        "name": "Blade's Edge",
+        "region": "US",
+        "slug": "blades-edge"
+    },
+    {
+        "name": "Bladefist",
+        "region": "US",
+        "slug": "bladefist"
+    },
+    {
+        "name": "Bleeding Hollow",
+        "region": "US",
+        "slug": "bleeding-hollow"
+    },
+    {
+        "name": "Blood Furnace",
+        "region": "US",
+        "slug": "blood-furnace"
+    },
+    {
+        "name": "Bloodhoof",
+        "region": "US",
+        "slug": "bloodhoof"
+    },
+    {
+        "name": "Bloodscalp",
+        "region": "US",
+        "slug": "bloodscalp"
+    },
+    {
+        "name": "Bonechewer",
+        "region": "US",
+        "slug": "bonechewer"
+    },
+    {
+        "name": "Borean Tundra",
+        "region": "US",
+        "slug": "borean-tundra"
+    },
+    {
+        "name": "Boulderfist",
+        "region": "US",
+        "slug": "boulderfist"
+    },
+    {
+        "name": "Bronzebeard",
+        "region": "US",
+        "slug": "bronzebeard"
+    },
+    {
+        "name": "Burning Blade",
+        "region": "US",
+        "slug": "burning-blade"
+    },
+    {
+        "name": "Burning Legion",
+        "region": "US",
+        "slug": "burning-legion"
+    },
+    {
+        "name": "Caelestrasz",
+        "region": "US",
+        "slug": "caelestrasz"
+    },
+    {
+        "name": "Cairne",
+        "region": "US",
+        "slug": "cairne"
+    },
+    {
+        "name": "Cenarion Circle",
+        "region": "US",
+        "slug": "cenarion-circle"
+    },
+    {
+        "name": "Cenarius",
+        "region": "US",
+        "slug": "cenarius"
+    },
+    {
+        "name": "Cho'gall",
+        "region": "US",
+        "slug": "chogall"
+    },
+    {
+        "name": "Chromaggus",
+        "region": "US",
+        "slug": "chromaggus"
+    },
+    {
+        "name": "Coilfang",
+        "region": "US",
+        "slug": "coilfang"
+    },
+    {
+        "name": "Crushridge",
+        "region": "US",
+        "slug": "crushridge"
+    },
+    {
+        "name": "Daggerspine",
+        "region": "US",
+        "slug": "daggerspine"
+    },
+    {
+        "name": "Dalaran",
+        "region": "US",
+        "slug": "dalaran"
+    },
+    {
+        "name": "Dalvengyr",
+        "region": "US",
+        "slug": "dalvengyr"
+    },
+    {
+        "name": "Dark Iron",
+        "region": "US",
+        "slug": "dark-iron"
+    },
+    {
+        "name": "Darkspear",
+        "region": "US",
+        "slug": "darkspear"
+    },
+    {
+        "name": "Darrowmere",
+        "region": "US",
+        "slug": "darrowmere"
+    },
+    {
+        "name": "Dath'Remar",
+        "region": "US",
+        "slug": "dathremar"
+    },
+    {
+        "name": "Dawnbringer",
+        "region": "US",
+        "slug": "dawnbringer"
+    },
+    {
+        "name": "Deathwing",
+        "region": "US",
+        "slug": "deathwing"
+    },
+    {
+        "name": "Demon Soul",
+        "region": "US",
+        "slug": "demon-soul"
+    },
+    {
+        "name": "Dentarg",
+        "region": "US",
+        "slug": "dentarg"
+    },
+    {
+        "name": "Destromath",
+        "region": "US",
+        "slug": "destromath"
+    },
+    {
+        "name": "Dethecus",
+        "region": "US",
+        "slug": "dethecus"
+    },
+    {
+        "name": "Detheroc",
+        "region": "US",
+        "slug": "detheroc"
+    },
+    {
+        "name": "Doomhammer",
+        "region": "US",
+        "slug": "doomhammer"
+    },
+    {
+        "name": "Draenor",
+        "region": "US",
+        "slug": "draenor"
+    },
+    {
+        "name": "Dragonblight",
+        "region": "US",
+        "slug": "dragonblight"
+    },
+    {
+        "name": "Dragonmaw",
+        "region": "US",
+        "slug": "dragonmaw"
+    },
+    {
+        "name": "Drak'Tharon",
+        "region": "US",
+        "slug": "draktharon"
+    },
+    {
+        "name": "Drak'thul",
+        "region": "US",
+        "slug": "drakthul"
+    },
+    {
+        "name": "Draka",
+        "region": "US",
+        "slug": "draka"
+    },
+    {
+        "name": "Drakkari",
+        "region": "US",
+        "slug": "drakkari"
+    },
+    {
+        "name": "Dreadmaul",
+        "region": "US",
+        "slug": "dreadmaul"
+    },
+    {
+        "name": "Drenden",
+        "region": "US",
+        "slug": "drenden"
+    },
+    {
+        "name": "Dunemaul",
+        "region": "US",
+        "slug": "dunemaul"
+    },
+    {
+        "name": "Durotan",
+        "region": "US",
+        "slug": "durotan"
+    },
+    {
+        "name": "Duskwood",
+        "region": "US",
+        "slug": "duskwood"
+    },
+    {
+        "name": "Earthen Ring",
+        "region": "US",
+        "slug": "earthen-ring"
+    },
+    {
+        "name": "Echo Isles",
+        "region": "US",
+        "slug": "echo-isles"
+    },
+    {
+        "name": "Eitrigg",
+        "region": "US",
+        "slug": "eitrigg"
+    },
+    {
+        "name": "Eldre'Thalas",
+        "region": "US",
+        "slug": "eldrethalas"
+    },
+    {
+        "name": "Elune",
+        "region": "US",
+        "slug": "elune"
+    },
+    {
+        "name": "Emerald Dream",
+        "region": "US",
+        "slug": "emerald-dream"
+    },
+    {
+        "name": "Eonar",
+        "region": "US",
+        "slug": "eonar"
+    },
+    {
+        "name": "Eredar",
+        "region": "US",
+        "slug": "eredar"
+    },
+    {
+        "name": "Executus",
+        "region": "US",
+        "slug": "executus"
+    },
+    {
+        "name": "Exodar",
+        "region": "US",
+        "slug": "exodar"
+    },
+    {
+        "name": "Farstriders",
+        "region": "US",
+        "slug": "farstriders"
+    },
+    {
+        "name": "Feathermoon",
+        "region": "US",
+        "slug": "feathermoon"
+    },
+    {
+        "name": "Fenris",
+        "region": "US",
+        "slug": "fenris"
+    },
+    {
+        "name": "Firetree",
+        "region": "US",
+        "slug": "firetree"
+    },
+    {
+        "name": "Fizzcrank",
+        "region": "US",
+        "slug": "fizzcrank"
+    },
+    {
+        "name": "Frostmane",
+        "region": "US",
+        "slug": "frostmane"
+    },
+    {
+        "name": "Frostmourne",
+        "region": "US",
+        "slug": "frostmourne"
+    },
+    {
+        "name": "Frostwolf",
+        "region": "US",
+        "slug": "frostwolf"
+    },
+    {
+        "name": "Galakrond",
+        "region": "US",
+        "slug": "galakrond"
+    },
+    {
+        "name": "Gallywix",
+        "region": "US",
+        "slug": "gallywix"
+    },
+    {
+        "name": "Garithos",
+        "region": "US",
+        "slug": "garithos"
+    },
+    {
+        "name": "Garona",
+        "region": "US",
+        "slug": "garona"
+    },
+    {
+        "name": "Garrosh",
+        "region": "US",
+        "slug": "garrosh"
+    },
+    {
+        "name": "Ghostlands",
+        "region": "US",
+        "slug": "ghostlands"
+    },
+    {
+        "name": "Gilneas",
+        "region": "US",
+        "slug": "gilneas"
+    },
+    {
+        "name": "Gnomeregan",
+        "region": "US",
+        "slug": "gnomeregan"
+    },
+    {
+        "name": "Goldrinn",
+        "region": "US",
+        "slug": "goldrinn"
+    },
+    {
+        "name": "Gorefiend",
+        "region": "US",
+        "slug": "gorefiend"
+    },
+    {
+        "name": "Gorgonnash",
+        "region": "US",
+        "slug": "gorgonnash"
+    },
+    {
+        "name": "Greymane",
+        "region": "US",
+        "slug": "greymane"
+    },
+    {
+        "name": "Grizzly Hills",
+        "region": "US",
+        "slug": "grizzly-hills"
+    },
+    {
+        "name": "Gul'dan",
+        "region": "US",
+        "slug": "guldan"
+    },
+    {
+        "name": "Gundrak",
+        "region": "US",
+        "slug": "gundrak"
+    },
+    {
+        "name": "Gurubashi",
+        "region": "US",
+        "slug": "gurubashi"
+    },
+    {
+        "name": "Hakkar",
+        "region": "US",
+        "slug": "hakkar"
+    },
+    {
+        "name": "Haomarush",
+        "region": "US",
+        "slug": "haomarush"
+    },
+    {
+        "name": "Hellscream",
+        "region": "US",
+        "slug": "hellscream"
+    },
+    {
+        "name": "Hydraxis",
+        "region": "US",
+        "slug": "hydraxis"
+    },
+    {
+        "name": "Hyjal",
+        "region": "US",
+        "slug": "hyjal"
+    },
+    {
+        "name": "Icecrown",
+        "region": "US",
+        "slug": "icecrown"
+    },
+    {
+        "name": "Illidan",
+        "region": "US",
+        "slug": "illidan"
+    },
+    {
+        "name": "Jaedenar",
+        "region": "US",
+        "slug": "jaedenar"
+    },
+    {
+        "name": "Jubei'Thos",
+        "region": "US",
+        "slug": "jubeithos"
+    },
+    {
+        "name": "Kael'thas",
+        "region": "US",
+        "slug": "kaelthas"
+    },
+    {
+        "name": "Kalecgos",
+        "region": "US",
+        "slug": "kalecgos"
+    },
+    {
+        "name": "Kargath",
+        "region": "US",
+        "slug": "kargath"
+    },
+    {
+        "name": "Kel'Thuzad",
+        "region": "US",
+        "slug": "kelthuzad"
+    },
+    {
+        "name": "Khadgar",
+        "region": "US",
+        "slug": "khadgar"
+    },
+    {
+        "name": "Khaz Modan",
+        "region": "US",
+        "slug": "khaz-modan"
+    },
+    {
+        "name": "Khaz'goroth",
+        "region": "US",
+        "slug": "khazgoroth"
+    },
+    {
+        "name": "Kil'jaeden",
+        "region": "US",
+        "slug": "kiljaeden"
+    },
+    {
+        "name": "Kilrogg",
+        "region": "US",
+        "slug": "kilrogg"
+    },
+    {
+        "name": "Kirin Tor",
+        "region": "US",
+        "slug": "kirin-tor"
+    },
+    {
+        "name": "Korgath",
+        "region": "US",
+        "slug": "korgath"
+    },
+    {
+        "name": "Korialstrasz",
+        "region": "US",
+        "slug": "korialstrasz"
+    },
+    {
+        "name": "Kul Tiras",
+        "region": "US",
+        "slug": "kul-tiras"
+    },
+    {
+        "name": "Laughing Skull",
+        "region": "US",
+        "slug": "laughing-skull"
+    },
+    {
+        "name": "Lethon",
+        "region": "US",
+        "slug": "lethon"
+    },
+    {
+        "name": "Lightbringer",
+        "region": "US",
+        "slug": "lightbringer"
+    },
+    {
+        "name": "Lightning's Blade",
+        "region": "US",
+        "slug": "lightnings-blade"
+    },
+    {
+        "name": "Lightninghoof",
+        "region": "US",
+        "slug": "lightninghoof"
+    },
+    {
+        "name": "Llane",
+        "region": "US",
+        "slug": "llane"
+    },
+    {
+        "name": "Lothar",
+        "region": "US",
+        "slug": "lothar"
+    },
+    {
+        "name": "Madoran",
+        "region": "US",
+        "slug": "madoran"
+    },
+    {
+        "name": "Maelstrom",
+        "region": "US",
+        "slug": "maelstrom"
+    },
+    {
+        "name": "Magtheridon",
+        "region": "US",
+        "slug": "magtheridon"
+    },
+    {
+        "name": "Maiev",
+        "region": "US",
+        "slug": "maiev"
+    },
+    {
+        "name": "Mal'Ganis",
+        "region": "US",
+        "slug": "malganis"
+    },
+    {
+        "name": "Malfurion",
+        "region": "US",
+        "slug": "malfurion"
+    },
+    {
+        "name": "Malorne",
+        "region": "US",
+        "slug": "malorne"
+    },
+    {
+        "name": "Malygos",
+        "region": "US",
+        "slug": "malygos"
+    },
+    {
+        "name": "Mannoroth",
+        "region": "US",
+        "slug": "mannoroth"
+    },
+    {
+        "name": "Medivh",
+        "region": "US",
+        "slug": "medivh"
+    },
+    {
+        "name": "Misha",
+        "region": "US",
+        "slug": "misha"
+    },
+    {
+        "name": "Mok'Nathal",
+        "region": "US",
+        "slug": "moknathal"
+    },
+    {
+        "name": "Moon Guard",
+        "region": "US",
+        "slug": "moon-guard"
+    },
+    {
+        "name": "Moonrunner",
+        "region": "US",
+        "slug": "moonrunner"
+    },
+    {
+        "name": "Mug'thol",
+        "region": "US",
+        "slug": "mugthol"
+    },
+    {
+        "name": "Muradin",
+        "region": "US",
+        "slug": "muradin"
+    },
+    {
+        "name": "Nagrand",
+        "region": "US",
+        "slug": "nagrand"
+    },
+    {
+        "name": "Nathrezim",
+        "region": "US",
+        "slug": "nathrezim"
+    },
+    {
+        "name": "Nazgrel",
+        "region": "US",
+        "slug": "nazgrel"
+    },
+    {
+        "name": "Nazjatar",
+        "region": "US",
+        "slug": "nazjatar"
+    },
+    {
+        "name": "Nemesis",
+        "region": "US",
+        "slug": "nemesis"
+    },
+    {
+        "name": "Ner'zhul",
+        "region": "US",
+        "slug": "nerzhul"
+    },
+    {
+        "name": "Nesingwary",
+        "region": "US",
+        "slug": "nesingwary"
+    },
+    {
+        "name": "Nordrassil",
+        "region": "US",
+        "slug": "nordrassil"
+    },
+    {
+        "name": "Norgannon",
+        "region": "US",
+        "slug": "norgannon"
+    },
+    {
+        "name": "Onyxia",
+        "region": "US",
+        "slug": "onyxia"
+    },
+    {
+        "name": "Perenolde",
+        "region": "US",
+        "slug": "perenolde"
+    },
+    {
+        "name": "Proudmoore",
+        "region": "US",
+        "slug": "proudmoore"
+    },
+    {
+        "name": "Quel'Thalas",
+        "region": "US",
+        "slug": "quelthalas"
+    },
+    {
+        "name": "Quel'dorei",
+        "region": "US",
+        "slug": "queldorei"
+    },
+    {
+        "name": "Ragnaros",
+        "region": "US",
+        "slug": "ragnaros"
+    },
+    {
+        "name": "Ravencrest",
+        "region": "US",
+        "slug": "ravencrest"
+    },
+    {
+        "name": "Ravenholdt",
+        "region": "US",
+        "slug": "ravenholdt"
+    },
+    {
+        "name": "Rexxar",
+        "region": "US",
+        "slug": "rexxar"
+    },
+    {
+        "name": "Rivendare",
+        "region": "US",
+        "slug": "rivendare"
+    },
+    {
+        "name": "Runetotem",
+        "region": "US",
+        "slug": "runetotem"
+    },
+    {
+        "name": "Sargeras",
+        "region": "US",
+        "slug": "sargeras"
+    },
+    {
+        "name": "Saurfang",
+        "region": "US",
+        "slug": "saurfang"
+    },
+    {
+        "name": "Scarlet Crusade",
+        "region": "US",
+        "slug": "scarlet-crusade"
+    },
+    {
+        "name": "Scilla",
+        "region": "US",
+        "slug": "scilla"
+    },
+    {
+        "name": "Sen'jin",
+        "region": "US",
+        "slug": "senjin"
+    },
+    {
+        "name": "Sentinels",
+        "region": "US",
+        "slug": "sentinels"
+    },
+    {
+        "name": "Shadow Council",
+        "region": "US",
+        "slug": "shadow-council"
+    },
+    {
+        "name": "Shadowmoon",
+        "region": "US",
+        "slug": "shadowmoon"
+    },
+    {
+        "name": "Shadowsong",
+        "region": "US",
+        "slug": "shadowsong"
+    },
+    {
+        "name": "Shandris",
+        "region": "US",
+        "slug": "shandris"
+    },
+    {
+        "name": "Shattered Halls",
+        "region": "US",
+        "slug": "shattered-halls"
+    },
+    {
+        "name": "Shattered Hand",
+        "region": "US",
+        "slug": "shattered-hand"
+    },
+    {
+        "name": "Shu'halo",
+        "region": "US",
+        "slug": "shuhalo"
+    },
+    {
+        "name": "Silver Hand",
+        "region": "US",
+        "slug": "silver-hand"
+    },
+    {
+        "name": "Silvermoon",
+        "region": "US",
+        "slug": "silvermoon"
+    },
+    {
+        "name": "Sisters of Elune",
+        "region": "US",
+        "slug": "sisters-of-elune"
+    },
+    {
+        "name": "Skullcrusher",
+        "region": "US",
+        "slug": "skullcrusher"
+    },
+    {
+        "name": "Skywall",
+        "region": "US",
+        "slug": "skywall"
+    },
+    {
+        "name": "Smolderthorn",
+        "region": "US",
+        "slug": "smolderthorn"
+    },
+    {
+        "name": "Spinebreaker",
+        "region": "US",
+        "slug": "spinebreaker"
+    },
+    {
+        "name": "Spirestone",
+        "region": "US",
+        "slug": "spirestone"
+    },
+    {
+        "name": "Staghelm",
+        "region": "US",
+        "slug": "staghelm"
+    },
+    {
+        "name": "Steamwheedle Cartel",
+        "region": "US",
+        "slug": "steamwheedle-cartel"
+    },
+    {
+        "name": "Stonemaul",
+        "region": "US",
+        "slug": "stonemaul"
+    },
+    {
+        "name": "Stormrage",
+        "region": "US",
+        "slug": "stormrage"
+    },
+    {
+        "name": "Stormreaver",
+        "region": "US",
+        "slug": "stormreaver"
+    },
+    {
+        "name": "Stormscale",
+        "region": "US",
+        "slug": "stormscale"
+    },
+    {
+        "name": "Suramar",
+        "region": "US",
+        "slug": "suramar"
+    },
+    {
+        "name": "Tanaris",
+        "region": "US",
+        "slug": "tanaris"
+    },
+    {
+        "name": "Terenas",
+        "region": "US",
+        "slug": "terenas"
+    },
+    {
+        "name": "Terokkar",
+        "region": "US",
+        "slug": "terokkar"
+    },
+    {
+        "name": "Thaurissan",
+        "region": "US",
+        "slug": "thaurissan"
+    },
+    {
+        "name": "The Forgotten Coast",
+        "region": "US",
+        "slug": "the-forgotten-coast"
+    },
+    {
+        "name": "The Scryers",
+        "region": "US",
+        "slug": "the-scryers"
+    },
+    {
+        "name": "The Underbog",
+        "region": "US",
+        "slug": "the-underbog"
+    },
+    {
+        "name": "The Venture Co",
+        "region": "US",
+        "slug": "the-venture-co"
+    },
+    {
+        "name": "Thorium Brotherhood",
+        "region": "US",
+        "slug": "thorium-brotherhood"
+    },
+    {
+        "name": "Thrall",
+        "region": "US",
+        "slug": "thrall"
+    },
+    {
+        "name": "Thunderhorn",
+        "region": "US",
+        "slug": "thunderhorn"
+    },
+    {
+        "name": "Thunderlord",
+        "region": "US",
+        "slug": "thunderlord"
+    },
+    {
+        "name": "Tichondrius",
+        "region": "US",
+        "slug": "tichondrius"
+    },
+    {
+        "name": "Tol Barad",
+        "region": "US",
+        "slug": "tol-barad"
+    },
+    {
+        "name": "Tortheldrin",
+        "region": "US",
+        "slug": "tortheldrin"
+    },
+    {
+        "name": "Trollbane",
+        "region": "US",
+        "slug": "trollbane"
+    },
+    {
+        "name": "Turalyon",
+        "region": "US",
+        "slug": "turalyon"
+    },
+    {
+        "name": "Twisting Nether",
+        "region": "US",
+        "slug": "twisting-nether"
+    },
+    {
+        "name": "Uldaman",
+        "region": "US",
+        "slug": "uldaman"
+    },
+    {
+        "name": "Uldum",
+        "region": "US",
+        "slug": "uldum"
+    },
+    {
+        "name": "Undermine",
+        "region": "US",
+        "slug": "undermine"
+    },
+    {
+        "name": "Ursin",
+        "region": "US",
+        "slug": "ursin"
+    },
+    {
+        "name": "Uther",
+        "region": "US",
+        "slug": "uther"
+    },
+    {
+        "name": "Vashj",
+        "region": "US",
+        "slug": "vashj"
+    },
+    {
+        "name": "Vek'nilash",
+        "region": "US",
+        "slug": "veknilash"
+    },
+    {
+        "name": "Velen",
+        "region": "US",
+        "slug": "velen"
+    },
+    {
+        "name": "Warsong",
+        "region": "US",
+        "slug": "warsong"
+    },
+    {
+        "name": "Whisperwind",
+        "region": "US",
+        "slug": "whisperwind"
+    },
+    {
+        "name": "Wildhammer",
+        "region": "US",
+        "slug": "wildhammer"
+    },
+    {
+        "name": "Windrunner",
+        "region": "US",
+        "slug": "windrunner"
+    },
+    {
+        "name": "Winterhoof",
+        "region": "US",
+        "slug": "winterhoof"
+    },
+    {
+        "name": "Wyrmrest Accord",
+        "region": "US",
+        "slug": "wyrmrest-accord"
+    },
+    {
+        "name": "Ysera",
+        "region": "US",
+        "slug": "ysera"
+    },
+    {
+        "name": "Ysondre",
+        "region": "US",
+        "slug": "ysondre"
+    },
+    {
+        "name": "Zangarmarsh",
+        "region": "US",
+        "slug": "zangarmarsh"
+    },
+    {
+        "name": "Zul'jin",
+        "region": "US",
+        "slug": "zuljin"
+    },
+    {
+        "name": "Zuluhed",
+        "region": "US",
+        "slug": "zuluhed"
+    },
+    {
+        "name": "Aegwynn",
+        "region": "EU",
+        "slug": "aegwynn"
+    },
+    {
+        "name": "Aerie Peak",
+        "region": "EU",
+        "slug": "aerie-peak"
+    },
+    {
+        "name": "Agamaggan",
+        "region": "EU",
+        "slug": "agamaggan"
+    },
+    {
+        "name": "Aggra (Português)",
+        "region": "EU",
+        "slug": "aggra-portugues"
+    },
+    {
+        "name": "Aggramar",
+        "region": "EU",
+        "slug": "aggramar"
+    },
+    {
+        "name": "Ahn'Qiraj",
+        "region": "EU",
+        "slug": "ahnqiraj"
+    },
+    {
+        "name": "Al'Akir",
+        "region": "EU",
+        "slug": "alakir"
+    },
+    {
+        "name": "Alexstrasza",
+        "region": "EU",
+        "slug": "alexstrasza"
+    },
+    {
+        "name": "Alleria",
+        "region": "EU",
+        "slug": "alleria"
+    },
+    {
+        "name": "Alonsus",
+        "region": "EU",
+        "slug": "alonsus"
+    },
+    {
+        "name": "Aman'Thul",
+        "region": "EU",
+        "slug": "amanthul"
+    },
+    {
+        "name": "Ambossar",
+        "region": "EU",
+        "slug": "ambossar"
+    },
+    {
+        "name": "Anachronos",
+        "region": "EU",
+        "slug": "anachronos"
+    },
+    {
+        "name": "Anetheron",
+        "region": "EU",
+        "slug": "anetheron"
+    },
+    {
+        "name": "Antonidas",
+        "region": "EU",
+        "slug": "antonidas"
+    },
+    {
+        "name": "Anub'arak",
+        "region": "EU",
+        "slug": "anubarak"
+    },
+    {
+        "name": "Arak-arahm",
+        "region": "EU",
+        "slug": "arakarahm"
+    },
+    {
+        "name": "Arathi",
+        "region": "EU",
+        "slug": "arathi"
+    },
+    {
+        "name": "Arathor",
+        "region": "EU",
+        "slug": "arathor"
+    },
+    {
+        "name": "Archimonde",
+        "region": "EU",
+        "slug": "archimonde"
+    },
+    {
+        "name": "Area 52",
+        "region": "EU",
+        "slug": "area-52"
+    },
+    {
+        "name": "Argent Dawn",
+        "region": "EU",
+        "slug": "argent-dawn"
+    },
+    {
+        "name": "Arthas",
+        "region": "EU",
+        "slug": "arthas"
+    },
+    {
+        "name": "Arygos",
+        "region": "EU",
+        "slug": "arygos"
+    },
+    {
+        "name": "Ashenvale",
+        "region": "EU",
+        "slug": "ashenvale"
+    },
+    {
+        "name": "Aszune",
+        "region": "EU",
+        "slug": "aszune"
+    },
+    {
+        "name": "Auchindoun",
+        "region": "EU",
+        "slug": "auchindoun"
+    },
+    {
+        "name": "Azjol-Nerub",
+        "region": "EU",
+        "slug": "azjolnerub"
+    },
+    {
+        "name": "Azshara",
+        "region": "EU",
+        "slug": "azshara"
+    },
+    {
+        "name": "Azuregos",
+        "region": "EU",
+        "slug": "azuregos"
+    },
+    {
+        "name": "Azuremyst",
+        "region": "EU",
+        "slug": "azuremyst"
+    },
+    {
+        "name": "Baelgun",
+        "region": "EU",
+        "slug": "baelgun"
+    },
+    {
+        "name": "Balnazzar",
+        "region": "EU",
+        "slug": "balnazzar"
+    },
+    {
+        "name": "Blackhand",
+        "region": "EU",
+        "slug": "blackhand"
+    },
+    {
+        "name": "Blackmoore",
+        "region": "EU",
+        "slug": "blackmoore"
+    },
+    {
+        "name": "Blackrock",
+        "region": "EU",
+        "slug": "blackrock"
+    },
+    {
+        "name": "Blackscar",
+        "region": "EU",
+        "slug": "blackscar"
+    },
+    {
+        "name": "Blade's Edge",
+        "region": "EU",
+        "slug": "blades-edge"
+    },
+    {
+        "name": "Bladefist",
+        "region": "EU",
+        "slug": "bladefist"
+    },
+    {
+        "name": "Bloodfeather",
+        "region": "EU",
+        "slug": "bloodfeather"
+    },
+    {
+        "name": "Bloodhoof",
+        "region": "EU",
+        "slug": "bloodhoof"
+    },
+    {
+        "name": "Bloodscalp",
+        "region": "EU",
+        "slug": "bloodscalp"
+    },
+    {
+        "name": "Blutkessel",
+        "region": "EU",
+        "slug": "blutkessel"
+    },
+    {
+        "name": "Booty Bay",
+        "region": "EU",
+        "slug": "booty-bay"
+    },
+    {
+        "name": "Borean Tundra",
+        "region": "EU",
+        "slug": "borean-tundra"
+    },
+    {
+        "name": "Boulderfist",
+        "region": "EU",
+        "slug": "boulderfist"
+    },
+    {
+        "name": "Bronze Dragonflight",
+        "region": "EU",
+        "slug": "bronze-dragonflight"
+    },
+    {
+        "name": "Bronzebeard",
+        "region": "EU",
+        "slug": "bronzebeard"
+    },
+    {
+        "name": "Burning Blade",
+        "region": "EU",
+        "slug": "burning-blade"
+    },
+    {
+        "name": "Burning Legion",
+        "region": "EU",
+        "slug": "burning-legion"
+    },
+    {
+        "name": "Burning Steppes",
+        "region": "EU",
+        "slug": "burning-steppes"
+    },
+    {
+        "name": "C'Thun",
+        "region": "EU",
+        "slug": "cthun"
+    },
+    {
+        "name": "Chamber of Aspects",
+        "region": "EU",
+        "slug": "chamber-of-aspects"
+    },
+    {
+        "name": "Chants éternels",
+        "region": "EU",
+        "slug": "chants-eternels"
+    },
+    {
+        "name": "Cho'gall",
+        "region": "EU",
+        "slug": "chogall"
+    },
+    {
+        "name": "Chromaggus",
+        "region": "EU",
+        "slug": "chromaggus"
+    },
+    {
+        "name": "Colinas Pardas",
+        "region": "EU",
+        "slug": "colinas-pardas"
+    },
+    {
+        "name": "Confrérie du Thorium",
+        "region": "EU",
+        "slug": "confrerie-du-thorium"
+    },
+    {
+        "name": "Conseil des Ombres",
+        "region": "EU",
+        "slug": "conseil-des-ombres"
+    },
+    {
+        "name": "Crushridge",
+        "region": "EU",
+        "slug": "crushridge"
+    },
+    {
+        "name": "Culte de la Rive noire",
+        "region": "EU",
+        "slug": "culte-de-la-rive-noire"
+    },
+    {
+        "name": "Daggerspine",
+        "region": "EU",
+        "slug": "daggerspine"
+    },
+    {
+        "name": "Dalaran",
+        "region": "EU",
+        "slug": "dalaran"
+    },
+    {
+        "name": "Dalvengyr",
+        "region": "EU",
+        "slug": "dalvengyr"
+    },
+    {
+        "name": "Darkmoon Faire",
+        "region": "EU",
+        "slug": "darkmoon-faire"
+    },
+    {
+        "name": "Darksorrow",
+        "region": "EU",
+        "slug": "darksorrow"
+    },
+    {
+        "name": "Darkspear",
+        "region": "EU",
+        "slug": "darkspear"
+    },
+    {
+        "name": "Das Konsortium",
+        "region": "EU",
+        "slug": "das-konsortium"
+    },
+    {
+        "name": "Das Syndikat",
+        "region": "EU",
+        "slug": "das-syndikat"
+    },
+    {
+        "name": "Deathguard",
+        "region": "EU",
+        "slug": "deathguard"
+    },
+    {
+        "name": "Deathweaver",
+        "region": "EU",
+        "slug": "deathweaver"
+    },
+    {
+        "name": "Deathwing",
+        "region": "EU",
+        "slug": "deathwing"
+    },
+    {
+        "name": "Deepholm",
+        "region": "EU",
+        "slug": "deepholm"
+    },
+    {
+        "name": "Defias Brotherhood",
+        "region": "EU",
+        "slug": "defias-brotherhood"
+    },
+    {
+        "name": "Dentarg",
+        "region": "EU",
+        "slug": "dentarg"
+    },
+    {
+        "name": "Der Mithrilorden",
+        "region": "EU",
+        "slug": "der-mithrilorden"
+    },
+    {
+        "name": "Der Rat von Dalaran",
+        "region": "EU",
+        "slug": "der-rat-von-dalaran"
+    },
+    {
+        "name": "Der abyssische Rat",
+        "region": "EU",
+        "slug": "der-abyssische-rat"
+    },
+    {
+        "name": "Destromath",
+        "region": "EU",
+        "slug": "destromath"
+    },
+    {
+        "name": "Dethecus",
+        "region": "EU",
+        "slug": "dethecus"
+    },
+    {
+        "name": "Die Aldor",
+        "region": "EU",
+        "slug": "die-aldor"
+    },
+    {
+        "name": "Die Arguswacht",
+        "region": "EU",
+        "slug": "die-arguswacht"
+    },
+    {
+        "name": "Die Nachtwache",
+        "region": "EU",
+        "slug": "die-nachtwache"
+    },
+    {
+        "name": "Die Silberne Hand",
+        "region": "EU",
+        "slug": "die-silberne-hand"
+    },
+    {
+        "name": "Die Todeskrallen",
+        "region": "EU",
+        "slug": "die-todeskrallen"
+    },
+    {
+        "name": "Die ewige Wacht",
+        "region": "EU",
+        "slug": "die-ewige-wacht"
+    },
+    {
+        "name": "Doomhammer",
+        "region": "EU",
+        "slug": "doomhammer"
+    },
+    {
+        "name": "Draenor",
+        "region": "EU",
+        "slug": "draenor"
+    },
+    {
+        "name": "Dragonblight",
+        "region": "EU",
+        "slug": "dragonblight"
+    },
+    {
+        "name": "Dragonmaw",
+        "region": "EU",
+        "slug": "dragonmaw"
+    },
+    {
+        "name": "Drak'thul",
+        "region": "EU",
+        "slug": "drakthul"
+    },
+    {
+        "name": "Drek'Thar",
+        "region": "EU",
+        "slug": "drekthar"
+    },
+    {
+        "name": "Dun Modr",
+        "region": "EU",
+        "slug": "dun-modr"
+    },
+    {
+        "name": "Dun Morogh",
+        "region": "EU",
+        "slug": "dun-morogh"
+    },
+    {
+        "name": "Dunemaul",
+        "region": "EU",
+        "slug": "dunemaul"
+    },
+    {
+        "name": "Durotan",
+        "region": "EU",
+        "slug": "durotan"
+    },
+    {
+        "name": "Earthen Ring",
+        "region": "EU",
+        "slug": "earthen-ring"
+    },
+    {
+        "name": "Echsenkessel",
+        "region": "EU",
+        "slug": "echsenkessel"
+    },
+    {
+        "name": "Eitrigg",
+        "region": "EU",
+        "slug": "eitrigg"
+    },
+    {
+        "name": "Eldre'Thalas",
+        "region": "EU",
+        "slug": "eldrethalas"
+    },
+    {
+        "name": "Elune",
+        "region": "EU",
+        "slug": "elune"
+    },
+    {
+        "name": "Emerald Dream",
+        "region": "EU",
+        "slug": "emerald-dream"
+    },
+    {
+        "name": "Emeriss",
+        "region": "EU",
+        "slug": "emeriss"
+    },
+    {
+        "name": "Eonar",
+        "region": "EU",
+        "slug": "eonar"
+    },
+    {
+        "name": "Eredar",
+        "region": "EU",
+        "slug": "eredar"
+    },
+    {
+        "name": "Eversong",
+        "region": "EU",
+        "slug": "eversong"
+    },
+    {
+        "name": "Executus",
+        "region": "EU",
+        "slug": "executus"
+    },
+    {
+        "name": "Exodar",
+        "region": "EU",
+        "slug": "exodar"
+    },
+    {
+        "name": "Festung der Stürme",
+        "region": "EU",
+        "slug": "festung-der-sturme"
+    },
+    {
+        "name": "Fordragon",
+        "region": "EU",
+        "slug": "fordragon"
+    },
+    {
+        "name": "Forscherliga",
+        "region": "EU",
+        "slug": "forscherliga"
+    },
+    {
+        "name": "Frostmane",
+        "region": "EU",
+        "slug": "frostmane"
+    },
+    {
+        "name": "Frostmourne",
+        "region": "EU",
+        "slug": "frostmourne"
+    },
+    {
+        "name": "Frostwhisper",
+        "region": "EU",
+        "slug": "frostwhisper"
+    },
+    {
+        "name": "Frostwolf",
+        "region": "EU",
+        "slug": "frostwolf"
+    },
+    {
+        "name": "Galakrond",
+        "region": "EU",
+        "slug": "galakrond"
+    },
+    {
+        "name": "Garona",
+        "region": "EU",
+        "slug": "garona"
+    },
+    {
+        "name": "Garrosh",
+        "region": "EU",
+        "slug": "garrosh"
+    },
+    {
+        "name": "Genjuros",
+        "region": "EU",
+        "slug": "genjuros"
+    },
+    {
+        "name": "Ghostlands",
+        "region": "EU",
+        "slug": "ghostlands"
+    },
+    {
+        "name": "Gilneas",
+        "region": "EU",
+        "slug": "gilneas"
+    },
+    {
+        "name": "Goldrinn",
+        "region": "EU",
+        "slug": "goldrinn"
+    },
+    {
+        "name": "Gordunni",
+        "region": "EU",
+        "slug": "gordunni"
+    },
+    {
+        "name": "Gorgonnash",
+        "region": "EU",
+        "slug": "gorgonnash"
+    },
+    {
+        "name": "Greymane",
+        "region": "EU",
+        "slug": "greymane"
+    },
+    {
+        "name": "Grim Batol",
+        "region": "EU",
+        "slug": "grim-batol"
+    },
+    {
+        "name": "Grom",
+        "region": "EU",
+        "slug": "grom"
+    },
+    {
+        "name": "Gul'dan",
+        "region": "EU",
+        "slug": "guldan"
+    },
+    {
+        "name": "Hakkar",
+        "region": "EU",
+        "slug": "hakkar"
+    },
+    {
+        "name": "Haomarush",
+        "region": "EU",
+        "slug": "haomarush"
+    },
+    {
+        "name": "Hellfire",
+        "region": "EU",
+        "slug": "hellfire"
+    },
+    {
+        "name": "Hellscream",
+        "region": "EU",
+        "slug": "hellscream"
+    },
+    {
+        "name": "Howling Fjord",
+        "region": "EU",
+        "slug": "howling-fjord"
+    },
+    {
+        "name": "Hyjal",
+        "region": "EU",
+        "slug": "hyjal"
+    },
+    {
+        "name": "Illidan",
+        "region": "EU",
+        "slug": "illidan"
+    },
+    {
+        "name": "Jaedenar",
+        "region": "EU",
+        "slug": "jaedenar"
+    },
+    {
+        "name": "Kael'thas",
+        "region": "EU",
+        "slug": "kaelthas"
+    },
+    {
+        "name": "Karazhan",
+        "region": "EU",
+        "slug": "karazhan"
+    },
+    {
+        "name": "Kargath",
+        "region": "EU",
+        "slug": "kargath"
+    },
+    {
+        "name": "Kazzak",
+        "region": "EU",
+        "slug": "kazzak"
+    },
+    {
+        "name": "Kel'Thuzad",
+        "region": "EU",
+        "slug": "kelthuzad"
+    },
+    {
+        "name": "Khadgar",
+        "region": "EU",
+        "slug": "khadgar"
+    },
+    {
+        "name": "Khaz Modan",
+        "region": "EU",
+        "slug": "khaz-modan"
+    },
+    {
+        "name": "Khaz'goroth",
+        "region": "EU",
+        "slug": "khazgoroth"
+    },
+    {
+        "name": "Kil'jaeden",
+        "region": "EU",
+        "slug": "kiljaeden"
+    },
+    {
+        "name": "Kilrogg",
+        "region": "EU",
+        "slug": "kilrogg"
+    },
+    {
+        "name": "Kirin Tor",
+        "region": "EU",
+        "slug": "kirin-tor"
+    },
+    {
+        "name": "Kor'gall",
+        "region": "EU",
+        "slug": "korgall"
+    },
+    {
+        "name": "Krag'jin",
+        "region": "EU",
+        "slug": "kragjin"
+    },
+    {
+        "name": "Krasus",
+        "region": "EU",
+        "slug": "krasus"
+    },
+    {
+        "name": "Kul Tiras",
+        "region": "EU",
+        "slug": "kul-tiras"
+    },
+    {
+        "name": "Kult der Verdammten",
+        "region": "EU",
+        "slug": "kult-der-verdammten"
+    },
+    {
+        "name": "La Croisade écarlate",
+        "region": "EU",
+        "slug": "la-croisade-ecarlate"
+    },
+    {
+        "name": "Laughing Skull",
+        "region": "EU",
+        "slug": "laughing-skull"
+    },
+    {
+        "name": "Les Clairvoyants",
+        "region": "EU",
+        "slug": "les-clairvoyants"
+    },
+    {
+        "name": "Les Sentinelles",
+        "region": "EU",
+        "slug": "les-sentinelles"
+    },
+    {
+        "name": "Lich King",
+        "region": "EU",
+        "slug": "lich-king"
+    },
+    {
+        "name": "Lightbringer",
+        "region": "EU",
+        "slug": "lightbringer"
+    },
+    {
+        "name": "Lightning's Blade",
+        "region": "EU",
+        "slug": "lightnings-blade"
+    },
+    {
+        "name": "Lordaeron",
+        "region": "EU",
+        "slug": "lordaeron"
+    },
+    {
+        "name": "Los Errantes",
+        "region": "EU",
+        "slug": "los-errantes"
+    },
+    {
+        "name": "Lothar",
+        "region": "EU",
+        "slug": "lothar"
+    },
+    {
+        "name": "Madmortem",
+        "region": "EU",
+        "slug": "madmortem"
+    },
+    {
+        "name": "Magtheridon",
+        "region": "EU",
+        "slug": "magtheridon"
+    },
+    {
+        "name": "Mal'Ganis",
+        "region": "EU",
+        "slug": "malganis"
+    },
+    {
+        "name": "Malfurion",
+        "region": "EU",
+        "slug": "malfurion"
+    },
+    {
+        "name": "Malorne",
+        "region": "EU",
+        "slug": "malorne"
+    },
+    {
+        "name": "Malygos",
+        "region": "EU",
+        "slug": "malygos"
+    },
+    {
+        "name": "Mannoroth",
+        "region": "EU",
+        "slug": "mannoroth"
+    },
+    {
+        "name": "Marécage de Zangar",
+        "region": "EU",
+        "slug": "marecage-de-zangar"
+    },
+    {
+        "name": "Mazrigos",
+        "region": "EU",
+        "slug": "mazrigos"
+    },
+    {
+        "name": "Medivh",
+        "region": "EU",
+        "slug": "medivh"
+    },
+    {
+        "name": "Minahonda",
+        "region": "EU",
+        "slug": "minahonda"
+    },
+    {
+        "name": "Moonglade",
+        "region": "EU",
+        "slug": "moonglade"
+    },
+    {
+        "name": "Mug'thol",
+        "region": "EU",
+        "slug": "mugthol"
+    },
+    {
+        "name": "Nagrand",
+        "region": "EU",
+        "slug": "nagrand"
+    },
+    {
+        "name": "Nathrezim",
+        "region": "EU",
+        "slug": "nathrezim"
+    },
+    {
+        "name": "Naxxramas",
+        "region": "EU",
+        "slug": "naxxramas"
+    },
+    {
+        "name": "Nazjatar",
+        "region": "EU",
+        "slug": "nazjatar"
+    },
+    {
+        "name": "Nefarian",
+        "region": "EU",
+        "slug": "nefarian"
+    },
+    {
+        "name": "Nemesis",
+        "region": "EU",
+        "slug": "nemesis"
+    },
+    {
+        "name": "Neptulon",
+        "region": "EU",
+        "slug": "neptulon"
+    },
+    {
+        "name": "Ner'zhul",
+        "region": "EU",
+        "slug": "nerzhul"
+    },
+    {
+        "name": "Nera'thor",
+        "region": "EU",
+        "slug": "nerathor"
+    },
+    {
+        "name": "Nethersturm",
+        "region": "EU",
+        "slug": "nethersturm"
+    },
+    {
+        "name": "Nordrassil",
+        "region": "EU",
+        "slug": "nordrassil"
+    },
+    {
+        "name": "Norgannon",
+        "region": "EU",
+        "slug": "norgannon"
+    },
+    {
+        "name": "Nozdormu",
+        "region": "EU",
+        "slug": "nozdormu"
+    },
+    {
+        "name": "Onyxia",
+        "region": "EU",
+        "slug": "onyxia"
+    },
+    {
+        "name": "Outland",
+        "region": "EU",
+        "slug": "outland"
+    },
+    {
+        "name": "Perenolde",
+        "region": "EU",
+        "slug": "perenolde"
+    },
+    {
+        "name": "Pozzo dell'Eternità",
+        "region": "EU",
+        "slug": "pozzo-delleternita"
+    },
+    {
+        "name": "Proudmoore",
+        "region": "EU",
+        "slug": "proudmoore"
+    },
+    {
+        "name": "Quel'Thalas",
+        "region": "EU",
+        "slug": "quelthalas"
+    },
+    {
+        "name": "Ragnaros",
+        "region": "EU",
+        "slug": "ragnaros"
+    },
+    {
+        "name": "Rajaxx",
+        "region": "EU",
+        "slug": "rajaxx"
+    },
+    {
+        "name": "Rashgarroth",
+        "region": "EU",
+        "slug": "rashgarroth"
+    },
+    {
+        "name": "Ravencrest",
+        "region": "EU",
+        "slug": "ravencrest"
+    },
+    {
+        "name": "Ravenholdt",
+        "region": "EU",
+        "slug": "ravenholdt"
+    },
+    {
+        "name": "Razuvious",
+        "region": "EU",
+        "slug": "razuvious"
+    },
+    {
+        "name": "Rexxar",
+        "region": "EU",
+        "slug": "rexxar"
+    },
+    {
+        "name": "Runetotem",
+        "region": "EU",
+        "slug": "runetotem"
+    },
+    {
+        "name": "Sanguino",
+        "region": "EU",
+        "slug": "sanguino"
+    },
+    {
+        "name": "Sargeras",
+        "region": "EU",
+        "slug": "sargeras"
+    },
+    {
+        "name": "Saurfang",
+        "region": "EU",
+        "slug": "saurfang"
+    },
+    {
+        "name": "Scarshield Legion",
+        "region": "EU",
+        "slug": "scarshield-legion"
+    },
+    {
+        "name": "Sen'jin",
+        "region": "EU",
+        "slug": "senjin"
+    },
+    {
+        "name": "Shadowsong",
+        "region": "EU",
+        "slug": "shadowsong"
+    },
+    {
+        "name": "Shattered Halls",
+        "region": "EU",
+        "slug": "shattered-halls"
+    },
+    {
+        "name": "Shattered Hand",
+        "region": "EU",
+        "slug": "shattered-hand"
+    },
+    {
+        "name": "Shattrath",
+        "region": "EU",
+        "slug": "shattrath"
+    },
+    {
+        "name": "Shen'dralar",
+        "region": "EU",
+        "slug": "shendralar"
+    },
+    {
+        "name": "Silvermoon",
+        "region": "EU",
+        "slug": "silvermoon"
+    },
+    {
+        "name": "Sinstralis",
+        "region": "EU",
+        "slug": "sinstralis"
+    },
+    {
+        "name": "Skullcrusher",
+        "region": "EU",
+        "slug": "skullcrusher"
+    },
+    {
+        "name": "Soulflayer",
+        "region": "EU",
+        "slug": "soulflayer"
+    },
+    {
+        "name": "Spinebreaker",
+        "region": "EU",
+        "slug": "spinebreaker"
+    },
+    {
+        "name": "Sporeggar",
+        "region": "EU",
+        "slug": "sporeggar"
+    },
+    {
+        "name": "Steamwheedle Cartel",
+        "region": "EU",
+        "slug": "steamwheedle-cartel"
+    },
+    {
+        "name": "Stormrage",
+        "region": "EU",
+        "slug": "stormrage"
+    },
+    {
+        "name": "Stormreaver",
+        "region": "EU",
+        "slug": "stormreaver"
+    },
+    {
+        "name": "Stormscale",
+        "region": "EU",
+        "slug": "stormscale"
+    },
+    {
+        "name": "Sunstrider",
+        "region": "EU",
+        "slug": "sunstrider"
+    },
+    {
+        "name": "Suramar",
+        "region": "EU",
+        "slug": "suramar"
+    },
+    {
+        "name": "Sylvanas",
+        "region": "EU",
+        "slug": "sylvanas"
+    },
+    {
+        "name": "Taerar",
+        "region": "EU",
+        "slug": "taerar"
+    },
+    {
+        "name": "Talnivarr",
+        "region": "EU",
+        "slug": "talnivarr"
+    },
+    {
+        "name": "Tarren Mill",
+        "region": "EU",
+        "slug": "tarren-mill"
+    },
+    {
+        "name": "Teldrassil",
+        "region": "EU",
+        "slug": "teldrassil"
+    },
+    {
+        "name": "Temple noir",
+        "region": "EU",
+        "slug": "temple-noir"
+    },
+    {
+        "name": "Terenas",
+        "region": "EU",
+        "slug": "terenas"
+    },
+    {
+        "name": "Terokkar",
+        "region": "EU",
+        "slug": "terokkar"
+    },
+    {
+        "name": "Terrordar",
+        "region": "EU",
+        "slug": "terrordar"
+    },
+    {
+        "name": "The Maelstrom",
+        "region": "EU",
+        "slug": "the-maelstrom"
+    },
+    {
+        "name": "The Sha'tar",
+        "region": "EU",
+        "slug": "the-shatar"
+    },
+    {
+        "name": "The Venture Co",
+        "region": "EU",
+        "slug": "the-venture-co"
+    },
+    {
+        "name": "Theradras",
+        "region": "EU",
+        "slug": "theradras"
+    },
+    {
+        "name": "Thermaplugg",
+        "region": "EU",
+        "slug": "thermaplugg"
+    },
+    {
+        "name": "Thrall",
+        "region": "EU",
+        "slug": "thrall"
+    },
+    {
+        "name": "Throk'Feroth",
+        "region": "EU",
+        "slug": "throkferoth"
+    },
+    {
+        "name": "Thunderhorn",
+        "region": "EU",
+        "slug": "thunderhorn"
+    },
+    {
+        "name": "Tichondrius",
+        "region": "EU",
+        "slug": "tichondrius"
+    },
+    {
+        "name": "Tirion",
+        "region": "EU",
+        "slug": "tirion"
+    },
+    {
+        "name": "Todeswache",
+        "region": "EU",
+        "slug": "todeswache"
+    },
+    {
+        "name": "Trollbane",
+        "region": "EU",
+        "slug": "trollbane"
+    },
+    {
+        "name": "Turalyon",
+        "region": "EU",
+        "slug": "turalyon"
+    },
+    {
+        "name": "Twilight's Hammer",
+        "region": "EU",
+        "slug": "twilights-hammer"
+    },
+    {
+        "name": "Twisting Nether",
+        "region": "EU",
+        "slug": "twisting-nether"
+    },
+    {
+        "name": "Tyrande",
+        "region": "EU",
+        "slug": "tyrande"
+    },
+    {
+        "name": "Uldaman",
+        "region": "EU",
+        "slug": "uldaman"
+    },
+    {
+        "name": "Ulduar",
+        "region": "EU",
+        "slug": "ulduar"
+    },
+    {
+        "name": "Uldum",
+        "region": "EU",
+        "slug": "uldum"
+    },
+    {
+        "name": "Un'Goro",
+        "region": "EU",
+        "slug": "ungoro"
+    },
+    {
+        "name": "Varimathras",
+        "region": "EU",
+        "slug": "varimathras"
+    },
+    {
+        "name": "Vashj",
+        "region": "EU",
+        "slug": "vashj"
+    },
+    {
+        "name": "Vek'lor",
+        "region": "EU",
+        "slug": "veklor"
+    },
+    {
+        "name": "Vek'nilash",
+        "region": "EU",
+        "slug": "veknilash"
+    },
+    {
+        "name": "Vol'jin",
+        "region": "EU",
+        "slug": "voljin"
+    },
+    {
+        "name": "Wildhammer",
+        "region": "EU",
+        "slug": "wildhammer"
+    },
+    {
+        "name": "Wrathbringer",
+        "region": "EU",
+        "slug": "wrathbringer"
+    },
+    {
+        "name": "Xavius",
+        "region": "EU",
+        "slug": "xavius"
+    },
+    {
+        "name": "Ysera",
+        "region": "EU",
+        "slug": "ysera"
+    },
+    {
+        "name": "Ysondre",
+        "region": "EU",
+        "slug": "ysondre"
+    },
+    {
+        "name": "Zenedar",
+        "region": "EU",
+        "slug": "zenedar"
+    },
+    {
+        "name": "Zirkel des Cenarius",
+        "region": "EU",
+        "slug": "zirkel-des-cenarius"
+    },
+    {
+        "name": "Zul'jin",
+        "region": "EU",
+        "slug": "zuljin"
+    },
+    {
+        "name": "Zuluhed",
+        "region": "EU",
+        "slug": "zuluhed"
+    }
+]

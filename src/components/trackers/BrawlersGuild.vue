@@ -196,10 +196,10 @@ export default {
         user-select: none;
         width:100%;
         text-decoration:none;
-        @media screen and (min-width:480px){
+        @include breakpoint('sm'){
             width:50%;
         }
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             width:25%;
         }
     }
@@ -215,15 +215,18 @@ export default {
         width:100%;
         min-height:265px;
         cursor: pointer;
+        @include compatibility('ie'){
+            display:block;
+        }
         &:hover{
             border: 1px solid orange;
         }
         img{
             width:65%;
-            @media screen and (min-width:480px){
+            @include breakpoint('sm'){
                 width:75%;
             }
-            @media screen and (min-width:768px){
+            @include breakpoint('md'){
                 width:100%;
             }
         }
@@ -239,7 +242,7 @@ export default {
         vertical-align:center;
         flex-grow:1;
         color:white;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             font-size:1em;
         }
         .brawlers-name{
@@ -277,7 +280,7 @@ export default {
         width:100%;
         display: flex;flex-flow:column;
         flex-wrap:wrap;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             flex-flow:row;
         }
     }

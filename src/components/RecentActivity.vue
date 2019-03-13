@@ -15,7 +15,7 @@
                     <app-table :headings="headings" :table-data="tableData.kills" :sortInitial="{column:2, order:'desc'}" v-if="tableData.kills.length>0"></app-table>
                     <div class="activity-empty" v-else>No activity to display.</div>
                 </div>
-            </div>
+            </div>  
 
         </div>
     </div>
@@ -40,6 +40,11 @@ export default {
     },
     created(){
        this.tableData = this.getTableData();
+    },
+    computed:{
+        accessToken(){
+            return this.$store.getters.accessToken;
+        }
     },
     methods:{
         getTableData(){
@@ -74,7 +79,7 @@ export default {
             return newDate.toLocaleDateString("en-GB");
         },
         getItemFromAPI(item, callback){
-            axios.get('https://eu.api.battle.net/wow/item/'+item.itemId+'?locale=en_GB&apikey='+config.BLIZZARD_KEY)
+            axios.get('https://eu.api.blizzard.com/wow/item/'+item.itemId+'?locale=en_GB&access_token='+this.accessToken)
             .then((response) =>{
                 let itemDetails = {icon: '<img src="'+getItemIcon(response.data.icon)+'">', 
                     description: {value:response.data.name, display:'<a class="item-link" target="_blank" href="//www.wowhead.com/item='+item.itemId + this.bonusLists(item)+'" data-wowhead="'+item.bonusLists.join(':')+'">'+response.data.name+'</a>'}};
@@ -108,7 +113,7 @@ export default {
         flex-wrap:wrap;
         .recent-activity-block{
             width:100%;
-            @media screen and (min-width:768px){
+            @include breakpoint('md'){
                 width:50%;
             }
             .activity-empty{
@@ -117,7 +122,7 @@ export default {
                 padding-top:1em;
             }
             .table-container{
-                @media screen and (min-width:768px){
+                @include breakpoint('md'){
                     margin:0 1em;
                 }
                 .table-row .table-cell{

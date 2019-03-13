@@ -31,6 +31,7 @@ export default {
         justify-content:center;
         padding:1em;
         width:200px;
+ 
         .loading-icon{
             font-size: 4.5em;
         }
@@ -39,6 +40,9 @@ export default {
             font-size:1.25em;
             margin-bottom:0;
             text-align:center;
+            @include compatibility("ie"){
+                align-self: stretch;
+            }
         }
     }
 </style>

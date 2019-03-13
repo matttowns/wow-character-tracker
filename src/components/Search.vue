@@ -127,7 +127,7 @@ export default {
             margin-left:auto;
             margin-right:auto;
             width:100%;
-            @media screen and (min-width:768px){
+            @include breakpoint('md'){
                 width:600px;
 
             }
@@ -147,7 +147,7 @@ export default {
             display:flex;
             flex-flow:column;
             justify-content:center;
-            @media screen and (min-width:768px){
+            @include breakpoint('md'){
                 flex-flow:row;
             }
             .search-label{
@@ -171,7 +171,7 @@ export default {
         display:flex;
         flex-flow:row;
         width:100%;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             width:250px;
             border:none;
         }
@@ -189,7 +189,7 @@ export default {
     }
     .realm{
         width:100%;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             width:250px;
         }
         padding:.25em 0;
@@ -199,7 +199,7 @@ export default {
     }
     .character-input{
         width:calc(100% - 10px);
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             width:240px;
         }
         box-sizing:content-box;

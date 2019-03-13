@@ -16,7 +16,7 @@ import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import Loading from './components/general/Loading.vue';
 import Frame from './components/general/Frame.vue';
-import achievements from './data/achievements.json'
+import achievements from './data/achievements.json';
 
 export default {
   components: {
@@ -31,9 +31,11 @@ export default {
         let searchDetails = {"region": this.$route.params.region, "name":this.$route.params.character, "realm":this.$route.params.realm};
         this.$store.dispatch('initCharacter', searchDetails);
     }
-
   },
   computed:{
+    accessToken(){
+        return this.$store.getters.accessToken;
+    },
     dataLoaded(){
       return this.$store.getters.dataLoaded;
     },
@@ -127,6 +129,7 @@ export default {
         background-color:#181818;
         small{
             padding-left:.5em;
+            
 
         }
         @media screen and (min-width:768px){

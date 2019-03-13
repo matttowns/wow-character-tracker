@@ -170,15 +170,15 @@ export default {
         width:100%;
         flex-grow:1;
         display:flex;
-        @media screen and (min-width:480px){
+        @include breakpoint('sm'){
             width:50%;
             max-width:50%;
         }
-         @media screen and (min-width:768px){
+         @include breakpoint('md'){
             width:25%;
             max-width:25%;
         }
-         @media screen and (min-width:1200px){
+         @include breakpoint('xl'){
             width:20%;
             max-width:20%;
         }
@@ -200,12 +200,19 @@ export default {
         padding-top:2em;
     }
     .achievement-category-percentage{
-        font-size:1.125em;
+        font-size:1.5em;
         text-align:center;
         padding:.5em 0;
         color:white;
-        font-weight:400;
+        font-weight:700;
         position:absolute;
+        @include compatibility("ie"){
+            margin:auto;
+            top:30px;
+            left:0;
+            right:0;
+            bottom:0;
+        }
     }
     .achievement-category-points{
         font-size:1em;

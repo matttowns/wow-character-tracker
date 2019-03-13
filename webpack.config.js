@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 
+
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -23,7 +24,7 @@ module.exports = {
           'vue-style-loader',
           'css-loader',
           'sass-loader'
-        ],
+        ]
       },
       {
         test: /\.sass$/,
@@ -44,12 +45,19 @@ module.exports = {
             'scss': [
               'vue-style-loader',
               'css-loader',
-              'sass-loader'
+              {
+                loader: 'sass-loader',
+                options: {
+                  // you can also read from a file, e.g. `variables.scss`
+                  data: `@import "./src/scss/_variables.scss";
+                  @import "./src/scss/_mixins.scss";`
+                }
+              }
             ],
             'sass': [
               'vue-style-loader',
               'css-loader',
-              'sass-loader?indentedSyntax'
+              'sass-loader?indentedSyntax',
             ]
           }
           // other vue-loader options go here
@@ -83,7 +91,7 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
 }
 
 if (process.env.NODE_ENV === 'production') {

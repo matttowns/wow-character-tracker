@@ -1,8 +1,8 @@
 <template>
     <div class="progression-container page-container">
-        <div v-for="expansion in raidsByExpansion" class="progression-expansion">
+        <div v-for="expansion in raidsByExpansion" class="progression-expansion" :key="expansion.id">
             <div class="section-header">{{expansion.expansion.title}}</div>
-            <app-table v-for="raid in expansion.raids" :sortable="false" :headings="getRaidHeadings(raid)" :tableData="getRaidTableData(raid)"></app-table>
+            <app-table v-for="raid in expansion.raids" :key="raid.id" :sortable="false" :headings="getRaidHeadings(raid)" :tableData="getRaidTableData(raid)"></app-table>
         </div> 
     </div>
 </template>
@@ -387,13 +387,13 @@ export default {
     }
     .progression-full{
         display: none;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             display:inline-block;
         }
     }
     .progression-short{
         display: inline-block;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             display:none;
         }
     }

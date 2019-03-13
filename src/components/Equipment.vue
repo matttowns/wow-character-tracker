@@ -189,11 +189,11 @@ export default {
         width:900px;
         max-height:670px;
         background-attachment:initial;
-        @media screen and (min-width:1200px) {
+        @include breakpoint('xl') {
             margin-left:auto;
             margin-right:auto;
         }
-        @media screen and (min-width:1200px) {
+        @include breakpoint('xl') {
             width:65%;
         }
     }
@@ -217,14 +217,14 @@ export default {
     }
     .equipment-list img{
         height:35px; width:35px;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             height:50px;
             width:50px;
         }
     }
     .equipment-list li{
         padding:3px 0;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             padding:6px 0;
         }
     }
@@ -286,6 +286,9 @@ export default {
                     filter: blur(50px);
                     opacity:.75;
                     background-color:#000;
+                    @include compatibility('ie'){
+                        display:none;
+                    }
                 }
                 @media screen and (min-width: 768px){
                     display:block;

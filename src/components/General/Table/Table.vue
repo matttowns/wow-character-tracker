@@ -125,7 +125,7 @@ export default {
         margin:2em auto;
         width:100%;
         color:white;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             font-size:1em;
         }
         font-size:.875em;
@@ -153,7 +153,7 @@ export default {
                 align-items:center;
                 font-size:.875em;
                 padding:1em 0.4375em;
-                @media screen and (min-width:768px){
+                @include breakpoint('md'){
                     padding:1em;
                 }
                 justify-content:center;
@@ -170,7 +170,7 @@ export default {
                     user-select:none;
                     font-size:1em;
                     padding:.875em 0.4143125em;
-                    @media screen and (min-width:768px){
+                    @include breakpoint('md'){
                         padding:.875em;
                     }
                     font-weight:600;
@@ -220,13 +220,13 @@ export default {
 
     .heading-full{
         display: none;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             display:inline-block;
         }
     }
     .heading-short{
         display: inline-block;
-        @media screen and (min-width:768px){
+        @include breakpoint('md'){
             display:none;
         }
     }
